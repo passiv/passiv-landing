@@ -1,0 +1,80 @@
+@import '../../styles/custom-media.css';
+@import '../../styles/custom-properties.css';
+
+@import '../../styles/home.css';
+@import '../../styles/btn.css';
+@import '../../styles/col.css';
+
+section.brokerage {
+  background: var(--brand-color-3);
+  padding: 75px 0px 50px;
+  @nest & h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 54px;
+    font-weight: 600;
+    letter-spacing: -0.9px;
+    @media (--media-max-desktop) {
+      font-size: 45px;
+      line-height: 1.2;
+    }
+  }
+  @nest & p {
+    color: #fff;
+    font-size: 34px;
+    line-height: 54px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 30px;
+    @media (--media-max-desktop) {
+      font-size: 30px;
+      line-height: 1.5;
+    }
+    @nest & span {
+      color: var(--brand-color);
+      font-weight: 700;
+    }
+    @nest & strong {
+      font-weight: 700;
+    }
+  }
+}
+.col2 {
+  margin: 70px auto 50px;
+  max-width: 1000px;
+  @media (--media-max-desktop) {
+    margin: 30px auto 20px;
+  }
+  @nest & a {
+    color: var(--brand-color);
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  @nest & .btn1 {
+    color: #fff;
+    display: inline-block;
+    width: auto;
+    margin-top: 10px;
+  }
+}
+.innerCol {
+  text-align: center;
+  padding: 20px 0;
+}
+@media (--media-min-desktop) {
+  .col2 .innerCol:last-of-type {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .col2 .innerCol:first-of-type {
+    border-right: 1px solid rgba(255,255,255,0.21);
+  }
+}
+@media (--media-min-desktop) {
+  .col2 .innerCol {
+    margin-right: 35px;
+    padding-right: 35px;
+  }
+}

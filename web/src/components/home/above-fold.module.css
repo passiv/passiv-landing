@@ -1,0 +1,200 @@
+@import '../../styles/custom-media.css';
+@import '../../styles/custom-properties.css';
+@import '../../styles/home.css';
+@import '../../styles/btn.css';
+
+.email-signup {
+  position: relative;
+  vertical-align: top;
+  @nest & label {
+    position: absolute;
+    font-weight: 500;
+    top: -12px;
+    left: 16px;
+    @nest &:after {
+      background: #fff;
+      content: '';
+      top: 12px;
+      left: -5px;
+      position: absolute;
+      width: 111%;
+      height: 50%;
+      z-index: 0;
+    }
+    @nest & span {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  @nest & input[type="email"] {
+    width: 312px;
+    margin-right: 18px;
+    height: 52px;
+    border: solid 1px #9e9f9f;
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 2px 12px;
+    @nest &:focus {
+
+    }
+    @media (--media-max-desktop) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.btn1 {
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.above-fold {
+  padding-top: 214px;
+  position: relative;
+  z-index: 1;
+  @media (--media-max-desktop) {
+    padding-top: 130px;
+    margin-bottom: 50px;
+  }
+  @media (--media-min-desktop) {
+    background-position: center top;
+    background-color: #F7F7F7;
+    min-height: 560px;
+    padding-bottom: 60px;
+    position: relative;
+  }
+  @nest & .btn1 {
+    padding: 18px 31px 19px;
+  }
+  @nest & h1 {
+    color: #383838;
+    font-family: $base-font-family;
+    font-weight: 500;
+    font-size: 48px;
+    letter-spacing: -2.33px;
+    line-height: 91px;
+    margin-bottom: 18px;
+    @media (--media-min-desktop) {
+      font-size: 50px;
+      line-height: 1.25;
+    }
+  }
+  @nest &:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+/*    background: url(images/dashboard-img.png) no-repeat;
+    @include retina-background-image("images/dashboard-img", "png", 50%, 50%);*/
+    background-position: right center;
+    max-width: 750px;
+    @media (--media-max-tablet) {
+      max-width: 475px;
+      width: 100%;
+      background-size: contain;
+    }
+    @media (--media-min-desktop) {
+      width: 40%;
+      background-size: contain;
+    }
+    @media (--media-min-desktop) {
+      width: 50%;
+      background-size: contain;
+    }
+  }
+  @media (--media-max-desktop) {
+    padding-bottom: 340px;
+    @nest &:after {
+      background-position: center bottom;
+    }
+  }
+  @nest &:before {
+    content: '';
+    width: 875px;
+    height: 965px;
+    position: absolute;
+    right: -400px;
+    top: 0;
+    transform: rotate(-45deg);
+    border-radius: 4px;
+    box-shadow: 4px 4px 24px 0 rgba(2, 74, 61, 0.48);
+    background-image: radial-gradient(circle at 48% 46%, #04a287, #0eb599, #04a287 165%);
+    @media (--media-max-tablet) {
+      height: 500px;
+      width: 437px;
+      top: 300px;
+      right: -200px;
+    }
+    @media (--media-max-mini) {
+      display: none;
+    }
+  }
+}
+
+.tagline {
+  color: #9A9A9A;
+  font-family: var(--base-font-family);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.71px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.blurb {
+  color: #292929;
+  font-family: var(--base-font-family);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -0.24px;
+  line-height: 36px;
+  max-width: 450px;
+  margin-bottom: 70px;
+}
+.cta-container {
+  position: relative;
+  z-index: 1;
+}
+.testimonial {
+  position: relative;
+  z-index: 0;
+  max-width: 628px;
+  margin: 50px auto 0;
+  @nest & blockquote {
+    background: #fff;
+    border-radius: 4px;
+    border: none;
+    box-shadow: -2px 4px 11px 0 rgba(174, 174, 174, 0.3);
+    color: #232225;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin-left: -40px;
+    padding: 24px 52px 25px 24px;
+  }
+  @nest & footer {
+    margin-bottom: 5px;
+  }
+  @nest & cite {
+    font-style: normal;
+  }
+}
+.author {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #2a2d34;
+  padding-right: 8px;
+}
+.company {
+  color: #8a8a8a;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2.2px;
+  text-align: left;
+  text-transform: uppercase;
+}

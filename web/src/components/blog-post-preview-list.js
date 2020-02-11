@@ -7,18 +7,18 @@ import styles from './blog-post-preview-list.module.css'
 function BlogPostPreviewGrid (props) {
   return (
     <div className={styles.root}>
-      {props.title && <h2 className={styles.headline}>{props.title}</h2>}
-      <ul className={styles.grid}>
+      {props.title && <h2>{props.title}</h2>}
+      <ul className={styles.col3}>
         {props.nodes &&
           props.nodes.map(node => (
-            <li key={node.id}>
+            <li className={styles.item} key={node.id}>
               <BlogPostPreview {...node} isInList />
             </li>
           ))}
       </ul>
       {props.browseMoreHref && (
         <div className={styles.browseMoreNav}>
-          <Link to={props.browseMoreHref}>Browse more</Link>
+          <Link className={styles.btn1} to={props.browseMoreHref}>Browse more</Link>
         </div>
       )}
     </div>

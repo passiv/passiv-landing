@@ -2,9 +2,9 @@
 @import '../styles/custom-properties.css';
 
 .content {
-  background: var(--color-white);
+  background: #F7F7F7;
   min-height: calc(100% - 73px - 120px);
-
+  overflow-x: hidden;
   @media (--media-min-small) {
     min-height: calc(100% - 91px - 155px);
   }

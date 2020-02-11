@@ -1,0 +1,49 @@
+@import '../../styles/custom-media.css';
+@import '../../styles/custom-properties.css';
+@import '../../styles/home.css';
+
+@import '../../styles/btn.css';
+@import '../../styles/col.css';
+
+.features {
+  @media (--media-max-desktop) {
+    margin-top: -70px;
+    margin-bottom: 85px;
+
+  }
+  margin-top: 40px;
+  margin-bottom: 40px;
+  @nest & h3 {
+    font-family: var(--base-font-family);
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--brand-color);
+    letter-spacing: -0.31px;
+    text-align: center;
+    line-height: 34px;
+    padding: 15px 0px;
+  }
+  @nest & p {
+    font-family: var(--base-font-family);
+    font-weight: 400;
+    font-size: 20px;
+    color: #3B3B3B;
+    text-align: center;
+    line-height: 34px;
+  }
+  @nest & img {
+    max-width: 150px;
+  }
+
+}
+.tile {
+  padding: 25px 25px 40px;
+  background: #FDFDFD;
+  box-shadow: 0 2px 20px 0 rgba(119, 119, 119, 0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.tileContainer {
+  text-align: center;
+}

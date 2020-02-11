@@ -1,0 +1,32 @@
+@import 'custom-media.css';
+@import 'custom-properties.css';
+
+.col3 {
+  @media (--media-min-desktop) {
+    display: flex;
+    @nest & .innerCol {
+      flex: 1;
+      margin-right: 30px;
+      @nest &:last-of-type{
+        margin-right: 0;
+      }
+    }
+  }
+  @media (--media-max-desktop) {
+    @nest & .innerCol {
+      margin-bottom: 20px;
+    }
+  }
+}
+.col2 {
+  @media (--media-min-desktop) {
+    display: flex;
+    @nest & .innerCol {
+      flex: 1;
+      margin-right: 20px;
+      @nest &:last-of-type{
+        margin-right: 0;
+      }
+    }
+  }
+}

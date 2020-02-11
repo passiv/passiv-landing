@@ -1,5 +1,5 @@
 :root {
-  --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-sans: 'Cooper Hewitt', Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
@@ -8,6 +8,33 @@
   --color-very-light-gray: #e7ebed;
   --color-white: #fff;
   --color-accent: #156dff;
+
+  --base-font-family: 'Cooper Hewitt', Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --base-font-size:   18px;
+  --base-font-weight: 500;
+  --small-font-size:  var(--base-font-size) * 0.875;
+  --base-line-height: 1.5;
+
+  --spacing-unit:     20px;
+
+  --text-color:         #262626;
+  --background-color:   #fdfdfd;
+  --brand-color:        #04A287;
+  --brand-color-2:      #003BA2;
+  --brand-color-3:      #2A2D34;
+  --brand-color-4:      #0043B9;
+  --brand-color-5:      #001C55;
+
+
+  --grey-color:       #828282;
+
+  --table-text-align: left;
+
+  --content-width:    1340px;
+  --page-width:       860px;
+
+  --on-palm:          600px;
+  --on-laptop:        800px;
 
   /* Typography */
   --unit: 16;

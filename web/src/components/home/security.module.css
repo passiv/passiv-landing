@@ -1,0 +1,68 @@
+@import '../../styles/custom-media.css';
+@import '../../styles/custom-properties.css';
+@import '../../styles/home.css';
+@import '../../styles/btn.css';
+
+.security {
+  background: var(--brand-color-3);
+  color: #fff;
+  padding: 30px 20px;
+  @nest & > div{
+    padding: 140px 0;
+    @media (--media-min-desktop) {
+      /*background: url(images/lock.png) no-repeat;*/
+      background-position: right center;
+    }
+    @media (--media-max-desktop) {
+      padding: 50px 0;
+    }
+  }
+  @nest & h2 {
+    color: #FFFFFF;
+    font-family: var(--base-font-family);
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 5.19px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    @nest & span {
+      color: var(--brand-color);
+    }
+  }
+  @nest & ul {
+    max-width: 786px;
+    font-family: var(--base-font-family);
+    font-weight: 300;
+    font-size: 26px;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+    line-height: 46px;
+    @media (--media-max-desktop) {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  }
+  @nest & p {
+    max-width: 786px;
+    font-family: var(--base-font-family);
+    font-weight: 300;
+    font-size: 26px;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+    line-height: 46px;
+    margin-bottom: 50px;
+    @media (--media-max-desktop) {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+    @nest & a {
+      font-size: 26px;
+      color: var(--brand-color);
+      font-family: var(--base-font-family);
+      font-weight: 400;
+      @media (--media-max-desktop) {
+        font-size: 20px;
+      }
+    }
+  }
+}

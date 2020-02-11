@@ -11,6 +11,13 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
+import AboveFold from '../components/home/above-fold'
+import Brokerage from '../components/home/brokerage'
+import Features from '../components/home/features'
+import Mission from '../components/home/mission'
+import Security from '../components/home/security'
+import Testimonials from '../components/home/testimonials'
+
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
     crop {
@@ -41,7 +48,7 @@ export const query = graphql`
       keywords
     }
     posts: allSanityPost(
-      limit: 6
+      limit: 3
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -95,8 +102,11 @@ const IndexPage = props => {
         description={site.description}
         keywords={site.keywords}
       />
+      <AboveFold/>
+      <Mission/>
+      <Features/>
+      <Brokerage/>
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
         {postNodes && (
           <BlogPostPreviewList
             title='Latest blog posts'
@@ -105,6 +115,8 @@ const IndexPage = props => {
           />
         )}
       </Container>
+      <Testimonials/>
+      <Security/>
     </Layout>
   )
 }

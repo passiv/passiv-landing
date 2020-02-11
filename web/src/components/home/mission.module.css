@@ -1,0 +1,111 @@
+@import '../../styles/custom-media.css';
+@import '../../styles/custom-properties.css';
+@import '../../styles/home.css';
+@import '../../styles/btn.css';
+
+.mission {
+  padding: 80px 0 75px;
+  position: relative;
+  z-index: 1;
+  @media (--media-max-desktop) {
+    padding: 50px 0 ;
+  }
+  @media (--media-min-desktop) {
+    margin-bottom: 120px;
+    @nest & .wrapper {
+    }
+  }
+}
+.img-container {
+  max-width: 100%;
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: -5px 6px 7px 0 rgba(143, 143, 143, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.25), -5px 6px 7px 0 rgba(143, 143, 143, 0.24);
+  @media (--media-min-desktop) {
+    position: absolute;
+  }
+  @media (--media-max-desktop) {
+    max-width: 600px;
+  }
+}
+.copy-container {
+  @media (--media-min-desktop) {
+    margin: 0 0 0 auto;
+    max-width: 698px;
+    position: relative;
+    z-index: 2;
+    padding-top: 30px;
+  }
+  @nest & h2 {
+    font-family: var(--base-font-family);
+    font-weight: 700;
+    font-size: 54px;
+    color: #2C2C2C;
+    letter-spacing: 1.97px;
+    margin-bottom: 0;
+    padding-top: 8px;
+    text-transform: uppercase;
+    @nest & span {
+      color: #fff;
+      @media (--media-min-desktop) {
+        color:#04A287;
+      }
+    }
+    @media (--media-min-desktop) {
+      padding-top: 25px;
+      font-size: 45px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+  }
+  @nest & ol{
+    background: #fff;
+    border-radius: 4px;
+    border-bottom: solid 4px #2a2d34;
+    box-shadow: 0 3px 43px 8px rgba(73, 73, 73, 0.09);
+    font-family: var(--base-font-family);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: -0.24px;
+    line-height: 39px;
+    margin-bottom: 25px;
+    padding: 32px 40px 75px;
+    @media (--media-max-desktop) {
+      font-size: 18px;
+      line-height: 1.5;
+      padding: 20px 20px 30px;
+    }
+  }
+  @nest & p {
+    background: #fff;
+    border-radius: 4px;
+    border-bottom: solid 4px #2a2d34;
+    box-shadow: 0 3px 43px 8px rgba(73, 73, 73, 0.09);
+    font-family: var(--base-font-family);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: -0.24px;
+    line-height: 39px;
+    margin-bottom: 25px;
+    padding: 32px 40px 75px;
+    @media (--media-max-desktop) {
+      font-size: 18px;
+      line-height: 1.5;
+      padding: 20px 20px 30px;
+    }
+  }
+}
+
+.btn3 {
+  margin-left: 40px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+  @media (--media-max-desktop) {
+    width: 65%;
+    margin-left: 0;
+  }
+  @media (--media-min-desktop) {
+    bottom: -20px;
+    position: absolute;
+  }
+}

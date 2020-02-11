@@ -11,7 +11,7 @@
   display: block;
   position: relative;
   background: var(--color-very-light-gray);
-  padding-bottom: calc(9 / 16 * 100%);
+  padding-bottom: calc(5 / 16 * 100%);
 
   @nest & img {
     display: block;
@@ -35,6 +35,8 @@
 }
 
 .mainContent {
+  max-width: 860px;
+  padding: 2rem 0;
   @nest & a {
     color: var(--color-accent);
 
@@ -45,8 +47,24 @@
     }
   }
 
+  @nest & h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 2rem 0;
+  }
+
   @nest & h2, & h3, & h4, & h5, & h6 {
     font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  @nest & p {
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+
+  @nest & a {
+    color: #003ba2;
   }
 
   @nest & figure {
@@ -57,9 +75,13 @@
       max-width: 100%;
     }
   }
+  @nest & ul {
+    margin: 2rem 0 3rem 1rem;
+  }
 }
 
 .metaContent {
+  max-width: 860px;
 }
 
 .publishedAt {

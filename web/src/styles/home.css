@@ -1,0 +1,206 @@
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-12px);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+}
+
+.home {
+  overflow-x:hidden;
+  @nest & header {
+    background: rgba(255,255,255,0);
+    transition: .25s all;
+    padding-bottom: 15px;
+  }
+}
+
+.stay-informed {
+  padding: 25px 0 130px;
+  @media (--media-max-desktop) {
+    padding-bottom: 60px;
+  }
+  @nest & h2 {
+    font-family: $base-font-family;
+    font-weight: 600;
+    font-size: 66px;
+    color: #2C2C2C;
+    letter-spacing: 1.86px;
+    text-align: center;
+    @media (--media-max-desktop) {
+      font-size: 28px;
+    }
+  }
+  @nest & p {
+    font-family: $base-font-family;
+    font-weight: 300;
+    font-size: 20px;
+    color: #2C2C2C;
+    letter-spacing: -0.31px;
+    text-align: center;
+    line-height: 32px;
+    max-width: 485px;
+    margin: 0 auto 50px;
+    strong {
+      font-family: $base-font-family;
+      font-weight: 400;
+    }
+  }
+  @nest & form.subscribe {
+    position: relative;
+  }
+  @nest & #subscribe p {
+    text-align: center;
+    max-width: 100%;
+    margin-top: 25px;
+    width: 100%;
+    font-weight: 600;
+    color: #00a387;
+  }
+  @nest & .success {
+    background: $brand-color;
+  }
+  @nest & .form-container {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+
+    @nest & label {
+      background: $brand-color-3;
+      box-sizing: border-box;
+      color: #fff;
+      font-family: $base-font-family;
+      font-weight: 600;
+      height: 100%;
+      padding: 15px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 26px 15px 15px;
+      @media (--media-max-desktop) {
+        position: relative;
+        width: 100%;
+        height: auto;
+        clip-path: none;
+        padding: 30px 0px;
+        background: none;
+        color: $brand-color-3;
+      }
+    }
+    @nest & input[type="email"]{
+      font-family: $base-font-family;
+      border: 2px solid $brand-color-3;
+      box-sizing: border-box;
+      font-size: 20px;
+      padding: 25px 80px 25px 188px;
+      width: 100%;
+      @media (--media-max-desktop) {
+        margin-bottom: 20px;
+        padding: 25px;
+      }
+    }
+    @nest & input[type="submit"]{
+      background: $brand-color-2;
+      box-sizing: border-box;
+      color: #fff;
+      -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+      clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+      font-family: $base-font-family;
+      font-weight: 600;
+      font-size: 18px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      padding: 4px 25px 0 45px;
+      position: absolute;
+      text-transform: uppercase;
+      transition: all .25s;
+      @media (--media-max-desktop) {
+        position: relative;
+        width: 100%;
+        height: auto;
+        clip-path: none;
+        padding: 30px 25px;
+      }
+      @nest &.success {
+        background: $brand-color;
+        @nest &:hover {
+          -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+          padding: 4px 25px 0 45px;
+          background: $brand-color;
+        }
+      }
+      @nest &:hover {
+        background: $brand-color-2;
+        padding: 4px 45px 0 25px;
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+  }
+}
+
+#mc_embed_signup {
+  box-shadow: 0px 0px 5px 0px rgba(2, 14, 16, 0.48);
+  padding: 35px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  max-width: 360px;
+}
+#feedback {
+  padding: 40px 25px;
+  @nest & input {
+    border: 2px solid #262626;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 25px;
+    border-radius: 0;
+    width: 100%;
+    outline: none;
+    margin-bottom: 15px;
+    @nest &:focus {
+      border-color: $brand-color-2;
+      box-shadow: 0px 0px 6px rgba(0, 67, 185, 0.4);
+    }
+  }
+  @nest & textarea {
+    border: 2px solid #262626;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 25px;
+    border-radius: 0;
+    width: 100%;
+    outline: none;
+    margin-bottom: 15px;
+    @nest &:focus {
+      border-color: $brand-color-2;
+      box-shadow: 0px 0px 6px rgba(0, 67, 185, 0.4);
+    }
+  }
+  .submit {
+    @nest & button {
+      background: $brand-color-2;
+      box-shadow: 0 1px 2px 0 rgba(37, 37, 37, 0.5);
+      border-radius: 2px;
+      font-family: 'Cooper Hewitt', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #FFFFFF;
+      letter-spacing: 0.8px;
+      margin-left: 0;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 22px 34px 18px;
+      line-height: 1;
+      border: none;
+      height: auto;
+    }
+  }
+}

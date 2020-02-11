@@ -1,0 +1,137 @@
+@import 'custom-media.css';
+@import 'custom-properties.css';
+
+.btn {
+  display: inline-block;
+  padding: 22px 34px 18px;
+  line-height: 1;
+}
+
+input.btn1{
+  background: var(--brand-color-2);
+  box-shadow: 0 1px 2px 0 rgba(37,37,37,0.50);
+  border-radius: 2px;
+  border: none;
+  font-family: var(--base-font-family);
+  font-weight: 700;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 0.8px;
+  margin-left: 0;
+  transition: .2s all;
+  padding: 20px 31px 21px;
+  text-decoration: none;
+  vertical-align: top;
+  -webkit-appearance: none;
+  cursor: pointer;
+  @nest &:hover {
+    margin: 0;
+    padding: 20px 31px 21px;
+    background: var(--brand-color-4);
+  }
+}
+a.btn1 {
+  background: var(--brand-color-2);
+  box-shadow: 0 1px 2px 0 rgba(37,37,37,0.50);
+  border-radius: 2px;
+  border: none;
+  font-family: var(--base-font-family);
+  font-weight: 700;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 0.8px;
+  margin-left: 0;
+  transition: .2s all;
+  padding: 20px 31px 21px;
+  text-decoration: none;
+  vertical-align: top;
+  -webkit-appearance: none;
+  cursor: pointer;
+  @nest &:hover {
+    margin: 0;
+    padding: 20px 31px 21px;
+    background: var(--brand-color-4);
+  }
+}
+.btn2 {
+  border: 1px solid #2C2C2C;
+  box-shadow: 0 1px 1px 0 rgba(37,37,37,0.00);
+  border-radius: 2px;
+  font-family: var(--base-font-family);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  padding: 20px 31px 21px;
+  @nest &:hover {
+    background: var(--brand-color-4);
+    color: #fff;
+  }
+}
+.btn3 {
+  background: var(--brand-color);
+  color: #fff;
+  font-family: var(--base-font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0.8px;
+  position: relative;
+  padding: 20px 90px 21px 31px;
+  transition: .25s all;
+  @nest & span {
+    position: relative;
+    z-index: 2;
+  }
+  @nest &:hover {
+    text-decoration: none;
+    color: #fff;
+    background: var(--brand-color-4);
+    @nest &:after {
+      width: 100%;
+      -webkit-clip-path: none;
+      clip-path: none;
+      background-color: var(--brand-color-2);
+    }
+  }
+  @nest &:after {
+    background: var(--brand-color-3);
+    content: '';
+    height: 100%;
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    right: 0;
+    top: 0px;
+    z-index: 1;
+    width: 30%;
+    transition: .25s all;
+  }
+  @nest &:before {
+    content: '→';
+    position: absolute;
+    z-index: 2;
+    right: 22px;
+    top: 0;
+    color: #fff;
+    font-weight: 900;
+    line-height: 62px;
+    text-align: center;
+  }
+}
+a.btn4 {
+  text-transform: uppercase;
+  border: 3px solid var(--brand-color-2);
+  border-radius: 2px;
+  font-family: "Cooper Hewitt", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  color: var(--brand-color-2);
+  padding: 17px 62px 15px;
+  text-align: center;
+  @nest &:hover {
+    background: var(--brand-color-2);
+    color: #fff;
+    text-decoration: none;
+  }
+}

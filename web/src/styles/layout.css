@@ -1,3 +1,4 @@
+@import 'font.css';
 @import './custom-properties.css';
 
 html {
@@ -19,3 +20,325 @@ body > div,
 body > div > div {
   height: 100%;
 }
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+/**
+ * `main` element
+ */
+main {
+  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+}
+
+
+li {
+  @nest & > ul {
+    margin-bottom: 0;
+  }
+  @nest & > ol {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/**
+ * Links
+ */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: var(--base-font-family);
+  font-size: 18px;
+  @nest &:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+    color: var(--brand-color);
+  }
+
+  @nest & .social-media-list:hover {
+    text-decoration: none;
+
+    @nest & .username {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: var(--grey-color);
+  border-left: 4px solid var(--grey-color-light);
+  padding-left: var(--spacing-unit / 2);
+  @include relative-font-size(1.125);
+  letter-spacing: -1px;
+  font-style: italic;
+
+  @nest & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+  @include relative-font-size(0.9375);
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  background-color: #eef;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  @nest & > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+/**
+ * Wrapper
+ */
+.wrapper {
+  max-width: calc(1340px - (20px * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--spacing-unit);
+  padding-left: var(--spacing-unit);
+}
+
+.post-page .wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  --pageWidth: calc( var(--page-width) - (var(--spacing-unit) * 2));
+  max-width: var(--pageWidth);
+}
+
+/**
+ * Icons
+ */
+
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: var(--grey-color);
+  padding-right: 5px;
+  vertical-align: text-top;
+}
+
+.social-media-list {
+  @nest & li + li {
+    padding-top: 5px;
+  }
+}
+
+
+
+/**
+ * Tables
+
+table {
+  margin-bottom: $spacing-unit;
+  width: 100%;
+  text-align: $table-text-align;
+  color: lighten($text-color, 18%);
+  border-collapse: collapse;
+  border: 1px solid $grey-color-light;
+  @nest & tr {
+    @nest &:nth-child(even) {
+      background-color: lighten($grey-color-light, 6%);
+    }
+  }
+  @nest & th, td {
+    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+  }
+  @nest & th {
+    background-color: lighten($grey-color-light, 3%);
+    border: 1px solid darken($grey-color-light, 4%);
+    border-bottom-color: darken($grey-color-light, 12%);
+  }
+  @nest & td {
+    border: 1px solid $grey-color-light;
+  }
+}*/
+
+header {
+  padding-top: 12px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0);
+  transition: .25s background;
+  @nest &.has-bg {
+    background: rgba(255,255,255,1);
+  }
+}
+
+/**
+ * Site header
+ */
+
+main {
+  background: #F7F7F7;
+}
+
+/**
+ * Site footer
+ */
+.site-footer {
+}
+
+.footer-heading {
+  @include relative-font-size(1.125);
+  margin-bottom: var(--spacing-unit) / 2;
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.footer-col-wrapper {
+  @include relative-font-size(0.9375);
+  color: var(--grey-color);
+  margin-left: -(var(--spacing-unit)) / 2;
+  @extend %clearfix;
+}
+
+.footer-col {
+  float: left;
+  margin-bottom: var(--spacing-unit) / 2;
+  padding-left: var(--spacing-unit) / 2;
+}
+
+
+/**
+ * Page content
+ */
+
+.page-heading {
+  @include relative-font-size(2);
+}
+
+.post-list-heading {
+  @include relative-font-size(1.75);
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  @nest & > li {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.post-meta {
+  font-size: var(--small-font-size);
+  color: var(--grey-color);
+}
+
+.post-link {
+  display: block;
+  @include relative-font-size(1.5);
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+  margin-bottom: var(--spacing-unit);
+}
+
+.post-title {
+  @include relative-font-size(2.625);
+  letter-spacing: -1px;
+  line-height: 1;
+
+  @include media-query($on-laptop) {
+    @include relative-font-size(2.25);
+  }
+}
+
+.post-content {
+  margin-bottom: $spacing-unit;
+
+  @nest & h2 {
+    @include relative-font-size(2);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.75);
+    }
+  }
+
+  @nest & h3 {
+    @include relative-font-size(1.625);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.375);
+    }
+  }
+
+  @nest & h4 {
+    @include relative-font-size(1.25);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.125);
+    }
+  }
+}
+
+
