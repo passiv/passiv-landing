@@ -1,17 +1,19 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import {mapEdgesToNodes} from '../lib/helpers'
-import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
+import TutorialPreviewGrid from '../components/tutorial-preview-grid'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
 import {responsiveTitle1} from '../components/typography.module.css'
+import styles from '../components/tutorial.module.css'
+
 
 export const query = graphql`
-  query ArchivePageQuery {
-    posts: allSanityPost(
+  query TutorialsPageQuery {
+    tutorials: allSanityTutorial(
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
       ) {
@@ -34,7 +36,7 @@ export const query = graphql`
   }
 `
 
-const ArchivePage = props => {
+const TutorialsPage = props => {
   const {data, errors} = props
 
   if (errors) {
@@ -45,17 +47,22 @@ const ArchivePage = props => {
     )
   }
 
-  const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
+  const tutorialNodes = data && data.tutorials && mapEdgesToNodes(data.tutorials)
 
   return (
-    <Layout>
-      <SEO title='Archive' />
-      <Container>
-        <h1 className={responsiveTitle1}>Archive</h1>
-        {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
-      </Container>
-    </Layout>
+    <div className={styles.tutorials}>
+      <Layout>
+        <SEO title='Tutorials' />
+        <Container>
+          <div className={styles.content}>
+            <h1 className={responsiveTitle1}>Getting Started with Passiv</h1>
+            <p className={styles.firstLine}>Just getting acquainted with Passiv? We can walk you through it.</p>
+            {tutorialNodes && tutorialNodes.length > 0 && <TutorialPreviewGrid nodes={tutorialNodes} />}
+          </div>
+        </Container>
+      </Layout>
+    </div>
   )
 }
 
-export default ArchivePage
+export default TutorialsPage

@@ -8,11 +8,11 @@ import PortableText from './portableText'
 import styles from './blog-post-preview.module.css'
 import {responsiveTitle3} from './typography.module.css'
 
-function BlogPostPreview (props) {
+function TutorialPreview (props) {
   return (
     <Link
       className={props.isInList ? styles.inList : styles.inGrid}
-      to={`/blog/${props.slug.current}`}
+      to={`/help/tutorials/${props.slug.current}`}
     >
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
@@ -33,10 +33,9 @@ function BlogPostPreview (props) {
             <PortableText blocks={props._rawExcerpt} />
           </div>
         )}
-        <div className={styles.date}>{format(props.publishedAt, 'MMMM Do, YYYY')}</div>
       </div>
     </Link>
   )
 }
 
-export default BlogPostPreview
+export default TutorialPreview

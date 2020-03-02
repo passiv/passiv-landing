@@ -49,7 +49,7 @@
 }
 
 .above-fold {
-  padding-top: 214px;
+  padding-top: 150px;
   position: relative;
   z-index: 1;
   @media (--media-max-desktop) {
@@ -87,9 +87,8 @@
     right: 0;
     position: absolute;
     z-index: 0;
-/*    background: url(images/dashboard-img.png) no-repeat;
-    @include retina-background-image("images/dashboard-img", "png", 50%, 50%);*/
-    background-position: right center;
+    background: url(../../images/dashboard-img@2x.png) no-repeat;
+    background-position: right 30%;
     max-width: 750px;
     @media (--media-max-tablet) {
       max-width: 475px;
@@ -117,7 +116,7 @@
     height: 965px;
     position: absolute;
     right: -400px;
-    top: 0;
+    top: -50px;
     transform: rotate(-45deg);
     border-radius: 4px;
     box-shadow: 4px 4px 24px 0 rgba(2, 74, 61, 0.48);

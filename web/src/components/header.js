@@ -3,6 +3,7 @@ import React from 'react'
 import Icon from './icon'
 import {cn} from '../lib/helpers'
 import Container from './container'
+import Logo from '../images/logo.svg'
 
 import styles from './header.module.css'
 
@@ -14,13 +15,17 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
 
       <Container>
         <Link className={siteTitle} rel="author" to='/'>
-          <img width="60px" src="/assets/images/logo.svg" alt="Passiv Logo" />
+          <img src={Logo} width="60" alt="Passiv Logo" />
         </Link>
 
 
         <nav className={cn(styles.siteNav, showNav && styles.showNav)}>
           <div>
             <Link className={styles.pageLink} to="/blog">Blog</Link>
+            <Link className={styles.pageLink} to="/about">About</Link>
+            <Link className={styles.pageLink} to="/pricing">Pricing</Link>
+            <Link className={styles.pageLink} to="/security">Security</Link>
+            <Link className={styles.pageLink} to="/tutorials">Tutorials</Link>
             <Link className={cn(styles.pageLink, styles.btn2, styles.login)} to="/app/login/">Log in</Link>
             <Link className={cn(styles.pageLink, styles.btn1, styles.try, styles.clickping)} to="/app/register/">Sign Up</Link>
           </div>

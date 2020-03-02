@@ -1,10 +1,10 @@
 import {Link} from 'gatsby'
 import React from 'react'
-import BlogPostPreview from './blog-post-preview'
+import TutorialPreview from './tutorial-preview'
 
 import styles from './blog-post-preview-grid.module.css'
 
-function BlogPostPreviewGrid (props) {
+function TutorialPreviewGrid (props) {
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
@@ -12,7 +12,7 @@ function BlogPostPreviewGrid (props) {
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
-              <BlogPostPreview {...node} isInGrid />
+              <TutorialPreview {...node} isInGrid />
             </li>
           ))}
       </ul>
@@ -25,10 +25,10 @@ function BlogPostPreviewGrid (props) {
   )
 }
 
-BlogPostPreviewGrid.defaultProps = {
+TutorialPreviewGrid.defaultProps = {
   title: '',
   nodes: [],
   browseMoreHref: ''
 }
 
-export default BlogPostPreviewGrid
+export default TutorialPreviewGrid

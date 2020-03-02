@@ -133,6 +133,7 @@
   float: right;
   --line-height: var(--base-line-height) * var(--base-font-size) * 2.25;
   line-height: var(--line-height);
+  margin-top: 20px;
   @nest & .btn2 {
     background: #fff;
     border: none;
@@ -140,6 +141,7 @@
   }
   @nest & a {
     margin-left: 15px;
+    font-weight: 500;
     @nest &:first-letter {
       text-transform: uppercase;
     }

@@ -10,7 +10,7 @@
   @nest & > div{
     padding: 140px 0;
     @media (--media-min-desktop) {
-      /*background: url(images/lock.png) no-repeat;*/
+      background: url(../../images/lock.png) no-repeat;
       background-position: right center;
     }
     @media (--media-max-desktop) {

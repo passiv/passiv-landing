@@ -2,7 +2,7 @@ import React from 'react'
 import {buildImageObj} from '../../lib/helpers'
 import {imageUrlFor} from '../../lib/image-url'
 import Container from '../container'
-
+import image from '../../images/mission-bg.jpg'
 import styles from './mission.module.css'
 
 function Mission ({  }) {
@@ -10,7 +10,7 @@ function Mission ({  }) {
   <section className={styles.mission}>
     <Container>
       <div className={styles.imgContainer}>
-        // <img alt="Passiv Interface" src="assets/images/mission-bg.jpg" />
+        <img alt="Passiv Interface" src={image} />
       </div>
       <div className={styles.copyContainer}>
         <h2><span>The</span> Mission</h2>

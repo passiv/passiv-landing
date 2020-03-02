@@ -21,7 +21,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2em;
-
+  grid-template-columns: repeat(3, 1fr);
   @media (--media-min-small) {
     grid-template-columns: 1fr 1fr;
   }
