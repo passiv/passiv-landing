@@ -120,6 +120,8 @@
   top: 0;
   left: 0;
   padding-top: 15px;
+  padding-bottom: 15px;
+  background: #f7f7f7;
   @nest & .page-content {
     margin-top: 0;
   }
@@ -163,6 +165,8 @@
 
   @nest & a.btn1 {
     margin-bottom: 15px;
+    margin-left: 15px;
+    @nest &:hover {color:#fff;}
     @media (--media-max-desktop) {
       padding: 21px 31px 20px;
       text-align: center;

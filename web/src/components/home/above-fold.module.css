@@ -49,7 +49,7 @@
 }
 
 .above-fold {
-  padding-top: 150px;
+  padding-top: 170px;
   position: relative;
   z-index: 1;
   @media (--media-max-desktop) {
@@ -88,7 +88,7 @@
     position: absolute;
     z-index: 0;
     background: url(../../images/dashboard-img@2x.png) no-repeat;
-    background-position: right 30%;
+    background-position: right 25%;
     max-width: 750px;
     @media (--media-max-tablet) {
       max-width: 475px;

@@ -1,0 +1,221 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.postPage {
+  min-height: 75vh;
+  padding-top: 40px;
+  font-weight: 400;
+  @nest & h1 {
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 47.25px;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  @nest & h2 {
+    padding-top: 50px;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  @nest & h3 {
+    text-transform: uppercase;
+    font-size: 22px;
+    letter-spacing: 0.015em;
+    font-weight: 600;
+    color: #00a387;
+    margin-top: 30px;
+  }
+  @nest & h2:first-of-type {
+    text-align: center;
+  }
+  @nest & p:first-of-type {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+  }
+  @nest & p {
+    font: 400 18px/1.5 "Cooper Hewitt", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin-bottom: 20px;
+  }
+  @nest & a {
+    color: $brand-color;
+    color: #00a387;
+  }
+  @nest & iframe {
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    margin-bottom: 30px;
+  }
+  @nest & ul {
+    padding-left: 16px;
+    margin-bottom: 20px;
+  }
+  @nest & ol {
+    padding-left: 16px;
+    margin-bottom: 20px;
+  }
+}
+.Blog,
+.Help,
+.Investing{
+  @nest & .wrapper {
+    max-width: calc(1200px - (20px * 2));
+  }
+}
+.postItem {
+  background: #fff;
+  padding: 1px 20px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 20px 0 rgba(119, 119, 119, 0.12);
+  margin: 10px auto;
+
+  @media (--media-min-tablet) {
+    width: 49%;
+    box-sizing: border-box;
+  }
+  @nest & .btn4 {
+    color: #003BA2;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  @nest & p:first-of-type {
+    margin-bottom: 0;
+  }
+}
+.postList {
+  @media (--media-min-tablet) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.subCategories {
+  @nest & .post-item {
+    @nest &:hover {
+      background: #003ba2;
+    }
+    @nest & a {
+      font-size: 40px;
+      font-weight: 600;
+      text-align: center;
+      display: block;
+      padding: 50px 0;
+      @nest &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.Terms {
+  @nest & h2:first-of-type {
+    text-align: left;
+  }
+  @nest & p:first-of-type {
+    font: 400 18px/1.5 "Cooper Hewitt", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    text-align: left;
+    margin: 0 0 20px 0;
+    max-width: 100%;
+  }
+  @nest & header {
+    background: #fff;
+  }
+  @nest & ul {
+    list-style: upper-latin;
+    @nest & ol {
+      list-style: upper-roman;
+    }
+    @nest & > li {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.Privacy {
+  @nest & h2:first-of-type {
+    text-align: left;
+  }
+  @nest & p:first-of-type {
+    font: 400 18px/1.5 "Cooper Hewitt", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    text-align: left;
+    margin: 0 0 20px 0;
+    max-width: 100%;
+  }
+  @nest & header {
+    background: #fff;
+  }
+  @nest & ul {
+    list-style: upper-latin;
+    @nest & ol {
+      list-style: upper-roman;
+    }
+    @nest & > li {
+      margin-bottom: 15px;
+    }
+  }
+}
+.About {
+  @nest & header {
+    background: #fff;
+  }
+  @nest & h2:first-of-type {
+    @media (--media-min-tablet) {
+      padding-top: 100px;
+      margin-top: 0;
+    }
+  }
+  @nest & .aboutSubLinks {
+    background: #00a387;
+    color: #fff;
+    padding: 20px 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    transition: .25s all;
+    @nest &.isFixed {
+     @media (--media-min-tablet) {
+        position: fixed;
+        right: 0;
+        margin: 0;
+        left: 0;
+        top: 88px;
+        width: auto;
+      }
+    }
+    @media (--media-min-tablet) {
+      position: relative;
+      top: auto;
+      width: auto;
+    }
+    @nest & a {
+      color: #fff;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.015em;
+      display: block;
+      text-align: center;
+    }
+    @media (--media-min-tablet) {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+.postContent {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}

@@ -1,22 +1,17 @@
 import React from 'react'
 import {graphql} from 'gatsby'
+import {buildImageObj} from '../lib/helpers'
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
-import BlogPostPreviewList from '../components/blog-post-preview-list'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
-import AboveFold from '../components/home/above-fold'
-import Brokerage from '../components/home/brokerage'
-import Features from '../components/home/features'
-import Mission from '../components/home/mission'
-import Security from '../components/home/security'
-import Testimonials from '../components/home/testimonials'
+import Security from '../components/security'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -41,37 +36,16 @@ export const query = graphql`
     }
   }
 
-  query IndexPageQuery {
+  query SecurityPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
       description
       keywords
     }
-    posts: allSanityPost(
-      limit: 3
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
-      edges {
-        node {
-          id
-          publishedAt
-          mainImage {
-            ...SanityImage
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
-    }
   }
 `
 
-const IndexPage = props => {
+const SecurityPage = props => {
   const {data, errors} = props
 
   if (errors) {
@@ -102,22 +76,9 @@ const IndexPage = props => {
         description={site.description}
         keywords={site.keywords}
       />
-      <AboveFold/>
-      <Mission/>
-      <Features/>
-      <Testimonials/>
-      <Container>
-        {postNodes && (
-          <BlogPostPreviewList
-            title='Latest blog posts'
-            nodes={postNodes}
-            browseMoreHref='/archive/'
-          />
-        )}
-      </Container>
-      <Security/>
+      <Security />
     </Layout>
   )
 }
 
-export default IndexPage
+export default SecurityPage
