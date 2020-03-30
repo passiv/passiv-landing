@@ -10,6 +10,9 @@ import category from './documents/category'
 import post from './documents/post'
 import tutorial from './documents/tutorial'
 import siteSettings from './documents/siteSettings'
+import vimeo from './documents/vimeo'
+import youtube from './documents/youtube'
+
 
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
@@ -36,6 +39,8 @@ export default createSchema({
     authorReference,
     bodyPortableText,
     bioPortableText,
+    vimeo,
+    youtube,
     excerptPortableText
 
     // When added to this list, object types can be used as

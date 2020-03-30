@@ -2,17 +2,17 @@ import {Link} from 'gatsby'
 import React from 'react'
 import TutorialPreview from './tutorial-preview'
 
-import styles from './blog-post-preview-grid.module.css'
+import styles from './tutorial.module.css'
 
 function TutorialPreviewGrid (props) {
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
-      <ul className={styles.grid}>
+      <ul className={styles.posts}>
         {props.nodes &&
           props.nodes.map(node => (
-            <li key={node.id}>
-              <TutorialPreview {...node} isInGrid />
+            <li key={node.id} className={styles.post}>
+              <TutorialPreview {...node} />
             </li>
           ))}
       </ul>

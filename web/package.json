@@ -24,7 +24,7 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-standard": "^4.0.0",
-    "gatsby": "^2.19.23",
+    "gatsby": "^2.20.8",
     "gatsby-plugin-postcss": "^2.0.7",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-source-sanity": "^4.0.3",
@@ -36,7 +36,12 @@
     "react-helmet": "^5.2.1"
   },
   "dependencies": {
+    "@u-wave/react-vimeo": "^0.8.2",
     "gatsby-image": "^2.0.41",
-    "postcss-retina-bg-img": "^4.1.0"
+    "get-video-id": "^3.1.4",
+    "get-youtube-id": "^1.0.1",
+    "postcss-retina-bg-img": "^4.1.0",
+    "react-vimeo": "^2.0.0",
+    "react-youtube": "^7.9.0"
   }
 }

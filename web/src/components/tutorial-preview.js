@@ -4,37 +4,40 @@ import React from 'react'
 import {buildImageObj, cn, getBlogUrl} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
+import getVideoId from 'get-video-id'
+import Vimeo from '@u-wave/react-vimeo';
 
-import styles from './blog-post-preview.module.css'
+import styles from './tutorial.module.css'
 import {responsiveTitle3} from './typography.module.css'
 
 function TutorialPreview (props) {
+
+const {_rawBody, title, vimeo} = props
+
+  const url = vimeo.url
+  const videoId = getVideoId(url).id
+
   return (
-    <Link
-      className={props.isInList ? styles.inList : styles.inGrid}
-      to={`/help/tutorials/${props.slug.current}`}
-    >
-      <div className={styles.leadMediaThumb}>
-        {props.mainImage && props.mainImage.asset && (
-          <img
-            src={imageUrlFor(buildImageObj(props.mainImage))
-              .width(600)
-              .height(Math.floor((9 / 16) * 600))
-              .auto('format')
-              .url()}
-            alt={props.mainImage.alt}
-          />
-        )}
+    <div className={styles.text}>
+      <h2 className={cn(responsiveTitle3, styles.title)}>
+        <Link to={`/help/tutorials/${props.slug.current}`}>
+          {props.title}
+        </Link>
+      </h2>
+      {props._rawExcerpt && (
+        <div className={styles.excerpt}>
+          <PortableText blocks={props._rawExcerpt} />
+        </div>
+      )}
+      {props._rawBody && (
+        <div className={styles.body}>
+          <PortableText blocks={props._rawBody} />
+        </div>
+      )}
+      <div className={styles.videoContainer}>
+        <Vimeo video={videoId} width="640" />
       </div>
-      <div className={styles.text}>
-        <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
-        {props._rawExcerpt && (
-          <div className={styles.excerpt}>
-            <PortableText blocks={props._rawExcerpt} />
-          </div>
-        )}
-      </div>
-    </Link>
+    </div>
   )
 }
 

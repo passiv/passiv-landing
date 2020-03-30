@@ -107,3 +107,16 @@
   composes: base from './typography.module.css';
   margin: 0.5rem 0 0;
 }
+
+.tutorialPost {
+  @nest & .mainContent {
+    margin: 0 auto 60px;
+    text-align: center;
+    @nest & p:first-of-type {
+      text-align: center;
+    }
+    @nest & iframe {
+      margin: 30px 0 40px;
+    }
+  }
+}

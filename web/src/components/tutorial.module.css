@@ -1,9 +1,14 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
 .tutorials {
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
 
   @nest & h1 {
     position: relative;
     z-index: 2;
+    margin-bottom: 2rem;
   }
   @nest &:before {
     content: '';
@@ -31,88 +36,6 @@
     background-image: radial-gradient(circle at 48% 46%, #04a287, #0eb599, #04a287 165%);
     z-index: 0;
   }
-  @nest & .post-content {
-    position: relative;
-    z-index: 1;
-  }
-  @nest & .posts {
-    margin-top: 30px;
-    @include mq($from: desktop) {
-      margin-top: 100px;
-    }
-  }
-  @nest & .post {
-    box-shadow: 4px 4px 24px 0 rgba(57, 62, 75, 0.2);
-    background-color: #ffffff;
-    position: relative;
-    margin-bottom: 50px;
-    @include mq($from: desktop) {
-      margin-bottom: 150px;
-    }
-    @nest &:nth-child(even){
-      border-right: solid 6px #2a2d34;
-      padding: 25px;
-      @include mq($from: desktop) {
-        padding: 35px 30px 35px 53%;
-        margin-right: 40px;
-      }
-      @nest & iframe {
-        padding: 0;
-        margin: 20px 0;
-        background: #fff;
-        box-shadow: 4px 4px 24px 0 rgba(80, 84, 91, 0.44);
-        border-radius: 6px;
-        max-width: 100%;
-        @include mq($from: desktop) {
-          max-width: 53%;
-          position: absolute;
-          left: 0;
-          margin: 0;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-      }
-    }
-    @nest &:nth-child(odd){
-      border-left: solid 6px #2a2d34;
-      padding: 25px;
-      @include mq($from: desktop) {
-        padding: 35px 53% 35px 30px;
-        margin-left: 40px;
-      }
-      @nest & iframe {
-        padding: 0;
-        margin: 20px 0;
-        background: #fff;
-        box-shadow: 4px 4px 24px 0 rgba(80, 84, 91, 0.44);
-        border-radius: 6px;
-        left: auto;
-        transform: none;
-        max-width: 100%;
-        @include mq($from: desktop) {
-          position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          left: auto;
-          max-width: 53%;
-          margin: 0;
-        }
-      }
-    }
-    @nest & h2 a{
-      font-size: 28px;
-      font-weight: 600;
-      letter-spacing: -0.36px;
-      color: #048770;
-      line-height: 1;
-    }
-    @nest & h2 {
-      margin-bottom: -30px;
-      padding-top: 0;
-      line-height: 1;
-    }
-  }
   @nest &.post-page {
     @nest & p:first-of-type {
       text-align: left;
@@ -120,6 +43,99 @@
   }
   @nest & .post-page .wrapper {
     max-width: calc(1500px - (20px * 2));
+  }
+}
+.post-content {
+  position: relative;
+  z-index: 1;
+}
+.posts {
+  margin-top: 30px;
+  @media (--media-min-desktop) {
+    margin-top: 100px;
+  }
+}
+.post {
+  box-shadow: 4px 4px 24px 0 rgba(57, 62, 75, 0.2);
+  background-color: #ffffff;
+  position: relative;
+  margin-bottom: 50px;
+  list-style: none;
+  @media (--media-min-desktop) {
+    margin-bottom: 150px;
+  }
+  @nest &:nth-child(even){
+    border-right: solid 6px #2a2d34;
+    padding: 25px;
+    @media (--media-min-desktop) {
+      padding: 35px 30px 35px 53%;
+      margin-right: 40px;
+    }
+    @nest & .videoContainer {
+      padding: 0;
+      margin: 20px 0;
+      background: #fff;
+      box-shadow: 4px 4px 24px 0 rgba(80, 84, 91, 0.44);
+      border-radius: 6px;
+      width: 100%;
+      @nest & iframe {
+        width: 100%;
+      }
+      @media (--media-min-desktop) {
+        max-width: 53%;
+        position: absolute;
+        left: -40px;
+        margin: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  @nest &:nth-child(odd){
+    border-left: solid 6px #2a2d34;
+    padding: 25px;
+    @media (--media-min-desktop) {
+      padding: 35px 53% 35px 30px;
+      margin-left: 40px;
+    }
+    @nest & .videoContainer {
+      padding: 0;
+      margin: 20px 0;
+      background: #fff;
+      box-shadow: 4px 4px 24px 0 rgba(80, 84, 91, 0.44);
+      border-radius: 6px;
+      left: auto;
+      transform: none;
+      width: 100%;
+      @nest & iframe {
+        width: 100%;
+      }
+      @media (--media-min-desktop) {
+        max-width: 53%;
+        position: absolute;
+        right: -40px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: auto;
+        margin: 0;
+      }
+    }
+  }
+  @nest & h2 a{
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.36px;
+    color: #048770;
+    line-height: 1;
+  }
+  @nest & h2 {
+    padding-top: 0;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  @nest & p {
+    font-size: 18px;
+    margin-bottom: 12px;
   }
 }
 .content {
@@ -133,4 +149,9 @@
   text-align: center;
   max-width: 650px;
   margin: 0 auto 45px;
+}
+.mainContent {
+  @nest & iframe {
+    margin-bottom: 30px;
+  }
 }

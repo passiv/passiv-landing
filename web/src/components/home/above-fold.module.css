@@ -53,7 +53,7 @@
   position: relative;
   z-index: 1;
   @media (--media-max-desktop) {
-    padding-top: 130px;
+    padding-top: 30px;
     margin-bottom: 50px;
   }
   @media (--media-min-desktop) {
@@ -68,13 +68,13 @@
   }
   @nest & h1 {
     color: #383838;
-    font-family: $base-font-family;
+    font-family: var(--font-family-sans);
     font-weight: 500;
     font-size: 48px;
     letter-spacing: -2.33px;
     line-height: 91px;
     margin-bottom: 18px;
-    @media (--media-min-desktop) {
+    @media (--media-max-desktop) {
       font-size: 50px;
       line-height: 1.25;
     }

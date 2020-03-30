@@ -21,12 +21,12 @@ export const query = graphql`
         node {
           id
           publishedAt
-          mainImage {
-            ...SanityImage
-            alt
-          }
           title
+          _rawBody
           _rawExcerpt
+          vimeo {
+            url
+          }
           slug {
             current
           }

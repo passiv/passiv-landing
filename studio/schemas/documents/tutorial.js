@@ -28,28 +28,6 @@ export default {
       description: 'This can be used to schedule post for publishing'
     },
     {
-      name: 'mainImage',
-      type: 'mainImage',
-      title: 'Main image'
-    },
-    {
-      name: 'excerpt',
-      type: 'excerptPortableText',
-      title: 'Excerpt',
-      description:
-        'This ends up on summary pages, on Google, when people share your post in social media.'
-    },
-    {
-      name: 'authors',
-      title: 'Authors',
-      type: 'array',
-      of: [
-        {
-          type: 'authorReference'
-        }
-      ]
-    },
-    {
       name: 'categories',
       type: 'array',
       title: 'Categories',
@@ -61,6 +39,18 @@ export default {
           }
         }
       ]
+    },
+    {
+      name:'vimeo',
+      type: 'vimeo',
+      title: 'Vimeo Embed'
+    },
+    {
+      name: 'excerpt',
+      type: 'excerptPortableText',
+      title: 'Excerpt',
+      description:
+        'This ends up on summary pages, on Google, when people share your post in social media.'
     },
     {
       name: 'body',

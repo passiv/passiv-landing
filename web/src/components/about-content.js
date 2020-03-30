@@ -13,11 +13,11 @@ function AboutContent ({  }) {
         <div className={styles.postContent}>
           <div className={styles.aboutSubLinks}>
 
-            <a data-scroll="our-story" href="#">Our Story</a>
-            <a data-scroll="our-mission" href="#">Our Mission</a>
-            <a data-scroll="what-is-passiv" href="#">What is Passiv?</a>
-            <a data-scroll="passiv-faq" href="#">Passiv FAQ</a>
-            <a data-scroll="the-team" href="#">The Team</a>
+            <a data-scroll="our-story" href="#our-story">Our Story</a>
+            <a data-scroll="our-mission" href="#our-mission">Our Mission</a>
+            <a data-scroll="what-is-passiv" href="#what-is-passiv">What is Passiv?</a>
+            <a data-scroll="passiv-faq" href="#passiv-faq">Passiv FAQ</a>
+            <a data-scroll="the-team" href="#the-team">The Team</a>
 
           </div>
 
