@@ -16,7 +16,6 @@ function AboutContent ({  }) {
             <a data-scroll="our-mission" href="#our-mission">Our Mission</a>
             <a data-scroll="what-is-passiv" href="#what-is-passiv">What is Passiv?</a>
             <a data-scroll="passiv-faq" href="#passiv-faq">Passiv FAQ</a>
-            <a data-scroll="the-team" href="#the-team">The Team</a>
           </div>
           <h2 id="our-story">Our Story</h2>
           <p>Passiv started when two Brendans met and discovered they were both disillusioned with the status quo of investing: paying high fees for active management of investment products, with nothing to show for it.</p>
