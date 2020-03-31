@@ -116,43 +116,6 @@ function AboutContent ({  }) {
 
           <p>Passiv’s Asset Exclusion feature allows you to exclude specific equities from your target portfolio. Passiv will not factor them in your target portfolio calculations. For example, maybe you generally follow a passive index investing strategy but you also want to put some “fun money” toward individual stock picks. Just leave those individual stock picks out when you set up your target portfolio in Passiv, then click on the toggle bar under Current Portfolio &gt; Exclude to exclude them from future calculations.</p>
 
-          <h2 id="the-team">The Team</h2>
-
-          <h3 id="mike-cousins">Mike Cousins</h3>
-
-          <p>Mike has a dream. He wants people to be able to save for retirement easily and well. Investing knowledge is hard to come by, fees are high, and the experience is bad. He’s going to fix this.</p>
-
-          <p>He is a developer from Calgary, a father, really tall, and enjoys volleyball, hockey, and skiing.</p>
-
-          <h3 id="kirsten-dodd">Kirsten Dodd</h3>
-
-          <p>Kirsten has lived in cities across North America, always finding new sources of creativity and innovation in each. A live music goer, a world traveler, and above all a dog lover.</p>
-
-          <p>A unicorn Web Designer and Developer with a heavy focus on user experience, utilizing the science behind behavioral design to build sleek digital experiences.  She’s new to investing and her goal is to make it feel less intimidating for others.</p>
-
-          <h3 id="brendan-kam">Brendan Kam</h3>
-
-          <p>A few months after turning 17, Brendan decided he wanted to travel. He packed up, got on a plane, traveled halfway round the world and ended up in a little town called Fredericton.  A decade passed and he’s still here.</p>
-
-          <p>Brendan started learning about personal finance around the same time he started learning to code. Coincidentally, he’s now a developer for a company that helps people with their personal finance, working alongside two other Brendans. He still finds this coincidence amusing.</p>
-
-          <h3 id="ena-musić">Ena Musić</h3>
-
-          <p>A few years ago, Ena was frustrated that she knew nothing about investing, so she read books and blogs until she finally felt comfortable calling herself “an investor”. With Passiv, she hopes to show all Canadians that investing is not as intimidating as Wall St and Bay St want you to think.</p>
-
-          <p>After a four-year stint in the Land Down Under, Ena has nearly reacclimatized to Toronto weather. She spends her spare time exploring all the cafes that opened while she was gone.</p>
-
-          <h3 id="brendan-lee-young">Brendan Lee Young</h3>
-
-          <p>Originally from Trinidad and Tobago, a small Caribbean island. Brendan considers himself a value investor and is huge fan of Warren Buffet. He believes that if you can’t beat the market, then you may as well buy it.</p>
-
-          <p>Brendan is passionate about helping others and spending time with family and friends. His interests include traveling, beaches, cooking, soccer, video-games, music, DJ-ing, reading, and investing of course!</p>
-
-          <h3 id="brendan-wood">Brendan Wood</h3>
-
-          <p>Brendan grew up on the rugged shores of Newfoundland and moved to New Brunswick for the canoeing. He’s a father of two with a drive for building and fixing.</p>
-
-          <p>Brendan is a passive investor who diversifies across index fund ETFs, real estate, and cryptocurrency. In his little spare time, Brendan enjoys tossing his kids around, cycling, and spending time with friends and family.</p>
         </div>
       </Container>
     </article>
