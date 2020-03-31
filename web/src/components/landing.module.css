@@ -2,10 +2,10 @@
 @import '../styles/custom-properties.css';
 
 .landing {
-  @nest .aboveFold {
+  @nest & .aboveFold {
     padding-bottom: 0;
   }
-  @nest .aboveFold:after {
+  @nest & .aboveFold:after {
     background: none;
   }
   @nest & .imgContainer {
@@ -22,7 +22,4 @@
       margin: 40px 20px 20px;
     }
   }
-}
-.testimonials {
-  padding-bottom: 60px;
 }
