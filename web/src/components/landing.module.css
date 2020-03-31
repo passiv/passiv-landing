@@ -5,7 +5,7 @@
   @nest .aboveFold {
     padding-bottom: 0;
   }
-  @nest & > section:after {
+  @nest .aboveFold:after {
     background: none;
   }
   @nest & .imgContainer {
