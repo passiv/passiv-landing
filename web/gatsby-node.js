@@ -85,7 +85,47 @@ async function createTutorialPages (graphql, actions) {
     })
 }
 
+async function createLandingPages (graphql, actions) {
+  const {createPage} = actions
+  const result = await graphql(`
+    {
+      allSanityLanding(
+        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      ) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) throw result.errors
+
+  const landingEdges = (result.data.allSanityLanding || {}).edges || []
+
+  landingEdges
+    .filter(edge => !isFuture(edge.node.publishedAt))
+    .forEach((edge, index) => {
+      const {id, slug = {}, publishedAt} = edge.node
+      const dateSegment = format(publishedAt, 'YYYY/MM')
+      const path = `/${slug.current}/`
+
+      createPage({
+        path,
+        component: require.resolve('./src/templates/landing-page.js'),
+        context: {id}
+      })
+    })
+}
+
 exports.createPages = async ({graphql, actions}) => {
   await createBlogPostPages(graphql, actions)
   await createTutorialPages(graphql, actions)
+  await createLandingPages(graphql, actions)
 }

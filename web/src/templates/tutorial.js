@@ -5,7 +5,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import Tutorials from '../components/tutorials'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import {toPlainText} from '../lib/helpers'
+import {toPlainText,cn} from '../lib/helpers'
 
 export const query = graphql`
   query TutorialTemplateQuery($id: String!) {

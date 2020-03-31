@@ -1,0 +1,28 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.landing {
+  @nest .aboveFold {
+    padding-bottom: 0;
+  }
+  @nest & > section:after {
+    background: none;
+  }
+  @nest & .imgContainer {
+    position: absolute;
+    right: 0;
+    max-width: 48%;
+    top: 47%;
+    transform: translateY(-50%);
+    @media (--media-max-tablet) {
+      position: relative;
+      max-width: 100%;
+      top: auto;
+      transform: none;
+      margin: 40px 20px 20px;
+    }
+  }
+}
+.testimonials {
+  padding-bottom: 60px;
+}

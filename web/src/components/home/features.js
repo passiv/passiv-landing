@@ -15,6 +15,7 @@ function Features ({  }) {
     return (
   <section className={styles.features}>
     <Container>
+      <h2>What can Passiv do?</h2>
       <div className={styles.col3}>
         <div className={cn(styles.innerCol, styles.tile)}>
           <div className={styles.tileContainer}>

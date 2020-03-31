@@ -126,7 +126,7 @@
     margin-top: 0;
   }
   @media (--media-max-desktop) {
-    padding: 8px 0 4px;
+    padding: 8px 0 13px;
   }
   @nest & img {
     @media (--media-max-desktop) {
@@ -136,6 +136,10 @@
   }
 }
 
+.logo {
+  position: relative;
+  z-index: 4;
+}
 
 .siteNav {
   float: right;
@@ -182,6 +186,9 @@
     @media (--media-max-desktop) {
       padding: 21px 31px 20px;
       text-align: center;
+      margin-top: 18px;
+      border: 2px solid #003ba2;
+      color: #003ba2;
     }
   }
   @nest & .navTrigger {
@@ -221,6 +228,7 @@
       text-align: center;
       padding: 10px;
       background-color: var(--background-color);
+      box-shadow: 4px 6px 12px 0 rgba(80, 84, 91, 0.15);
     }
 
     @nest & .menuIcon {

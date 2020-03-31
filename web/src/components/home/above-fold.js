@@ -12,7 +12,7 @@ function AboveFold ({  }) {
         <div className={styles.ctaContainer}>
           <h1>Autopilot for your Portfolio</h1>
           <p className={styles.tagline}>Allocating cash and rebalancing made easy</p>
-          <p className={styles.blurb}>Over 204M is already managed using Passiv. Sign up today and join the movement.</p>
+          <p className={styles.blurb}>Over $350M is already managed using Passiv. Sign up today and join the movement.</p>
           <div className={cn(styles.emailSignup, styles.inputContainer)}>
             <div className={cn(styles.emailContainer, styles.formContainer)}>
               <form className={styles.register} method="get" novalidate action="/app/register/">

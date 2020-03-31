@@ -6,8 +6,12 @@
 .root {
   padding: 5em 0;
   @nest & h2 {
-    font-size: 45px;
+    font-size: 42px;
     margin-bottom: 35px;
+    @media (--media-max-tablet) {
+      line-height: 1.2;
+      text-align: center;
+    }
   }
 }
 
@@ -23,7 +27,9 @@
 
 .browseMoreNav {
   margin-top: 4rem;
-
+  @media (--media-max-tablet) {
+    margin-top: 1.5rem;
+  }
 }
 
 .col3 {

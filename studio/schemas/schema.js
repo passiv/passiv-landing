@@ -9,9 +9,12 @@ import author from './documents/author'
 import category from './documents/category'
 import post from './documents/post'
 import tutorial from './documents/tutorial'
+import landing from './documents/landing'
 import siteSettings from './documents/siteSettings'
 import vimeo from './documents/vimeo'
 import youtube from './documents/youtube'
+import testimonial from './documents/testimonial'
+import feature from './documents/feature'
 
 
 // Object types
@@ -34,6 +37,7 @@ export default createSchema({
     post,
     category,
     tutorial,
+    landing,
     author,
     mainImage,
     authorReference,
@@ -41,6 +45,8 @@ export default createSchema({
     bioPortableText,
     vimeo,
     youtube,
+    feature,
+    testimonial,
     excerptPortableText
 
     // When added to this list, object types can be used as

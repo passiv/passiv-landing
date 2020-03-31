@@ -150,8 +150,3 @@
   max-width: 650px;
   margin: 0 auto 45px;
 }
-.mainContent {
-  @nest & iframe {
-    margin-bottom: 30px;
-  }
-}

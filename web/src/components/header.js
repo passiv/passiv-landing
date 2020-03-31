@@ -12,7 +12,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
   <div>
     <header className={styles.siteHeader} role="banner">
       <Container>
-        <Link className={siteTitle} rel="author" to='/'>
+        <Link className={styles.logo} rel="author" to='/'>
           <img src={Logo} width="60" alt="Passiv Logo" />
         </Link>
 

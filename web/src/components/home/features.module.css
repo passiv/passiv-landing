@@ -9,10 +9,20 @@
   @media (--media-max-desktop) {
     margin-top: -70px;
     margin-bottom: 85px;
-
   }
   margin-top: 40px;
   margin-bottom: 40px;
+  @nest & h2 {
+    padding-top: 25px;
+    line-height: 1.2;
+    font-size: 42px;
+    color: #2C2C2C;
+    margin-bottom: 20px;
+    @media (--media-max-desktop) {
+      text-align: center;
+      padding: 25px 10px 10px;
+    }
+  }
   @nest & h3 {
     font-family: var(--base-font-family);
     font-weight: 600;
