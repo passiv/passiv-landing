@@ -3,7 +3,7 @@
 
 .root {
   box-sizing: border-box;
-  max-width: calc(1340px - (20px * 2));
+  max-width: calc(1380px - (20px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: var(--spacing-unit);

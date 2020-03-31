@@ -19,6 +19,16 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd
       }
+    },
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `passiv-theme`,
+        short_name: `passiv`,
+        start_url: `/`,
+        icon: `src/images/logo-no-name.png`
+      }
     }
   ]
 }

@@ -29,8 +29,8 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
             <Link className={styles.pageLink} to="/pricing">Pricing</Link>
             <Link className={styles.pageLink} to="/security">Security</Link>
             <Link className={styles.pageLink} to="/tutorials">Tutorials</Link>
-            <Link className={cn(styles.pageLink, styles.btn2, styles.login)} to="/app/login/">Log in</Link>
-            <Link className={cn(styles.pageLink, styles.btn1, styles.try, styles.clickping)} to="/app/register/">Sign Up</Link>
+            <a className={cn(styles.pageLink, styles.btn2, styles.login)} href="/app/login/">Log in</a>
+            <a className={cn(styles.pageLink, styles.btn1, styles.try, styles.clickping)} href="/app/register/">Sign Up</a>
           </div>
 
         </nav>
