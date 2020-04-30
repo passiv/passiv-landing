@@ -36,7 +36,7 @@ function PricingList ({  }) {
             <div>
               <span className={styles.price}><span className={styles.numbers}>$99</span>/year</span>
             </div>
-            <div><span className={styles.priceSubtext}>$79 for Questrade Clients</span></div>
+            <div><span className={styles.priceSubtext}>$0 for Questrade Clients</span></div>
           </div>
           <ul className={styles.planDetails}>
             <li>Automated calculations</li>
