@@ -7,6 +7,7 @@
     @nest & .innerCol {
       flex: 1;
       margin-right: 30px;
+      z-index: 1;
       @nest &:last-of-type{
         margin-right: 0;
       }
