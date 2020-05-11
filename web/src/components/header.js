@@ -19,7 +19,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
         <nav className={cn(styles.siteNav, showNav && styles.showNav)}>
 
           <input type="checkbox" id="nav-trigger" className={styles.navTrigger} />
-          <label for="nav-trigger">
+          <label htmlFor="nav-trigger">
             <span className={styles.menuIcon}></span>
           </label>
 
