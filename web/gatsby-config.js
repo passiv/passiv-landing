@@ -12,6 +12,14 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-5C64MPR',
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: 'gatsby' }
+      }
+    },
+    {
       resolve: 'gatsby-source-sanity',
       options: {
         ...clientConfig.sanity,

@@ -15,7 +15,7 @@ function AboveFold ({  }) {
           <p className={styles.blurb}>Over $350M is already managed using Passiv. Sign up today and join the movement.</p>
           <div className={cn(styles.emailSignup, styles.inputContainer)}>
             <div className={cn(styles.emailContainer, styles.formContainer)}>
-              <form className={styles.register} method="get" novalidate action="/app/register/">
+              <form className={styles.register} method="get" noValidate action="/app/register/">
                 <label><span>Enter your Email</span></label>
                 <input type="hidden" name="type" />
                 <input type="email" required max_length="512" className={styles.registerEmail} name="email" />

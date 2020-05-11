@@ -38,12 +38,12 @@
   "dependencies": {
     "@u-wave/react-vimeo": "^0.8.2",
     "gatsby-image": "^2.0.41",
+    "gatsby-plugin-google-tagmanager": "^2.3.1",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-sharp": "^2.5.3",
     "get-video-id": "^3.1.4",
     "get-youtube-id": "^1.0.1",
     "postcss-retina-bg-img": "^4.1.0",
-    "react-gtm-module": "^2.0.8",
     "react-vimeo": "^2.0.0",
     "react-youtube": "^7.9.0"
   }
