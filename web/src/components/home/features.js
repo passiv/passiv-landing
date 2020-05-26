@@ -35,7 +35,7 @@ function Features ({  }) {
         </div>
         <div className={cn(styles.innerCol, styles.tile)}>
           <div className={styles.tileContainer}>
-            <img src={smartAlerts} srcset={cn(smartAlerts2x,'2x')} alt="Smart Alerts" />
+            <img src={smartAlerts} srcSet={cn(smartAlerts2x,'2x')} alt="Smart Alerts" />
             <h3>Smart Alerts</h3>
             <p>Get notified whenever new cash & dividend payments come in or whenever your portfolio drifts out of alignment.
             </p>

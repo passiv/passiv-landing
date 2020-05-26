@@ -14,7 +14,7 @@ function AboveFold ({  }) {
           <p className={styles.blurb}>Passiv turns your brokerage account into a modern portfolio management tool. Build your own personalized index, invest and rebalance with the click of a button, and seamlessly manage multiple accounts.</p>
           <div className={cn(styles.emailSignup, styles.inputContainer)}>
             <div className={cn(styles.emailContainer, styles.formContainer)}>
-              <form className={styles.register} method="get" novalidate action="/app/register/">
+              <form className={styles.register} method="get" noValidate action="/app/register/">
                 <label><span>Enter your Email</span></label>
                 <input type="hidden" name="type" />
                 <input type="email" required max_length="512" className={styles.registerEmail} name="email" />
