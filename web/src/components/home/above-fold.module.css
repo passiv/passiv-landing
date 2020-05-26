@@ -146,11 +146,11 @@
   color: #292929;
   font-family: var(--base-font-family);
   font-weight: 400;
-  font-size: 22px;
+  font-size: 16px;
   letter-spacing: -0.24px;
   line-height: 36px;
-  max-width: 450px;
-  margin-bottom: 70px;
+  max-width: 500px;
+  margin-bottom: 50px;
 }
 .cta-container {
   position: relative;

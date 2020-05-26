@@ -11,8 +11,7 @@ function AboveFold ({  }) {
       <Container>
         <div className={styles.ctaContainer}>
           <h1>Autopilot for your Portfolio</h1>
-          <p className={styles.tagline}>Allocating cash and rebalancing made easy</p>
-          <p className={styles.blurb}>Over $350M is already managed using Passiv. Sign up today and join the movement.</p>
+          <p className={styles.blurb}>Passiv turns your brokerage account into a modern portfolio management tool. Build your own personalized index, invest and rebalance with the click of a button, and seamlessly manage multiple accounts.</p>
           <div className={cn(styles.emailSignup, styles.inputContainer)}>
             <div className={cn(styles.emailContainer, styles.formContainer)}>
               <form className={styles.register} method="get" novalidate action="/app/register/">
