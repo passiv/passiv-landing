@@ -16,10 +16,10 @@ export const query = graphql`
         _id
         title
       }
-      vimeo {
-        url
-      }
       title
+      mainImage {
+        ...SanityImage
+      }
       slug {
         current
       }

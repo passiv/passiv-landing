@@ -35,6 +35,7 @@
 .mainContent {
   max-width: 860px;
   padding: 2rem 0;
+  margin: 0 auto;
   @media (--media-max-tablet) {
     padding: 0 0 1rem;
   }
@@ -79,6 +80,14 @@
   @nest & ul {
     margin: 2rem 0 3rem 1rem;
   }
+
+  @nest & figure {
+    max-width: 100%;
+    margin: 20px 0;
+  }
+  @nest & .mainImage {
+    margin-bottom: 30px;
+  }
 }
 
 .metaContent {
@@ -109,20 +118,4 @@
 .categoriesHeadline {
   composes: base from './typography.module.css';
   margin: 0.5rem 0 0;
-}
-
-.tutorialPost {
-  @nest & .mainContent {
-    margin: 0 auto 60px;
-    text-align: center;
-    @nest & p:first-of-type {
-      text-align: center;
-    }
-    @nest & iframe {
-      margin: 30px 0 40px;
-      @media (--media-max-tablet) {
-        max-width: 100%;
-      }
-    }
-  }
 }

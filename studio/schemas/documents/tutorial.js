@@ -41,9 +41,9 @@ export default {
       ]
     },
     {
-      name:'vimeo',
-      type: 'vimeo',
-      title: 'Vimeo Embed'
+      name: 'mainImage',
+      type: 'mainImage',
+      title: 'Thumbnail image'
     },
     {
       name: 'excerpt',

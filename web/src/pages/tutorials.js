@@ -24,8 +24,8 @@ export const query = graphql`
           title
           _rawBody
           _rawExcerpt
-          vimeo {
-            url
+          mainImage {
+            ...SanityImage
           }
           slug {
             current

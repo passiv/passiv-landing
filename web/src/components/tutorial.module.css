@@ -150,3 +150,8 @@
   max-width: 650px;
   margin: 0 auto 45px;
 }
+
+.readBtn {
+  color: #04a388;
+  font-weight: 600;
+}
