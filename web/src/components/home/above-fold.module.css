@@ -95,11 +95,7 @@
       width: 100%;
       background-size: contain;
     }
-    @media (--media-min-desktop) {
-      width: 40%;
-      background-size: contain;
-    }
-    @media (--media-min-desktop) {
+    @media (--media-min-tablet) {
       width: 50%;
       background-size: contain;
     }

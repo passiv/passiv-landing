@@ -107,7 +107,7 @@
       left: auto;
       transform: none;
       width: 100%;
-      @nest & iframe {
+      @nest & img {
         width: 100%;
       }
       @media (--media-min-desktop) {
