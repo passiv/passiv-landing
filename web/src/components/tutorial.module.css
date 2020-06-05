@@ -107,6 +107,7 @@
       left: auto;
       transform: none;
       width: 100%;
+      max-width: 640px;
       @nest & img {
         width: 100%;
       }

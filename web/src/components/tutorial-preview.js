@@ -31,7 +31,7 @@ const {_rawBody, title, vimeo} = props
         {props.mainImage && props.mainImage.asset && (
           <img
             src={imageUrlFor(buildImageObj(props.mainImage))
-              .width(600)
+              .width(700)
               .height(Math.floor((9 / 16) * 600))
               .auto('format')
               .url()}
