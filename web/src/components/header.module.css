@@ -205,7 +205,7 @@
     }
   }
 
-  @media (--media-max-tablet) {
+  @media (max-width: 870px) {
     position: absolute;
     top: 9px;
     right: 0;

@@ -4,20 +4,13 @@ import React from 'react'
 import {buildImageObj, cn, getBlogUrl} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
-import getVideoId from 'get-video-id'
-import Vimeo from '@u-wave/react-vimeo';
 
 import styles from './tutorial.module.css'
 import {responsiveTitle3} from './typography.module.css'
 
 function TutorialPreview (props) {
 
-  const {_rawBody, title, vimeo} = props
-  const url = vimeo.url
-  let videoId = null
-  if (url !== null) {
-    videoId = getVideoId(url).id
-  }
+const {_rawBody, title, vimeo} = props
 
   return (
     <div className={styles.text}>
@@ -31,11 +24,20 @@ function TutorialPreview (props) {
           <PortableText blocks={props._rawExcerpt} />
         </div>
       )}
-      { videoId !== null && (
-        <div className={styles.videoContainer}>
-          <Vimeo video={videoId} width="640" />
-        </div>
-      ) }
+      <Link className={styles.readBtn} to={`/help/tutorials/${props.slug.current}`}>
+        Read More
+      </Link>
+      <div className={styles.videoContainer}>
+        {props.mainImage && props.mainImage.asset && (
+          <img
+            src={imageUrlFor(buildImageObj(props.mainImage))
+              .width(700)
+              .height(Math.floor((9 / 16) * 600))
+              .auto('format')
+              .url()}
+          />
+        )}
+      </div>
     </div>
   )
 }
