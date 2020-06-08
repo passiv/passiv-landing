@@ -107,7 +107,8 @@
       left: auto;
       transform: none;
       width: 100%;
-      @nest & iframe {
+      max-width: 640px;
+      @nest & img {
         width: 100%;
       }
       @media (--media-min-desktop) {
@@ -149,4 +150,9 @@
   text-align: center;
   max-width: 650px;
   margin: 0 auto 45px;
+}
+
+.readBtn {
+  color: #04a388;
+  font-weight: 600;
 }
