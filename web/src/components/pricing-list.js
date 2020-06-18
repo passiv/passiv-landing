@@ -36,7 +36,7 @@ function PricingList ({  }) {
             <div>
               <span className={styles.price}><span className={styles.numbers}>$99</span>/year</span>
             </div>
-            <div><span className={styles.priceSubtext}>$0 for Questrade Clients</span></div>
+            <div><span className={styles.priceSubtext}>$0 for Questrade Clients</span>&#42;</div>
           </div>
           <ul className={styles.planDetails}>
             <li>Automated calculations</li>
@@ -52,11 +52,16 @@ function PricingList ({  }) {
       </div>
       <div className={styles.pricingFooter}>
         <p className={styles.pricingFooterTitle}>Money-back <span className={styles.textGreen}>GUARANTEE</span></p>
-        <p  className={styles.pricingFooterText}>
+        <p className={styles.pricingFooterText}>
             We offer a no-risk, 100% money-back guarantee.
         </p>
-        <p  className={styles.pricingFooterText}>
+        <p className={styles.pricingFooterText}>
             If you're not happy, we'll refund you.
+        </p>
+      </div>
+      <div className={styles.pricingFooter}>
+        <p className={styles.pricingSubtext}>
+            &#42; Questrade covers the cost of Passiv Elite subscriptions for their customers on an annual basis and reserves the right to discontinue at any point.
         </p>
       </div>
     </Container>
