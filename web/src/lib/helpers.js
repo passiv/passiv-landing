@@ -1,4 +1,6 @@
 import {format, isFuture} from 'date-fns'
+import qs from 'qs';
+
 
 export function cn (...args) {
   return args.filter(Boolean).join(' ')
@@ -44,4 +46,41 @@ export function toPlainText (blocks) {
       return block.children.map(child => child.text).join('')
     })
     .join('\n\n')
+}
+
+export function saveReferralCode () {
+  const query_params = qs.parse(window.location.search, {
+    ignoreQueryPrefix: true,
+  });
+  if (query_params.ref !== undefined) {
+    localStorage.setItem('landing-ref', query_params.ref);
+  }
+}
+
+export function getReferralCode () {
+  return localStorage.getItem('landing-ref');
+}
+
+export function getLoginPath () {
+  const referralCode = getReferralCode();
+
+  let loginPath = '/app/login/';
+
+  if (referralCode !== null) {
+    loginPath += `?ref=${referralCode}`;
+  }
+
+  return loginPath;
+}
+
+export function getRegisterPath () {
+  const referralCode = getReferralCode();
+
+  let registerPath = '/app/register/';
+
+  if (referralCode !== null) {
+    registerPath += `?ref=${referralCode}`;
+  }
+
+  return registerPath;
 }

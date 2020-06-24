@@ -2,10 +2,12 @@ import React from 'react'
 import {buildImageObj,cn} from '../../lib/helpers'
 import {imageUrlFor} from '../../lib/image-url'
 import Container from '../container'
+import { getReferralCode } from '../../lib/helpers';
 
 import styles from './above-fold.module.css'
 
 function AboveFold ({  }) {
+  const referralCode = getReferralCode();
   return (
     <section className={styles.aboveFold}>
       <Container>
@@ -19,6 +21,11 @@ function AboveFold ({  }) {
                 <input type="hidden" name="type" />
                 <input type="email" required max_length="512" className={styles.registerEmail} name="email" />
                 <input className={cn(styles.btn1, styles.registerBtn, styles.clickping)} type="submit" value="Get Passiv" />
+                {
+                  referralCode !== null && (
+                    <input type="hidden" name="ref" value={referralCode} />
+                  )
+                }
               </form>
             </div>
           </div>

@@ -2,10 +2,12 @@ import React from 'react'
 import {buildImageObj,cn} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import Container from './container'
+import { getRegisterPath } from '../lib/helpers';
 
 import styles from './pricing.module.css'
 
 function PricingList ({  }) {
+  const registerPath = getRegisterPath();
   return (
   <div className={styles.priceContainer}>
     <Container>
@@ -28,7 +30,7 @@ function PricingList ({  }) {
             <li className={styles.disabled}>Advanced currency handling</li>
             <li className={styles.disabled}>Connect multiple brokerage logins</li>
           </ul>
-          <a href="/app/register/" className={cn(styles.pageLink,styles.btn4)}>GET COMMUNITY</a>
+          <a href={registerPath} className={cn(styles.pageLink,styles.btn4)}>GET COMMUNITY</a>
         </div>
         <div className={cn(styles.plan,styles.plan2)}>
           <div className={cn(styles.title, styles.title2)}>
@@ -47,7 +49,7 @@ function PricingList ({  }) {
             <li>Advanced currency handling</li>
             <li>Connect multiple brokerage logins</li>
           </ul>
-          <a href="/app/register/" className={cn(styles.pageLink,styles.btn4)}>GET ELITE</a>
+          <a href={registerPath} className={cn(styles.pageLink,styles.btn4)}>GET ELITE</a>
         </div>
       </div>
       <div className={styles.pricingFooter}>
