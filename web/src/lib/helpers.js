@@ -49,16 +49,20 @@ export function toPlainText (blocks) {
 }
 
 export function saveReferralCode () {
-  const query_params = qs.parse(window.location.search, {
-    ignoreQueryPrefix: true,
-  });
-  if (query_params.ref !== undefined) {
-    localStorage.setItem('landing-ref', query_params.ref);
+  if (typeof window !== 'undefined') {
+    const query_params = qs.parse(window.location.search, {
+      ignoreQueryPrefix: true,
+    });
+    if (query_params.ref !== undefined) {
+      localStorage.setItem('landing-ref', query_params.ref);
+    }
   }
 }
 
 export function getReferralCode () {
-  return localStorage.getItem('landing-ref');
+  if (typeof localStorage !== 'undefined') {
+    return localStorage.getItem('landing-ref');
+  }
 }
 
 export function getLoginPath () {
