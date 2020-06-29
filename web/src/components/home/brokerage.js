@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {buildImageObj,cn} from '../../lib/helpers'
 import {imageUrlFor} from '../../lib/image-url'
 import Container from '../container'
-import { getRegisterPath } from '../../lib/helpers';
+import { getReferralCode } from '../../lib/helpers';
 
 import styles from './brokerage.module.css'
 
 function Brokerage ({  }) {
-  const registerPath = getRegisterPath();
+  const [referralCode, setReferralCode] = useState(undefined);
+
+  useEffect(() => {
+    setReferralCode(getReferralCode());
+  }, []);
+
+  let registerPath = '/app/register/';
+  if (referralCode !== undefined && referralCode !== null) {
+    const appendage = `?ref=${referralCode}`;
+    registerPath += appendage;
+  }
   return (
  <section className={styles.brokerage}>
     <Container>

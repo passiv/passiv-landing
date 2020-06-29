@@ -1,16 +1,27 @@
 import {Link} from 'gatsby'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Icon from './icon'
 import {cn} from '../lib/helpers'
 import Container from './container'
 import Logo from '../images/logo.svg'
-import { getLoginPath, getRegisterPath } from '../lib/helpers';
+import { getReferralCode } from '../lib/helpers';
 
 import styles from './header.module.css'
 
 const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
-  const loginPath = getLoginPath();
-  const registerPath = getRegisterPath();
+  const [referralCode, setReferralCode] = useState(undefined);
+
+  useEffect(() => {
+    setReferralCode(getReferralCode());
+  }, []);
+
+  let registerPath = '/app/register/';
+  let loginPath = '/app/login/';
+  if (referralCode !== undefined && referralCode !== null) {
+    const appendage = `?ref=${referralCode}`;
+    registerPath += appendage;
+    loginPath += appendage;
+  }
 
   return (
     <div>

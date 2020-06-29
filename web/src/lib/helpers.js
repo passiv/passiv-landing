@@ -64,27 +64,3 @@ export function getReferralCode () {
     return localStorage.getItem('landing-ref');
   }
 }
-
-export function getLoginPath () {
-  const referralCode = getReferralCode();
-
-  let loginPath = '/app/login/';
-
-  if (referralCode !== null) {
-    loginPath += `?ref=${referralCode}`;
-  }
-
-  return loginPath;
-}
-
-export function getRegisterPath () {
-  const referralCode = getReferralCode();
-
-  let registerPath = '/app/register/';
-
-  if (referralCode !== null) {
-    registerPath += `?ref=${referralCode}`;
-  }
-
-  return registerPath;
-}
