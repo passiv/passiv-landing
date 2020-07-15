@@ -37,6 +37,10 @@ module.exports = {
         start_url: `/`,
         icon: `src/images/logo-no-name.png`
       }
-    }
-  ]
+    },
+    'gatsby-plugin-sitemap',
+  ],
+  siteMetadata: {
+    siteUrl: `https://getpassiv.com`,
+  },
 }
