@@ -18,7 +18,7 @@ function AboutContent ({  }) {
             <a data-scroll="passiv-faq" href="#passiv-faq">Passiv FAQ</a>
           </div>
           <h2 id="our-story">Our Story</h2>
-          <p>Passiv started when two Brendans met and discovered they were both disillusioned with the status quo of investing: paying high fees for active management of investment products, with nothing to show for it.</p>
+          <p>Passiv started when our founders, <a href="https://ca.linkedin.com/in/brendanleeyoung" target="_blank" rel="noopener noreferrer">Brendan Lee Young</a> and <a href="https://ca.linkedin.com/in/brendancalebwood" target="_blank" rel="noopener noreferrer">Brendan Wood</a>, met and discovered they were both disillusioned with the status quo of investing: paying high fees for active management of investment products, with nothing to show for it.</p>
           <p>They did the math and realized that those expensive investment products would add years to their working life, because high management expense ratios (MERs) dramatically slowed the growth of their nest eggs.</p>
           <p>From there, they turned to passive investing, a strategy that involves buying and holding index funds that follow the market, rather than actively picking, buying, and selling stocks in an effort to “beat the market”. Since index funds don’t require active management, the management fees are significantly lower - about 10x lower than fees associated with actively managed investments like mutual funds.</p>
           <p>While passive investing takes less time than active investing, the Brendans found there were still tedious aspects to managing your own investments. For instance, whenever new contributions or dividends hit your account, you need to calculate which assets to buy, and how much of them you need to buy to bring your portfolio back to its target allocation. This meant spending hours on manual data entry and endless spreadsheet calculations.</p>
@@ -27,7 +27,7 @@ function AboutContent ({  }) {
           <h2 id="our-mission">Our Mission</h2>
           <p>To make passive investing simple for everyday investors who want to save money and time.</p>
           <h2 id="what-is-passiv">What is Passiv?</h2>
-          <p>Put simply, <strong>Passiv is software that helps you implement a passive investing strategy</strong> for long-term goals like retirement or saving for your child’s education.</p>
+          <p>Passiv is a portfolio management tool that makes it easier for DIY investors to maintain a balanced portfolio and build a passive investment strategy at their online broker. It eliminates the need to use spreadsheets, saves you from having to log into your broker to place trades and helps you stick to your portfolio’s target allocation. With Passiv, users can be their household’s wealth manager.</p>
           <p>Note that Passiv is not a robo-advisor - it won’t tell you what you should invest in, so you’ll need to decide that yourself, either through self-education or alongside a financial advisor. Passiv is also not an algorithmic trading platform trying to outperform the market.</p>
           <h3 id="how-can-passiv-help-me">How can Passiv help me?</h3>
           <p>Whether you’re managing one account or your <a href="/blog/seamlessly-manage-your-spouses-account/">entire family’s</a> portfolio, there are some common tasks that need to be done. You need to:</p>
@@ -51,17 +51,16 @@ function AboutContent ({  }) {
             <li>Sit back and let Passiv do the work.</li>
           </ol>
           <p>Using Passiv frees you from having to create and maintain spreadsheets and needing to calculate where to allocate new contributions and dividends. Passiv emails you when cash hits your accounts so you don’t waste time checking them yourself every day. It also calculates rebalancing trades for you.</p>
-          <p><a href="/pricing/">Elite users</a> can save even more time by using the One-Click Trades feature and having Passiv execute the required trades on your behalf. Note that this still requires you to start the process (that’s the One Click in the name) but in the future, you’ll be able to completely automate these trades if you want to. Elite subscribers can also exclude assets - such as individual stock picks - from their target portfolio. All of this is done from one Passiv dashboard for all your accounts - no more logging in to multiple brokerage accounts!</p>
-          <h3 id="will-you-develop-passiv-further">Will you develop Passiv further?</h3>
-          <p>Yes. Since releasing Passiv in 2017, we’ve already added new features and functionalities as a direct result of our early users’ requests. We also have several new features currently in the works. We built Passiv so that anyone can feel empowered to invest on their own and save more toward retirement. Your feedback helps us help you reach your goals. We’d like to thank everyone who has given us their input and we encourage you to keep sharing your feedback to <a href="mailto:feedback@getpassiv.com">feedback@getpassiv.com</a>.</p>
+          <p><a href="/pricing/">Elite users</a> can save even more time by using the One-Click Trades feature and having Passiv execute the required trades on your behalf. Note that this still requires you to start the process (that’s the One Click in the name). Elite subscribers can also access other <a href="/pricing">features</a>.
+All of this is done from one Passiv dashboard for all your accounts - no more logging in to multiple brokerage accounts!</p>
           <h2 id="passiv-faq">Passiv FAQ</h2>
           <h3 id="what-is-passiv-1">What is Passiv?</h3>
           <p>Passiv is a web app that helps you manage your portfolio and maintain a desired target allocation. It calculates the trades needed based on the target allocation you’ve set and your available cash. <a href="/pricing/">Elite users</a> can save even more time by having Passiv execute trades for you at the click of a button with the One-Click Trades feature.</p>
           <h3 id="who-is-passiv-for">Who is Passiv for?</h3>
           <p>Passiv is for individuals who prefer to manage their own retirement portfolio and are tired of losing money to high management fees. It’s for anyone who wants to automate the tedious parts of portfolio management, like allocating new cash and rebalancing.</p>
-          <h3 id="im-american-can-i-use-passiv">I’m American. Can I use Passiv?</h3>
+          <h3 id="im-american-can-i-use-passiv">What brokerages does Passiv support?</h3>
 
-          <p>Yes! We are partnered with <a href="https://alpaca.markets/">Alpaca</a> in the United States and will be rolling out support for more brokerages in the near future.</p>
+          <p>Passiv supports Interactive Brokers (available internationally), TD Ameritrade, Questrade, and Alpaca. In Canada, Passiv is excusively partnered with Questrade. We are planning to roll out support for more brokerages in the near future.</p>
 
           <h3 id="does-passiv-store-my-brokerages-login-credentials">Does Passiv store my brokerage’s login credentials?</h3>
 
@@ -105,15 +104,7 @@ function AboutContent ({  }) {
 
           <h3 id="why-is-passiv-set-to-buy-only-by-default">Why is Passiv set to Buy-Only by default?</h3>
 
-          <p>While you can’t control the stock market, you can control another aspect of investing: how much you pay in fees like trading commissions. Some brokerages, like Questrade, allow you to buy ETFs commission-free, but you pay commission when you sell. Passiv helps you keep more of your money by defaulting to Buy-Only trades, making sure you don’t pay unnecessary trading fees. As long as you’re contributing to your account regularly, you likely won’t need to sell to keep your portfolio in line with your target.</p>
-
-          <h3 id="how-does-the-buy-only-feature-work">How does the Buy-Only feature work?</h3>
-
-          <p>When Buy-Only is active, Passiv will attempt to allocate cash to bring your account closer to 100% accuracy. If there isn’t enough cash to buy anything, no trades will be shown. Passiv determines which assets to purchase by calculating which of your target assets is the most underweight. For example, say you want a bond fund to make up 30% of your portfolio but its returns were lower than those of your stock funds and now it’s only 20% of your portfolio. Passiv will allocate new cash toward buying more of that fund, bringing your portfolio back to your desired allocation. You can choose to turn off Buy-Only on the Settings page at any time.</p>
-
-          <h3 id="what-does-the-exclude-feature-do">What does the “Exclude” feature do?</h3>
-
-          <p>Passiv’s Asset Exclusion feature allows you to exclude specific equities from your target portfolio. Passiv will not factor them in your target portfolio calculations. For example, maybe you generally follow a passive index investing strategy but you also want to put some “fun money” toward individual stock picks. Just leave those individual stock picks out when you set up your target portfolio in Passiv, then click on the toggle bar under Current Portfolio &gt; Exclude to exclude them from future calculations.</p>
+          <p>While you can’t control the stock market, you can control another aspect of investing: how much you pay in fees like trading commissions. Some brokerages allow you to buy ETFs commission-free, but you pay commission when you sell. Passiv helps you keep more of your money by defaulting to Buy-Only trades, making sure you don’t pay unnecessary trading fees. As long as you’re contributing to your account regularly, you likely won’t need to sell to keep your portfolio in line with your target. For more information on Passiv’s features, read our <a href="https://getpassiv.com/tutorials">tutorials</a>.</p>
 
         </div>
       </Container>
