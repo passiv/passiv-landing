@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import author from './documents/author'
 import category from './documents/category'
 import post from './documents/post'
+import dataFeed from './documents/dataFeed'
 import tutorial from './documents/tutorial'
 import landing from './documents/landing'
 import siteSettings from './documents/siteSettings'
@@ -43,6 +44,7 @@ export default createSchema({
     authorReference,
     bodyPortableText,
     bioPortableText,
+    dataFeed,
     vimeo,
     youtube,
     feature,

@@ -124,8 +124,48 @@ async function createLandingPages (graphql, actions) {
     })
 }
 
+async function createDataPages (graphql, actions) {
+  const {createPage} = actions
+  const result = await graphql(`
+    {
+      allSanityDataFeed(
+        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      ) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) throw result.errors
+
+  const dataFeedEdges = (result.data.allSanityDataFeed || {}).edges || []
+
+  dataFeedEdges
+    .filter(edge => !isFuture(edge.node.publishedAt))
+    .forEach((edge, index) => {
+      const {id, slug = {}, publishedAt} = edge.node
+      const dateSegment = format(publishedAt, 'YYYY/MM')
+      const path = `/feed/${slug.current}/`
+
+      createPage({
+        path,
+        component: require.resolve('./src/templates/data-feed.js'),
+        context: {id}
+      })
+    })
+}
+
 exports.createPages = async ({graphql, actions}) => {
   await createBlogPostPages(graphql, actions)
   await createTutorialPages(graphql, actions)
   await createLandingPages(graphql, actions)
+  await createDataPages(graphql, actions)
 }
