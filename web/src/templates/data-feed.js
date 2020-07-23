@@ -16,7 +16,8 @@ export const query = graphql`
       slug {
         current
       }
-      _rawBody(resolveReferences: {maxDepth: 5})
+      postType
+      body
     }
   }
 `

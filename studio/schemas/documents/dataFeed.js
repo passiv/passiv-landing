@@ -41,8 +41,11 @@ export default {
     },
     {
       name: 'body',
-      type: 'bodyPortableText',
-      title: 'Body'
+      title: 'Body',
+      type: 'markdown',
+      options: {
+        minRows: 20
+      }
     }
   ],
   orderings: [
