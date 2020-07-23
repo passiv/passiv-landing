@@ -17,7 +17,6 @@ function Tutorials (props) {
         <div className={styles.tutorialPost}>
           <div className={styles.mainContent}>
             <h1>{title}</h1>
-            {_rawExcerpt && <PortableText blocks={_rawExcerpt} />}
             {_rawBody && <PortableText blocks={_rawBody} />}
           </div>
         </div>

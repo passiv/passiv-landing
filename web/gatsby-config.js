@@ -37,6 +37,26 @@ module.exports = {
         start_url: `/`,
         icon: `src/images/logo-no-name.png`
       }
-    }
-  ]
+    },
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://getpassiv.com',
+        sitemap: 'https://getpassiv.com/sitemap.xml',
+        policy: [{
+          userAgent: '*',
+          allow: '/',
+          disallow: [
+            '/admin',
+            '/app',
+            '/api',
+          ],
+        }],
+      }
+    },
+  ],
+  siteMetadata: {
+    siteUrl: `https://getpassiv.com`,
+  },
 }

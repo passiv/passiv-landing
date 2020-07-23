@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {buildImageObj,cn} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import Container from './container'
+import { getReferralCode } from '../lib/helpers';
 
 import styles from './pricing.module.css'
 
 function PricingList ({  }) {
+  const [referralCode, setReferralCode] = useState(undefined);
+
+  useEffect(() => {
+    setReferralCode(getReferralCode());
+  }, []);
+
+  let registerPath = '/app/register/';
+  if (referralCode !== undefined && referralCode !== null) {
+    const appendage = `?ref=${referralCode}`;
+    registerPath += appendage;
+  }
+
   return (
   <div className={styles.priceContainer}>
     <Container>
@@ -28,7 +41,7 @@ function PricingList ({  }) {
             <li className={styles.disabled}>Advanced currency handling</li>
             <li className={styles.disabled}>Connect multiple brokerage logins</li>
           </ul>
-          <a href="/app/register/" className={cn(styles.pageLink,styles.btn4)}>GET COMMUNITY</a>
+          <a href={registerPath} className={cn(styles.pageLink,styles.btn4)}>GET COMMUNITY</a>
         </div>
         <div className={cn(styles.plan,styles.plan2)}>
           <div className={cn(styles.title, styles.title2)}>
@@ -36,7 +49,7 @@ function PricingList ({  }) {
             <div>
               <span className={styles.price}><span className={styles.numbers}>$99</span>/year</span>
             </div>
-            <div><span className={styles.priceSubtext}>$79 for Questrade Clients</span></div>
+            <div><span className={styles.priceSubtext}>$0 for Questrade Clients</span>&#42;</div>
           </div>
           <ul className={styles.planDetails}>
             <li>Automated calculations</li>
@@ -47,16 +60,21 @@ function PricingList ({  }) {
             <li>Advanced currency handling</li>
             <li>Connect multiple brokerage logins</li>
           </ul>
-          <a href="/app/register/" className={cn(styles.pageLink,styles.btn4)}>GET ELITE</a>
+          <a href={registerPath} className={cn(styles.pageLink,styles.btn4)}>GET ELITE</a>
         </div>
       </div>
       <div className={styles.pricingFooter}>
         <p className={styles.pricingFooterTitle}>Money-back <span className={styles.textGreen}>GUARANTEE</span></p>
-        <p  className={styles.pricingFooterText}>
+        <p className={styles.pricingFooterText}>
             We offer a no-risk, 100% money-back guarantee.
         </p>
-        <p  className={styles.pricingFooterText}>
+        <p className={styles.pricingFooterText}>
             If you're not happy, we'll refund you.
+        </p>
+      </div>
+      <div className={styles.pricingFooter}>
+        <p className={styles.pricingSubtext}>
+            &#42; Questrade covers the cost of Passiv Elite subscriptions for their customers on an annual basis and reserves the right to discontinue at any point.
         </p>
       </div>
     </Container>

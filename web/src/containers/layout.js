@@ -1,6 +1,7 @@
 import {graphql, StaticQuery} from 'gatsby'
 import React, {useState} from 'react'
 import Layout from '../components/layout'
+import { saveReferralCode } from '../lib/helpers';
 
 const query = graphql`
   query SiteTitleQuery {
@@ -12,6 +13,9 @@ const query = graphql`
 
 function LayoutContainer (props) {
   const [showNav, setShowNav] = useState(false)
+
+  saveReferralCode();
+
   function handleShowNav () {
     setShowNav(true)
   }

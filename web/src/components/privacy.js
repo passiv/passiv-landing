@@ -38,6 +38,113 @@ function Privacy ({  }) {
             </ul>
             <p>We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained.</p>
         </div>
+        <h1 className={styles.postTitle}>GDPR Compliance Statement</h1>
+        <div className={styles.postContent}>
+            <p>
+                At Passiv we take user data and privacy very seriously. Our position is that software companies have a duty of care to protect and secure user data. As such we have decided to voluntarily adhere to GDPR standards.
+            </p>
+            <h3>General GDPR principles</h3>
+            <ul>
+                <li>
+                    <p>
+                        we will process all personal data fairly and lawfully
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we will only process personal data for specified and lawful purposes
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we will endeavor to hold relevant and accurate personal data, and where practical, we will keep it up to date
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we will not keep personal data for longer than is necessary
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we will keep all personal data secure
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we will endeavor to ensure that personal data is not transferred to countries outside of the European Economic Area (EEA) without adequate protection
+                    </p>
+                </li>
+            </ul>
+            <h3>GDPR compliance</h3>
+            <p>
+                We have implemented the relevant policies and practices to ensure we protect any data handled by Passiv – for its employees and suppliers, specifically including the following:
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        employees were made aware of the GDPR and restrictions and obligations within it as may be relevant to them, with the relevant training provided as necessary
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        all new employees joining after the 25th May 2018 will receive awareness training as part of our induction programme
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        all suppliers who process personal data on behalf of Passiv are required to provide proof of compliance with GDPR standards
+                    </p>
+                </li>
+            </ul>
+            <h3>GDPR actions to date</h3>
+            <ul>
+                <li>
+                    <p>
+                        we created a policy to only collect and store minimum required user data
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we undertook a gap analysis of all our business processes where personal data is either held or collected and produced an action plan
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we are undertaking a systematic review of the personal data we store, manage, maintain, collect, process and control
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we have assessed our lawful bases for processing data to ensure all personal data is processed lawfully, fairly and transparently
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we migrated our servers and data center to a service provider that follows GDPR standards
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we have conducted data mapping of all our processes involving personal data
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we are providing training to our employees and generally raising the awareness and importance of GDPR to our business and their individual responsibilities arising from this
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we are and will continue to look at ways of improving our systems and procedures to better comply with GDPR best practice
+                    </p>
+                </li>
+            </ul>
+            <h3>Contact</h3>
+            <p>
+                Should you require any further information about Passiv’s GDPR statements, please feel free to reach out using Passiv’s <a href="https://getpassiv.com/app/help" target="_blank" rel="noopener noreferrer">feedback form</a>.
+            </p>
+        </div>
       </Container>
     </article>
 

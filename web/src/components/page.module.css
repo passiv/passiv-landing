@@ -44,6 +44,7 @@
   @nest & a {
     color: $brand-color;
     color: #00a387;
+    font-size: inherit;
   }
   @nest & iframe {
     margin: 0 auto;

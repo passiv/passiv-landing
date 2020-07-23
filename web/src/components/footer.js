@@ -9,8 +9,8 @@ function Footer () {
     <footer className={styles.siteFooter}>
       <Container>
         <p className={styles.sub}>
-          <a href="#feedback" rel="modal:open" className={styles.openModal}>Feedback</a>
-          <Link to='/about'>About Us</Link>
+          <a href="/app/help">Feedback</a>
+          <Link to="/about">About Us</Link>
           <Link to="/blog/">Blog</Link>
           <Link to="/terms-of-service/">Terms of Service</Link>
           <Link to="/privacy/">Privacy Policy</Link>

@@ -1,4 +1,6 @@
 import {format, isFuture} from 'date-fns'
+import qs from 'qs';
+
 
 export function cn (...args) {
   return args.filter(Boolean).join(' ')
@@ -44,4 +46,21 @@ export function toPlainText (blocks) {
       return block.children.map(child => child.text).join('')
     })
     .join('\n\n')
+}
+
+export function saveReferralCode () {
+  if (typeof window !== 'undefined') {
+    const query_params = qs.parse(window.location.search, {
+      ignoreQueryPrefix: true,
+    });
+    if (query_params.ref !== undefined) {
+      localStorage.setItem('landing-ref', query_params.ref);
+    }
+  }
+}
+
+export function getReferralCode () {
+  if (typeof localStorage !== 'undefined') {
+    return localStorage.getItem('landing-ref');
+  }
 }

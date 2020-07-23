@@ -5,6 +5,7 @@ import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
 import {Link} from 'gatsby'
+import { getReferralCode } from '../lib/helpers';
 
 import stylesA from './home/above-fold.module.css'
 import stylesF from './home/features.module.css'
@@ -15,7 +16,7 @@ import styles from './landing.module.css'
 
 function Landing (props) {
   const { title, mainImage, publishedAt, tagline, description, btnUrl, btnCopy, featureTitle, feature, testimonialTitle,testimonial,darkTitle, darkCopy, darkBtnUrl, darkBtnCopy} = props
-
+  const referralCode = getReferralCode();
   return (
     <div className={styles.landing}>
       <section className={cn(stylesA.aboveFold, styles.aboveFold)}>
@@ -31,6 +32,11 @@ function Landing (props) {
                   <input type="hidden" name="type" />
                   <input type="email" required max_length="512" className={stylesA.registerEmail} name="email" />
                   <input className={cn(stylesA.btn1, stylesA.registerBtn, stylesA.clickping)} type="submit" value={btnCopy} />
+                  {
+                    referralCode !== null && (
+                      <input type="hidden" name="ref" value={referralCode} />
+                    )
+                  }
                 </form>
               </div>
             </div>
