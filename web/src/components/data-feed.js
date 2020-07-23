@@ -4,6 +4,7 @@ import {buildImageObj} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
+const ReactMarkdown = require('react-markdown')
 
 import styles from './blog-post.module.css'
 
@@ -15,7 +16,10 @@ function DataFeed (props) {
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1>{title}</h1>
-            {body}
+            <ReactMarkdown
+              source={body}
+              escapeHtml={false}
+            />
             {publishedAt && (
               <div className={styles.publishedAt}>
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
