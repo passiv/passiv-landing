@@ -8,14 +8,14 @@ import Container from './container'
 import styles from './blog-post.module.css'
 
 function DataFeed (props) {
-  const {_rawBody, title, publishedAt, postType} = props
+  const {body, title, publishedAt, postType} = props
   return (
     <article className={styles.root}>
       <Container>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1>{title}</h1>
-            {_rawBody && <PortableText blocks={_rawBody} />}
+            {body}
             {publishedAt && (
               <div className={styles.publishedAt}>
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
