@@ -38,7 +38,7 @@ function Privacy ({  }) {
             </ul>
             <p>We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained.</p>
         </div>
-        <h1 className={styles.postTitle}>GDPR Compliance Statement</h1>
+        <h2 className={styles.postTitle}>GDPR Compliance Statement</h2>
         <div className={styles.postContent}>
             <p>
                 At Passiv we take user data and privacy very seriously. Our position is that software companies have a duty of care to protect and secure user data. As such we have decided to voluntarily adhere to GDPR standards.
