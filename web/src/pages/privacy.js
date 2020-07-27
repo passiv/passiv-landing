@@ -72,8 +72,8 @@ const PrivacyPage = props => {
   return (
     <Layout>
       <SEO
-        title={site.title}
-        description={site.description}
+        title="Our Privacy Policy"
+        description= "Privacy is a fundamental part of our business. This page holds Passiv's Privacy Policy and related information."
         keywords={site.keywords}
       />
       <Privacy />
