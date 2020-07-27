@@ -73,8 +73,8 @@ const AboutPage = props => {
   return (
     <Layout>
       <SEO
-        title={site.title}
-        description={site.description}
+        title="About Us"
+        description="Passiv builds portfolio rebalancing software for DIY investors. This page explains a bit about us and the company we're building."
         keywords={site.keywords}
       />
       <AboutContent />

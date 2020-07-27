@@ -72,8 +72,8 @@ const SecurityPage = props => {
   return (
     <Layout>
       <SEO
-        title={site.title}
-        description={site.description}
+        title="Security & Data"
+		description="Security is a fundamental part of Passiv's business. This page explains how we protect personal data and secure our systems."
         keywords={site.keywords}
       />
       <Security />

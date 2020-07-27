@@ -72,8 +72,8 @@ const TermsPage = props => {
   return (
     <Layout>
       <SEO
-        title={site.title}
-        description={site.description}
+        title="Terms of Service"
+        description="Passiv builds portfolio rebalancing tools for self-directed investors. This page holds our Terms of Service and related information."
         keywords={site.keywords}
       />
       <Terms />
