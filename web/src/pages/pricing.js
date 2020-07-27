@@ -72,9 +72,9 @@ const PricingPage = props => {
   return (
     <Layout>
       <SEO
-        title={site.title}
-        description={site.description}
-        keywords={site.keywords}
+        title="Pricing"
+		description="Passiv builds portfolio rebalancing software for self-directed investors. This page explains our pricing scheme."
+		keywords={site.keywords}
       />
       <PricingList />
     </Layout>
