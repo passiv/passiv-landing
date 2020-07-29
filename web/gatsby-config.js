@@ -9,6 +9,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   plugins: [
+    'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     {
