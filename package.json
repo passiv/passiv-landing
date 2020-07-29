@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@sanity/cli": "^0.147.8",
+    "gatsby-plugin-remove-trailing-slashes": "^2.3.11",
     "lerna": "^3.13.1"
   },
   "dependencies": {
