@@ -19,7 +19,7 @@ function SEO ({description, lang, meta, keywords, title, image}) {
           <Helmet
             htmlAttributes={{lang}}
             title={title}
-            titleTemplate={title === siteTitle ? '%s' : `%s | ${siteTitle}`}
+            titleTemplate={title === siteTitle ? 'Passiv | Free Portfolio Rebalancing Software' : `%s | ${siteTitle}`}
             meta={[
               {
                 name: 'description',
