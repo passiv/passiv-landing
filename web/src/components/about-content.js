@@ -51,7 +51,7 @@ function AboutContent ({  }) {
             <li>Sit back and let Passiv do the work.</li>
           </ol>
           <p>Using Passiv frees you from having to create and maintain spreadsheets and needing to calculate where to allocate new contributions and dividends. Passiv emails you when cash hits your accounts so you don’t waste time checking them yourself every day. It also calculates rebalancing trades for you.</p>
-          <p><a href="/pricing/">Elite users</a> can save even more time by using the One-Click Trades feature and having Passiv execute the required trades on your behalf. Note that this still requires you to start the process (that’s the One Click in the name). Elite subscribers can also access other <a href="/pricing">features</a>.
+          <p><a href="/pricing/">Elite users</a> can save even more time by using the One-Click Trades feature and having Passiv execute the required trades on your behalf. Note that this still requires you to start the process (that’s the One Click in the name). Elite subscribers can also access other <a href="/pricing/">features</a>.
 All of this is done from one Passiv dashboard for all your accounts - no more logging in to multiple brokerage accounts!</p>
           <h2 id="passiv-faq">Passiv FAQ</h2>
           <h3 id="what-is-passiv-1">What is Passiv?</h3>
@@ -104,7 +104,7 @@ All of this is done from one Passiv dashboard for all your accounts - no more lo
 
           <h3 id="why-is-passiv-set-to-buy-only-by-default">Why is Passiv set to Buy-Only by default?</h3>
 
-          <p>While you can’t control the stock market, you can control another aspect of investing: how much you pay in fees like trading commissions. Some brokerages allow you to buy ETFs commission-free, but you pay commission when you sell. Passiv helps you keep more of your money by defaulting to Buy-Only trades, making sure you don’t pay unnecessary trading fees. As long as you’re contributing to your account regularly, you likely won’t need to sell to keep your portfolio in line with your target. For more information on Passiv’s features, read our <a href="https://getpassiv.com/tutorials">tutorials</a>.</p>
+          <p>While you can’t control the stock market, you can control another aspect of investing: how much you pay in fees like trading commissions. Some brokerages allow you to buy ETFs commission-free, but you pay commission when you sell. Passiv helps you keep more of your money by defaulting to Buy-Only trades, making sure you don’t pay unnecessary trading fees. As long as you’re contributing to your account regularly, you likely won’t need to sell to keep your portfolio in line with your target. For more information on Passiv’s features, read our <a href="https://getpassiv.com/tutorials/">tutorials</a>.</p>
 
         </div>
       </Container>
