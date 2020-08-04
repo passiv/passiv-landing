@@ -10,7 +10,6 @@ import {faFacebook,faTwitter,faLinkedinIn} from "@fortawesome/free-brands-svg-ic
 
 import ReadingProgress from 'react-reading-progress'
 import Img from "gatsby-image"
-import Mailchimp from 'react-mailchimp-form'
 import {Link} from 'gatsby'
 
 import styles from './blog-post.module.css'
@@ -95,31 +94,15 @@ function BlogPost (props) {
               </div>
               <div className={styles.formContainer}>
                 <h2>Stay up to date</h2>
-                <label to="EMAIL">Email Address</label>
-                <Mailchimp
-                  action='#'
-                  fields={[
-                    {
-                      name: 'EMAIL',
-                      placeholder: 'Email',
-                      type: 'email',
-                      required: true,
-                      id:'email',
-                      for:'email'
-                    }
-                  ]}
-                   // Change predetermined language
-                  messages = {
-                    {
-                      sending: "Sending...",
-                      success: "Thank you for subscribing!",
-                      error: "An unexpected internal error has occurred.",
-                      empty: "You must write an e-mail address.",
-                      duplicate: "Too many subscribe attempts for this email address",
-                      button: "Get Updates"
-                    }
-                  }
-                />
+                
+                <form action='#'>
+                  <label for="email">
+                    Email
+                    <input id="email" name="email" required="" type="email"/>
+                  </label>
+                  <button type="submit">Get Updates</button>
+                </form>
+                  
               </div>
             </div>  
           </div>  
