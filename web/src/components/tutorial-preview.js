@@ -15,7 +15,7 @@ const {_rawBody, title, vimeo} = props
   return (
     <div className={styles.text}>
       <h2 className={cn(responsiveTitle3, styles.title)}>
-        <Link to={`/help/tutorials/${props.slug.current}`}>
+        <Link to={`/help/tutorials/${props.slug.current}/`}>
           {props.title}
         </Link>
       </h2>
@@ -24,7 +24,7 @@ const {_rawBody, title, vimeo} = props
           <PortableText blocks={props._rawExcerpt} />
         </div>
       )}
-      <Link className={styles.readBtn} to={`/help/tutorials/${props.slug.current}`}>
+      <Link className={styles.readBtn} to={`/help/tutorials/${props.slug.current}/`}>
         Read More
       </Link>
       <div className={styles.videoContainer}>

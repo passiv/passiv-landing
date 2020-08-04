@@ -12,7 +12,7 @@ function BlogPostPreview (props) {
   return (
     <Link
       className={props.isInList ? styles.inList : styles.inGrid}
-      to={`/blog/${props.slug.current}`}
+      to={`/blog/${props.slug.current}/`}
     >
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
