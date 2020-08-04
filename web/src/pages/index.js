@@ -98,7 +98,7 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO
-        title={site.title}
+        title = "Passiv | Free Portfolio Rebalancing Software"
         description={site.description}
         keywords={site.keywords}
       />
