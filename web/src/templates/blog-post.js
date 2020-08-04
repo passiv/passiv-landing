@@ -12,23 +12,26 @@ export const query = graphql`
     post: sanityPost(id: {eq: $id}) {
       id
       publishedAt
-      categories {
-        _id
-        title
-      }
       mainImage {
-        ...SanityImage
+        asset {
+          fluid(maxWidth: 1600) {
+            ...GatsbySanityImageFluid_noBase64
+          }
+          _id
+        }
         alt
       }
       title
       slug {
         current
       }
+      postType
       _rawExcerpt(resolveReferences: {maxDepth: 5})
       _rawBody(resolveReferences: {maxDepth: 5})
       authors {
         _key
         author {
+          _id
           image {
             crop {
               _key
@@ -51,6 +54,7 @@ export const query = graphql`
             }
           }
           name
+          _rawBio
         }
       }
     }
