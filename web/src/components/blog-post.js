@@ -38,8 +38,7 @@ function BlogPost (props) {
                 <>
                 {authors.map( author => (
                   <div key={author._key}>
-                    <span>{name}</span>
-                    <span>{}</span>
+                    <span>name {author.name}</span>
                   </div>
                 ))}
                 </>
@@ -122,6 +121,7 @@ function BlogPost (props) {
             </>
           )}
         </div>  
+
       </Container>
     </article>
     </>
