@@ -33,7 +33,7 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'eft', value: 'etf'},
+          {title: 'etf', value: 'etf'},
           {title: 'stock', value: 'stock'}
         ], // <-- predefined values
         layout: 'radio' // <-- defaults to 'dropdown'
