@@ -154,7 +154,7 @@ async function createDataPages (graphql, actions) {
     .forEach((edge, index) => {
       const {id, slug = {}, publishedAt} = edge.node
       const dateSegment = format(publishedAt, 'YYYY/MM')
-      const path = `/feed/${edge.node.postType}/${slug.current}/`
+      const path = `${edge.node.postType}/${slug.current}/`
 
       createPage({
         path,
