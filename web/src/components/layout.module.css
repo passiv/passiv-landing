@@ -4,7 +4,6 @@
 .content {
   background: #F7F7F7;
   min-height: calc(100% - 73px - 120px);
-  overflow-x: hidden;
   padding-top: 102px;
   @media (--media-max-desktop) {
     padding-top: 70px;

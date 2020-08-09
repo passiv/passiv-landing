@@ -28,6 +28,21 @@ export default {
       description: 'This can be used to schedule post for publishing'
     },
     {
+      title: 'Post Type',
+      name: 'postType',
+      type: 'string',
+      defaultValue: 'personal-finance',
+      options: {
+        list: [
+          {title: 'Personal Finance', value: 'personal-finance'},
+          {title: 'Accounts', value: 'accounts'},
+          {title: 'Retirement', value: 'retirement'},
+          {title: 'Investing', value: 'investing'}
+        ], // <-- predefined values
+        layout: 'radio' // <-- defaults to 'dropdown'
+      }
+    },
+    {
       name: 'mainImage',
       type: 'mainImage',
       title: 'Main image'
@@ -46,19 +61,6 @@ export default {
       of: [
         {
           type: 'authorReference'
-        }
-      ]
-    },
-    {
-      name: 'categories',
-      type: 'array',
-      title: 'Categories',
-      of: [
-        {
-          type: 'reference',
-          to: {
-            type: 'category'
-          }
         }
       ]
     },
