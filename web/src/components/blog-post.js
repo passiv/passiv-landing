@@ -21,7 +21,7 @@ function BlogPost (props) {
     event.preventDefault();
     const form = new FormData(event.target);
     const email = form.get('email');
-     axios.post('https://staging.getpassiv.com/api/v1/emailsubscribe', {email: email}).then(
+     axios.post('https://getpassiv.com/api/v1/emailsubscribe', {email: email}).then(
        response => {
          console.log('success', response)
        }
