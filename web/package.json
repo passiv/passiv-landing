@@ -3,14 +3,14 @@
 	"name": "sanity-gatsby-blog-web",
 	"version": "1.0.1",
 	"author": "Sanity <hello@sanity.io>",
-    "scripts": {
-        "build": "gatsby build",
-        "clean-cache": "gatsby clean",
-        "dev": "npm run clean-cache && gatsby develop",
-        "lint": "eslint .",
-        "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
-        "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
-    },
+	"scripts": {
+		"build": "gatsby build",
+		"clean-cache": "gatsby clean",
+		"dev": "npm run clean-cache && gatsby develop",
+		"lint": "eslint .",
+		"format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
+		"test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+	},
 	"devDependencies": {
 		"@sanity/block-content-to-react": "^2.0.7",
 		"@sanity/image-url": "^0.140.17",
@@ -36,6 +36,9 @@
 		"react-helmet": "^5.2.1"
 	},
 	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^1.2.30",
+		"@fortawesome/free-brands-svg-icons": "^5.14.0",
+		"@fortawesome/react-fontawesome": "^0.1.11",
 		"@u-wave/react-vimeo": "^0.8.2",
 		"gatsby-image": "^2.0.41",
 		"gatsby-plugin-google-tagmanager": "^2.3.1",
@@ -47,7 +50,9 @@
 		"get-youtube-id": "^1.0.1",
 		"postcss-retina-bg-img": "^4.1.0",
 		"qs": "^6.5.2",
+		"react-mailchimp-form": "^1.0.2",
 		"react-markdown": "^4.3.1",
+		"react-reading-progress": "^0.3.0",
 		"react-vimeo": "^2.0.0",
 		"react-youtube": "^7.9.0",
 		"update": "^0.7.4"

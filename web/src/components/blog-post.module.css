@@ -9,8 +9,7 @@
   display: block;
   position: relative;
   background: var(--color-very-light-gray);
-  padding-bottom: calc(5 / 16 * 100%);
-
+  width: 100%;
   @nest & img {
     display: block;
     position: absolute;
@@ -23,21 +22,16 @@
   }
 }
 
-.grid {
-  @media (--media-min-medium) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-column-gap: 2em;
-    grid-template-columns: 3fr 1fr;
-  }
-}
-
 .mainContent {
-  max-width: 860px;
-  padding: 2rem 0;
-  margin: 0 auto;
+  max-width: 720px;
+  padding: 3rem;
+  background: #fff;
+  @media (--media-min-desktop) {
+      margin: 0 0 50px auto;
+  }
   @media (--media-max-tablet) {
-    padding: 0 0 1rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
   }
   @nest & a {
     color: var(--color-accent);
@@ -47,12 +41,6 @@
         color: inherit;
       }
     }
-  }
-
-  @nest & h1 {
-    font-size: 40px;
-    line-height: 1.2;
-    margin: 2rem 0;
   }
 
   @nest & h2, & h3, & h4, & h5, & h6 {
@@ -94,12 +82,6 @@
   max-width: 860px;
 }
 
-.publishedAt {
-  composes: small from './typography.module.css';
-  margin: 2rem 0 3rem;
-  color: var(--color-gray);
-}
-
 .categories {
   border-top: 1px solid var(--color-very-light-gray);
   margin: 2rem 0 3rem;
@@ -119,3 +101,170 @@
   composes: base from './typography.module.css';
   margin: 0.5rem 0 0;
 }
+
+.metaContainer {
+  @media (--media-max-desktop) {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  @media (--media-min-desktop) {
+    display: flex;
+    align-items: center;
+    min-height: 65vh;
+  }
+  @nest & .mainImage {
+    flex: 2;
+  }
+}
+
+.metaDetails {
+  flex: 3;
+  padding-right: 20px;
+}
+
+.blogTitle {
+  font-size: 60px;
+  box-shadow: 8px 0px 0 3px #1b1d23, -8px 0px 0 3px #1b1d23;
+  color: #07a185;
+  background: #1b1d23;
+  display: inline;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  @media (--media-max-tablet) {
+    font-size: 34px;
+  }
+}
+.whoWhen {
+  display: flex;
+  font-size: 18px;
+  margin: 3rem 0 1rem;
+  line-height: 1;
+  @nest & a {
+    color: #07a185;
+  }
+}
+.who {
+  margin-right: 8px;
+  padding-right: 8px;
+  display: block;
+  border-right: 1px solid #000;
+}
+.publishedAt {
+}
+.category {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+.sidebar {
+  @media (--media-min-desktop) {
+    position: sticky;
+  }
+  top: 140px;
+  align-self: start;
+  margin-bottom: 50px;
+}
+.share {
+  margin-bottom: 50px;
+  @nest & a {
+    display: block;
+    font-size: 28px;
+  }
+  @nest & h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+}
+.sidebarContainer {
+  text-align: center;
+  @media (--media-max-desktop) {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.formContainer {
+  border: 1px solid #1b1d23;
+  text-align: left;
+  padding: 16px 20px 20px;
+  align-self: start;
+  max-width: ;
+  @nest & h2 {
+    font-weight: 600;
+    font-size: 22px;
+    color: #0ea185;
+    margin-bottom: 12px;
+  }
+  @nest & label {
+    color: #1b1d23;
+    margin-bottom: 4px;
+    display: block;
+    font-family: var(--base-font-family);
+    font-weight: 600;
+  }
+  @nest & input {
+    color: #1b1d23;
+    background: #fff;
+    border: 1px solid #1b1d23;
+    display: block;
+    outline: none;
+    -webkit-appearance: none;
+    padding: 12px;
+    font-size: 18px;
+    font-family: var(--base-font-family);
+    width: 199px;
+    @nest &::placeholder {
+      color: #1b1d23;
+      opacity: 1;
+      font-size: 16px;
+    }
+    @nest &:focus {
+      border: 1px solid #07a185;
+    }
+    @nest &:focus::placeholder {
+      opacity: 0;
+    }
+  }
+  @nest & button {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    display: block;
+    border: none;
+    outline: none;
+    background: #1b1d23;
+    padding: 10px 18px 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    font-family: var(--base-font-family);
+    @nest &:hover {
+      background: #023ca2;
+    }
+  }
+  @nest & p {
+    color: #ff5959!important;
+    padding-top: 5px;
+  }
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  @media (--media-min-desktop) {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 16px;
+    -ms-grid-columns: 1fr 3fr;
+    grid-template-columns: 1fr 3fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+  }
+}
+
+
