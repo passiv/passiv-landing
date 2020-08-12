@@ -77,6 +77,7 @@ function DataFeed (props) {
               </div>
             </div>
           </div>
+          </div>
           <div className={styles.mainContent}>
             <h1>{title}</h1>
             <ReactMarkdown
