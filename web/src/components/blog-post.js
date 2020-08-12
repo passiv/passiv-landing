@@ -1,5 +1,5 @@
 import {format, distanceInWords, differenceInDays} from 'date-fns'
-import React from 'react'
+import React, { useState } from 'react';
 import {buildImageObj} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
@@ -17,12 +17,16 @@ import styles from './blog-post.module.css'
 
 function BlogPost (props) {
   const {_rawBody, slug, authors, title, postType, mainImage, publishedAt} = props
+  const [success, setSuccess] = useState(false);
+
+
   const handleSubmit = event => {
     event.preventDefault();
     const form = new FormData(event.target);
     const email = form.get('email');
-     axios.post('https://staging.getpassiv.com/api/v1/emailsubscribe', {email: email}).then(
+     axios.post('https://getpassiv.com/api/v1/emailsubscribe', {email: email}).then(
        response => {
+         setSuccess(true);
          console.log('success', response)
        }
      ).catch(
@@ -114,7 +118,14 @@ function BlogPost (props) {
                     Email
                     <input id="email" name="email" required="" type="email"/>
                   </label>
-                  <button type="submit">Get Updates</button>
+
+                  { success ? (
+                    <button type="submit" disabled>Success</button>
+                  ) : (
+                    <button type="submit">Get Updates</button>
+                  )}
+
+
                 </form>
 
               </div>
@@ -124,6 +135,7 @@ function BlogPost (props) {
           <div className={styles.mainContent}>
             {_rawBody && <PortableText blocks={_rawBody} />}
           </div>
+
 
           {authors && authors.length > 0 && (
             <>
