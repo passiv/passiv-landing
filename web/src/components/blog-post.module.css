@@ -267,4 +267,12 @@
   }
 }
 
+.feed {
+  @media (--media-min-desktop) {
+    @nest & .metaContainer {
+      min-height: 300px;
+
+    }
+  }
+}
 
