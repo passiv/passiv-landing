@@ -19,6 +19,7 @@ function BlogPost (props) {
   const {_rawBody, slug, authors, title, postType, mainImage, publishedAt} = props
   const [success, setSuccess] = useState(false);
 
+
   const handleSubmit = event => {
     event.preventDefault();
     const form = new FormData(event.target);
@@ -117,11 +118,13 @@ function BlogPost (props) {
                     Email
                     <input id="email" name="email" required="" type="email"/>
                   </label>
+
                   { success ? (
                     <button type="submit" disabled>Success</button>
                   ) : (
                     <button type="submit">Get Updates</button>
                   )}
+
 
                 </form>
 
@@ -132,6 +135,7 @@ function BlogPost (props) {
           <div className={styles.mainContent}>
             {_rawBody && <PortableText blocks={_rawBody} />}
           </div>
+
 
           {authors && authors.length > 0 && (
             <>
