@@ -10,6 +10,23 @@ import styles from './blog-post.module.css'
 
 function DataFeed (props) {
   const {body, title, publishedAt, postType} = props
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    const form = new FormData(event.target);
+    const email = form.get('email');
+     axios.post('https://getpassiv.com/api/v1/emailsubscribe', {email: email}).then(
+       response => {
+         setSuccess(true);
+         console.log('success', response)
+       }
+     ).catch(
+       error => {
+         console.log('error', error)
+       }
+     );
+  }
+  
   return (
     <article className={styles.root}>
       <Container>
