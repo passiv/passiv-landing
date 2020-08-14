@@ -45,6 +45,7 @@ export default createSchema({
     bodyPortableText,
     bioPortableText,
     dataFeed,
+    modelPortfolio,
     vimeo,
     youtube,
     feature,
