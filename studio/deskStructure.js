@@ -31,6 +31,10 @@ export default () =>
         .schemaType('post')
         .child(S.documentTypeList('dataFeed').title('Data Feed')),
       S.listItem()
+        .title('Model portfolios')
+        .schemaType('post')
+        .child(S.documentTypeList('modelPortfolio').title('Model Portfolio')),
+      S.listItem()
         .title('Authors')
         .icon(MdPerson)
         .schemaType('author')
