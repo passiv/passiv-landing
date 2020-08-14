@@ -102,7 +102,7 @@ function DataFeed(props) {
                 <div
                   style={{
                     width: "260px",
-                    height: "200px",
+                    height: "150px",
                     margin: "5px",
                   }}
                 >
@@ -110,28 +110,29 @@ function DataFeed(props) {
                 </div>
               )}
               <div className={styles.sidebarContainer}>
-                <div className={styles.share}>
+                <div className={styles.dataFeedShare}>
                   <h2>Share</h2>
-                  <div className={styles.shareWrapper}>
-                    <a
-                      target="_blank"
-                      href={`https://twitter.com/intent/tweet/?text=${title}&url=https://getpassiv.com/blog/${props.slug.current}%2F&via=getpassiv`}
-                    >
-                      <FontAwesomeIcon icon={faTwitter} className={styles.icon} />
-                    </a>
-                    <a
-                      href={`https://www.facebook.com/sharer/sharer.php?u=https://getpassiv.com/blog/${props.slug.current}`}
-                      target="_blank"
-                    >
-                      <FontAwesomeIcon icon={faFacebook} className={styles.icon} />
-                    </a>
-                    <a
-                      href={`https://www.linkedin.com/shareArticle?mini=true&url=https://getpassiv.com/blog/${props.slug.current}&title=${title}&source=${title}`}
-                      target="_blank"
-                    >
-                      <FontAwesomeIcon icon={faLinkedinIn} className={styles.icon} />
-                    </a>
-                  </div>
+                  <a
+                    className={styles.shareLinks}
+                    target="_blank"
+                    href={`https://twitter.com/intent/tweet/?text=${title}&url=https://getpassiv.com/blog/${props.slug.current}%2F&via=getpassiv`}
+                  >
+                    <FontAwesomeIcon icon={faTwitter} className={styles.icon} />
+                  </a>
+                  <a
+                    className={styles.shareLinks}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=https://getpassiv.com/blog/${props.slug.current}`}
+                    target="_blank"
+                  >
+                    <FontAwesomeIcon icon={faFacebook} className={styles.icon} />
+                  </a>
+                  <a
+                    className={styles.shareLinks}
+                    href={`https://www.linkedin.com/shareArticle?mini=true&url=https://getpassiv.com/blog/${props.slug.current}&title=${title}&source=${title}`}
+                    target="_blank"
+                  >
+                    <FontAwesomeIcon icon={faLinkedinIn} className={styles.icon} />
+                  </a>
                 </div>
                 <div className={styles.formContainer}>
                   <h2>Stay up to date</h2>
