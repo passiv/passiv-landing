@@ -1,8 +1,8 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .title {
-  composes: responsiveTitle1 from './typography.module.css';
+  composes: responsiveTitle1 from "./typography.module.css";
 }
 
 .mainImage {
@@ -27,7 +27,7 @@
   padding: 3rem;
   background: #fff;
   @media (--media-min-desktop) {
-      margin: 0 0 50px auto;
+    margin: 0 0 50px auto;
   }
   @media (--media-max-tablet) {
     margin: 0 auto;
@@ -98,7 +98,7 @@
 }
 
 .categoriesHeadline {
-  composes: base from './typography.module.css';
+  composes: base from "./typography.module.css";
   margin: 0.5rem 0 0;
 }
 
@@ -247,7 +247,7 @@
     }
   }
   @nest & p {
-    color: #ff5959!important;
+    color: #ff5959 !important;
     padding-top: 5px;
   }
 }
@@ -271,8 +271,10 @@
   @media (--media-min-desktop) {
     @nest & .metaContainer {
       min-height: 300px;
-
     }
   }
 }
 
+.shareWrapper {
+  display: inline-block;
+}

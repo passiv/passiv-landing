@@ -112,7 +112,7 @@ function DataFeed(props) {
               <div className={styles.sidebarContainer}>
                 <div className={styles.share}>
                   <h2>Share</h2>
-                  <div style="display: inline-block">
+                  <div className={styles.shareWrapper}>
                     <a
                       target="_blank"
                       href={`https://twitter.com/intent/tweet/?text=${title}&url=https://getpassiv.com/blog/${props.slug.current}%2F&via=getpassiv`}
