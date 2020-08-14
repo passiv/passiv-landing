@@ -36,8 +36,8 @@ export default {
       title: 'Contributor',
       name: 'contributor',
       type: 'string',
-      description: 'The name of the person (real or pseudonymous) who contributed this model portfolio'
-      }
+      description:
+        'The name of the person (real or pseudonymous) who contributed this model portfolio'
     },
     {
       name: 'body',
