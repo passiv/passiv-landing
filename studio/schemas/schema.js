@@ -17,7 +17,6 @@ import youtube from './documents/youtube'
 import testimonial from './documents/testimonial'
 import feature from './documents/feature'
 
-
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
 import bioPortableText from './objects/bioPortableText'
@@ -45,6 +44,7 @@ export default createSchema({
     bodyPortableText,
     bioPortableText,
     dataFeed,
+    modelPortfolio,
     vimeo,
     youtube,
     feature,
