@@ -128,9 +128,10 @@ function DataFeed(props) {
                     <a
                       href={`https://www.linkedin.com/shareArticle?mini=true&url=https://getpassiv.com/blog/${props.slug.current}&title=${title}&source=${title}`}
                       target="_blank"
-                    ></div>
-                    <FontAwesomeIcon icon={faLinkedinIn} className={styles.icon} />
-                  </a>
+                    >
+                      <FontAwesomeIcon icon={faLinkedinIn} className={styles.icon} />
+                    </a>
+                  </div>
                 </div>
                 <div className={styles.formContainer}>
                   <h2>Stay up to date</h2>
