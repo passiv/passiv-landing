@@ -32,6 +32,8 @@ function Tutorials(props) {
   return (
     <article className={styles.root}>
       <Container>
+      <div className={styles.wrapper}>
+        <div className={styles.sidebar}></div>
         <div className={styles.sidebarContainer}>
           <div className={styles.share}>
             <h2>Share</h2>
@@ -71,6 +73,8 @@ function Tutorials(props) {
               )}
             </form>
           </div>
+        </div>
+        </div>
         </div>
         <div className={styles.tutorialPost}>
           <div className={styles.mainContent}>
