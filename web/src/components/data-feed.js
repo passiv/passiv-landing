@@ -6,19 +6,32 @@ import PortableText from './portableText'
 import Container from './container'
 const ReactMarkdown = require('react-markdown')
 import axios from 'axios';
-
+import { Chart } from "react-charts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faFacebook,faTwitter,faLinkedinIn} from "@fortawesome/free-brands-svg-icons"
-
 import ReadingProgress from 'react-reading-progress'
-
 import styles from './blog-post.module.css'
 import {Link} from 'gatsby'
-
 
 function DataFeed (props) {
   const {body, title, publishedAt, postType} = props
   const [success, setSuccess] = useState(false);
+  const [historicalPrices, setHistoricalPrices] = useState(null);
+  const ticker = props.slug.current.toUpperCase();
+  const [dataRetrieved, setDataRetrieved] = useState(false);
+  if (historicalPrices === null) {
+    axios.get("https://getpassiv.com/api/v1/historical/" + ticker).then(
+      response => {
+        console.log(response.data);
+        setHistoricalPrices(response.data);
+        setDataRetrieved(true);
+      }
+    ).catch(
+      error => {
+        console.log('error', error)
+      }
+    );
+  }
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -35,7 +48,32 @@ function DataFeed (props) {
        }
      );
   }
-  
+
+  const data = React.useMemo(
+    () => [
+      {
+        label: 'Share Price',
+        data: historicalPrices?.map(a => {
+          let date = new Date(Date.parse(a.date));
+          return [
+            new Date(date.getFullYear(), date.getMonth(), date.getDate()),
+            a.close,
+          ];
+        }),
+        color: '#04A286',
+      },
+    ],
+    [historicalPrices],
+  );
+
+   const axes = React.useMemo(
+     () => [
+       { primary: true, type: 'time', position: 'bottom' },
+       { type: 'linear', position: 'left' },
+     ],
+     []
+   )
+
   return (
     <div className={styles.feed}>
       <ReadingProgress targetEl="#targetEl" />
@@ -107,6 +145,15 @@ function DataFeed (props) {
                   </form>
 
                 </div>
+                {dataRetrieved && data !== undefined && (
+                  <div style={{
+                     width: '260px',
+                     height: '200px',
+                     margin: '5px',
+                   }}>
+                   <Chart data={data} axes={axes} tooltip />
+                 </div>
+                )}
               </div>
             </div>
             <div className={styles.mainContent}>
