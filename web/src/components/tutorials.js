@@ -12,6 +12,7 @@ import styles from "./blog-post.module.css";
 
 function Tutorials(props) {
   const { _rawBody, _rawExcerpt, authors, categories, title, mainImage, publishedAt } = props;
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
