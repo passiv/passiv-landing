@@ -5,6 +5,8 @@ import { imageUrlFor } from "../lib/image-url";
 import PortableText from "./portableText";
 import Container from "./container";
 import AuthorList from "./author-list";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 import styles from "./blog-post.module.css";
 
