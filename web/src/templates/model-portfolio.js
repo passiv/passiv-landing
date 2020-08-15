@@ -9,14 +9,13 @@ import { toPlainText } from "../lib/helpers";
 
 export const query = graphql`
   query modelPortfolioTemplateQuery($id: String!) {
-    feed: sanityModelPortfolio(id: { eq: $id }) {
+    feed: allSanityModelPortfolio(id: { eq: $id }) {
       id
       publishedAt
       title
       slug {
         current
       }
-      postType
       body
     }
   }
