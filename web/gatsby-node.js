@@ -1,9 +1,4 @@
 const { isFuture } = require("date-fns");
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
 
 const { format } = require("date-fns");
 
@@ -160,17 +155,10 @@ async function createModelPortfolios(graphql, actions) {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allSanityModelPortfolios(
-        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-      ) {
+      allSanityPost(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
         edges {
           node {
             id
-            publishedAt
-            slug {
-              current
-            }
-            postType
           }
         }
       }
@@ -179,7 +167,7 @@ async function createModelPortfolios(graphql, actions) {
 
   if (result.errors) throw result.errors;
 
-  const modelPortfolioEdges = (result.data.allSanityModelPortfolios || {}).edges || [];
+  const modelPortfolioEdges = (result.data.allSanityPost || {}).edges || [];
 
   modelPortfolioEdges
     .filter((edge) => !isFuture(edge.node.publishedAt))

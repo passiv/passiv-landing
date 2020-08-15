@@ -3,7 +3,7 @@ import { format } from 'date-fns'
 export default {
   name: 'modelPortfolio',
   type: 'document',
-  title: 'Model Portfolios',
+  title: 'Model portfolios',
   fields: [
     {
       name: 'title',
