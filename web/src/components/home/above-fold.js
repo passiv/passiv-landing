@@ -5,6 +5,7 @@ import Container from "../container";
 import { getReferralCode } from "../../lib/helpers";
 import axios from "axios";
 import styles from "./above-fold.module.css";
+import 'node-fetch'
 
 function AboveFold({}) {
   const referralCode = getReferralCode();
