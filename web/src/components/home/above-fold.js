@@ -44,14 +44,15 @@ function AboveFold({}) {
                   className={styles.registerEmail}
                   name="email"
                 />
-                <br></br>
-                <br></br>
                 <input
                   className={cn(styles.btn1, styles.registerBtn, styles.clickping)}
                   type="submit"
-                  value={`Join ${signups} New Passiv Users This Month`}
+                  value={`Get Passiv`}
                 />
                 {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
+                  <p>
+                  {`Join ${signups} new Passiv users this month.`}
+                  </p>
               </form>
             </div>
           </div>
