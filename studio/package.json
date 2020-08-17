@@ -31,6 +31,7 @@
     "react-dom": "^16.8.6",
     "react-vimeo": "^2.0.0",
     "react-youtube": "^7.9.0",
+    "sanity": "^1.149.7",
     "sanity-plugin-dashboard-widget-document-list": "^0.0.9",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
     "sanity-plugin-markdown": "^1.0.1"
