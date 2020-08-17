@@ -50,7 +50,7 @@ function AboveFold({}) {
                   value={`Get Passiv`}
                 />
                 {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
-                  <p>
+                  <p className={styles.socialProof}>
                   {`Join ${signups} new Passiv users this month!`}
                   </p>
               </form>
