@@ -1,12 +1,19 @@
-const { isFuture } = require("date-fns");
+const {isFuture} = require('date-fns')
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/node-apis/
+ */
 
-const { format } = require("date-fns");
+const {format} = require('date-fns')
 
-async function createBlogPostPages(graphql, actions) {
-  const { createPage } = actions;
+async function createBlogPostPages (graphql, actions) {
+  const {createPage} = actions
   const result = await graphql(`
     {
-      allSanityPost(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
+      allSanityPost(
+        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      ) {
         edges {
           node {
             id
@@ -18,32 +25,34 @@ async function createBlogPostPages(graphql, actions) {
         }
       }
     }
-  `);
+  `)
 
-  if (result.errors) throw result.errors;
+  if (result.errors) throw result.errors
 
-  const postEdges = (result.data.allSanityPost || {}).edges || [];
+  const postEdges = (result.data.allSanityPost || {}).edges || []
 
   postEdges
-    .filter((edge) => !isFuture(edge.node.publishedAt))
+    .filter(edge => !isFuture(edge.node.publishedAt))
     .forEach((edge, index) => {
-      const { id, slug = {}, publishedAt } = edge.node;
-      const dateSegment = format(publishedAt, "YYYY/MM");
-      const path = `/blog/${slug.current}/`;
+      const {id, slug = {}, publishedAt} = edge.node
+      const dateSegment = format(publishedAt, 'YYYY/MM')
+      const path = `/blog/${slug.current}/`
 
       createPage({
         path,
-        component: require.resolve("./src/templates/blog-post.js"),
-        context: { id },
-      });
-    });
+        component: require.resolve('./src/templates/blog-post.js'),
+        context: {id}
+      })
+    })
 }
 
-async function createTutorialPages(graphql, actions) {
-  const { createPage } = actions;
+async function createTutorialPages (graphql, actions) {
+  const {createPage} = actions
   const result = await graphql(`
     {
-      allSanityTutorial(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
+      allSanityTutorial(
+        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      ) {
         edges {
           node {
             id
@@ -55,32 +64,34 @@ async function createTutorialPages(graphql, actions) {
         }
       }
     }
-  `);
+  `)
 
-  if (result.errors) throw result.errors;
+  if (result.errors) throw result.errors
 
-  const tutorialEdges = (result.data.allSanityTutorial || {}).edges || [];
+  const tutorialEdges = (result.data.allSanityTutorial || {}).edges || []
 
   tutorialEdges
-    .filter((edge) => !isFuture(edge.node.publishedAt))
+    .filter(edge => !isFuture(edge.node.publishedAt))
     .forEach((edge, index) => {
-      const { id, slug = {}, publishedAt } = edge.node;
-      const dateSegment = format(publishedAt, "YYYY/MM");
-      const path = `/help/tutorials/${slug.current}/`;
+      const {id, slug = {}, publishedAt} = edge.node
+      const dateSegment = format(publishedAt, 'YYYY/MM')
+      const path = `/help/tutorials/${slug.current}/`
 
       createPage({
         path,
-        component: require.resolve("./src/templates/tutorial.js"),
-        context: { id },
-      });
-    });
+        component: require.resolve('./src/templates/tutorial.js'),
+        context: {id}
+      })
+    })
 }
 
-async function createLandingPages(graphql, actions) {
-  const { createPage } = actions;
+async function createLandingPages (graphql, actions) {
+  const {createPage} = actions
   const result = await graphql(`
     {
-      allSanityLanding(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
+      allSanityLanding(
+        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      ) {
         edges {
           node {
             id
@@ -92,32 +103,34 @@ async function createLandingPages(graphql, actions) {
         }
       }
     }
-  `);
+  `)
 
-  if (result.errors) throw result.errors;
+  if (result.errors) throw result.errors
 
-  const landingEdges = (result.data.allSanityLanding || {}).edges || [];
+  const landingEdges = (result.data.allSanityLanding || {}).edges || []
 
   landingEdges
-    .filter((edge) => !isFuture(edge.node.publishedAt))
+    .filter(edge => !isFuture(edge.node.publishedAt))
     .forEach((edge, index) => {
-      const { id, slug = {}, publishedAt } = edge.node;
-      const dateSegment = format(publishedAt, "YYYY/MM");
-      const path = `/${slug.current}/`;
+      const {id, slug = {}, publishedAt} = edge.node
+      const dateSegment = format(publishedAt, 'YYYY/MM')
+      const path = `/${slug.current}/`
 
       createPage({
         path,
-        component: require.resolve("./src/templates/landing-page.js"),
-        context: { id },
-      });
-    });
+        component: require.resolve('./src/templates/landing-page.js'),
+        context: {id}
+      })
+    })
 }
 
-async function createDataPages(graphql, actions) {
-  const { createPage } = actions;
+async function createDataPages (graphql, actions) {
+  const {createPage} = actions
   const result = await graphql(`
     {
-      allSanityDataFeed(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
+      allSanityDataFeed(
+        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      ) {
         edges {
           node {
             id
@@ -130,68 +143,30 @@ async function createDataPages(graphql, actions) {
         }
       }
     }
-  `);
+  `)
 
-  if (result.errors) throw result.errors;
+  if (result.errors) throw result.errors
 
-  const dataFeedEdges = (result.data.allSanityDataFeed || {}).edges || [];
+  const dataFeedEdges = (result.data.allSanityDataFeed || {}).edges || []
 
   dataFeedEdges
-    .filter((edge) => !isFuture(edge.node.publishedAt))
+    .filter(edge => !isFuture(edge.node.publishedAt))
     .forEach((edge, index) => {
-      const { id, slug = {}, publishedAt } = edge.node;
-      const dateSegment = format(publishedAt, "YYYY/MM");
-      const path = `${edge.node.postType}/${slug.current}/`;
+      const {id, slug = {}, publishedAt} = edge.node
+      const dateSegment = format(publishedAt, 'YYYY/MM')
+      const path = `${edge.node.postType}/${slug.current}/`
 
       createPage({
         path,
-        component: require.resolve("./src/templates/data-feed.js"),
-        context: { id },
-      });
-    });
+        component: require.resolve('./src/templates/data-feed.js'),
+        context: {id}
+      })
+    })
 }
 
-async function createModelPortfolios(graphql, actions) {
-  const { createPage } = actions;
-  const result = await graphql(`
-    {
-      allSanityModelPortfolio(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
-        edges {
-          node {
-            id
-            publishedAt
-            slug {
-              current
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  if (result.errors) throw result.errors;
-
-  const modelPortfolioEdges = (result.data.allSanityModelPortfolio || {}).edges || [];
-
-  modelPortfolioEdges
-    .filter((edge) => !isFuture(edge.node.publishedAt))
-    .forEach((edge, index) => {
-      const { id, slug = {}, publishedAt } = edge.node;
-      const dateSegment = format(publishedAt, "YYYY/MM");
-      const path = `model-portfolio/${slug.current}/`;
-
-      createPage({
-        path,
-        component: require.resolve("./src/templates/model-portfolio.js"),
-        context: { id },
-      });
-    });
+exports.createPages = async ({graphql, actions}) => {
+  await createBlogPostPages(graphql, actions)
+  await createTutorialPages(graphql, actions)
+  await createLandingPages(graphql, actions)
+  await createDataPages(graphql, actions)
 }
-
-exports.createPages = async ({ graphql, actions }) => {
-  await createBlogPostPages(graphql, actions);
-  await createTutorialPages(graphql, actions);
-  await createLandingPages(graphql, actions);
-  await createDataPages(graphql, actions);
-  await createModelPortfolios(graphql, actions);
-};
