@@ -43,6 +43,13 @@
   }
 }
 
+.socialProof {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #023ca2;
+  font-size: 18px;
+}
+
 .btn1 {
   vertical-align: top;
   box-sizing: border-box;
@@ -133,7 +140,7 @@
   color: #9A9A9A;
   font-family: var(--base-font-family);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 0.71px;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -142,10 +149,10 @@
   color: #292929;
   font-family: var(--base-font-family);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: -0.24px;
   line-height: 36px;
-  max-width: 500px;
+  max-width: 555px;
   margin-bottom: 50px;
 }
 .cta-container {
