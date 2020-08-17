@@ -9,6 +9,7 @@ import styles from "./above-fold.module.css";
 function AboveFold({}) {
   const referralCode = getReferralCode();
   const [signups, setSignups] = useState(0);
+  const fetch = require('node-fetch');
   const fetchPromise = fetch("https://getpassiv.com/api/v1/signups/").then((response) => response.json())
   .then(data => setSignups(data.count))
 
