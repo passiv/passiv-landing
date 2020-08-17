@@ -1,5 +1,5 @@
-import React from "react";
-import { buildImageObj, cn, getSignups } from "../../lib/helpers";
+import React, { useState } from "react";
+import { buildImageObj, cn } from "../../lib/helpers";
 import { imageUrlFor } from "../../lib/image-url";
 import Container from "../container";
 import { getReferralCode } from "../../lib/helpers";
@@ -8,10 +8,18 @@ import styles from "./above-fold.module.css";
 
 function AboveFold({}) {
   const referralCode = getReferralCode();
-  var signups = 0;
-  const fetchPromise = fetch("https://getpassiv.com/api/v1/signups/").then((response) => {
-    signups = response.json();
-  });
+  const [signups, setSignups] = useState(0);
+  const fetchPromise = fetch("https://getpassiv.com/api/v1/signups/").then((response) => response.json())
+  .then(data => setSignups(data.count))
+
+
+  // {
+  //   const data = response
+  //   setSignups(data)  
+  //   console.log(data)
+
+  // });
+
   return (
     <section className={styles.aboveFold}>
       <Container>
@@ -41,7 +49,7 @@ function AboveFold({}) {
                 <input
                   className={cn(styles.btn1, styles.registerBtn, styles.clickping)}
                   type="submit"
-                  value={`Join 442 New Passiv Users This Month`}
+                  value={`Join ${signups} New Passiv Users This Month`}
                 />
                 {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
               </form>
