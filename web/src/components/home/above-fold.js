@@ -5,11 +5,11 @@ import Container from "../container";
 import { getReferralCode } from "../../lib/helpers";
 import axios from "axios";
 import styles from "./above-fold.module.css";
+import "node-fetch"
 
 function AboveFold({}) {
   const referralCode = getReferralCode();
   const [signups, setSignups] = useState(0);
-  const theFetch = require('node-fetch');
   const fetchPromise = fetch("https://getpassiv.com/api/v1/signups/").then((response) => response.json())
   .then(data => setSignups(data.count))
 
