@@ -155,10 +155,14 @@ async function createModelPortfolios(graphql, actions) {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allSanityPost(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
+      allSanityModelPortfolio(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
         edges {
           node {
             id
+            publishedAt
+            slug {
+              current
+            }
           }
         }
       }
@@ -167,14 +171,14 @@ async function createModelPortfolios(graphql, actions) {
 
   if (result.errors) throw result.errors;
 
-  const modelPortfolioEdges = (result.data.allSanityPost || {}).edges || [];
+  const modelPortfolioEdges = (result.data.allSanityModelPortfolio || {}).edges || [];
 
   modelPortfolioEdges
     .filter((edge) => !isFuture(edge.node.publishedAt))
     .forEach((edge, index) => {
       const { id, slug = {}, publishedAt } = edge.node;
       const dateSegment = format(publishedAt, "YYYY/MM");
-      const path = `${edge.node.postType}/${slug.current}/`;
+      const path = `model-portfolio/${slug.current}/`;
 
       createPage({
         path,

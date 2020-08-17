@@ -13,7 +13,7 @@ import ReadingProgress from "react-reading-progress";
 import styles from "./blog-post.module.css";
 import { Link } from "gatsby";
 
-function DataFeed(props) {
+function ModelPortfolio(props) {
   const { body, title, publishedAt, postType } = props;
   const [success, setSuccess] = useState(false);
   const [historicalPrices, setHistoricalPrices] = useState(null);
@@ -170,4 +170,4 @@ function DataFeed(props) {
   );
 }
 
-export default DataFeed;
+export default ModelPortfolio;

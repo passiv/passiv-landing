@@ -9,7 +9,7 @@ import { toPlainText } from "../lib/helpers";
 
 export const query = graphql`
   query modelPortfolioTemplateQuery($id: String!) {
-    feed: allSanityModelPortfolio(id: { eq: $id }) {
+    post: sanityModelPortfolio(id: { eq: $id }) {
       id
       publishedAt
       title
@@ -23,18 +23,18 @@ export const query = graphql`
 
 const modelPortfolioTemplate = (props) => {
   const { data, errors } = props;
-  const feed = data && data.feed;
+  const post = data && data.post;
   return (
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
-      {feed && <SEO title={feed.title || "Untitled"} />}
+      {post && <SEO title={post.title || "Untitled"} />}
 
       {errors && (
         <Container>
           <GraphQLErrorList errors={errors} />
         </Container>
       )}
-      {feed && <ModelPortfolio {...feed} />}
+      {post && <ModelPortfolio {...post} />}
     </Layout>
   );
 };
