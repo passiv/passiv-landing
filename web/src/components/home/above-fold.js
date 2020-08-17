@@ -8,7 +8,10 @@ import styles from "./above-fold.module.css";
 
 function AboveFold({}) {
   const referralCode = getReferralCode();
-  console.log(typeof getSignups());
+  var signups = 0;
+  const fetchPromise = fetch("https://getpassiv.com/api/v1/signups/").then((response) => {
+    signups = response.json();
+  });
   return (
     <section className={styles.aboveFold}>
       <Container>
@@ -38,7 +41,7 @@ function AboveFold({}) {
                 <input
                   className={cn(styles.btn1, styles.registerBtn, styles.clickping)}
                   type="submit"
-                  value={`Join 442 New Users This Month`}
+                  value={`Join 442 New Passiv Users This Month`}
                 />
                 {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
               </form>

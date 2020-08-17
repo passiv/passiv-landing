@@ -63,12 +63,3 @@ export function getReferralCode() {
     return localStorage.getItem("landing-ref");
   }
 }
-
-export function getSignups(){
-  return axios.get('https://getpassiv.com/api/v1/signups/')
-      .then(response => {
-        this.response = response.data
-        return this.response.count
-      })
-  }
-}
