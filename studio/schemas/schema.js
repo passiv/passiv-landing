@@ -9,6 +9,7 @@ import author from './documents/author'
 import category from './documents/category'
 import post from './documents/post'
 import dataFeed from './documents/dataFeed'
+import modelPortfolio from './documents/modelPortfolio'
 import tutorial from './documents/tutorial'
 import landing from './documents/landing'
 import siteSettings from './documents/siteSettings'
@@ -16,7 +17,6 @@ import vimeo from './documents/vimeo'
 import youtube from './documents/youtube'
 import testimonial from './documents/testimonial'
 import feature from './documents/feature'
-
 
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
@@ -45,6 +45,7 @@ export default createSchema({
     bodyPortableText,
     bioPortableText,
     dataFeed,
+    modelPortfolio,
     vimeo,
     youtube,
     feature,
