@@ -51,7 +51,7 @@ function AboveFold({}) {
                 />
                 {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
                   <p>
-                  {`Join ${signups} new Passiv users this month.`}
+                  {`Join ${signups} new Passiv users this month!`}
                   </p>
               </form>
             </div>
