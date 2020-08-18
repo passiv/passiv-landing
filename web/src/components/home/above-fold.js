@@ -5,21 +5,12 @@ import Container from "../container";
 import { getReferralCode } from "../../lib/helpers";
 import axios from "axios";
 import styles from "./above-fold.module.css";
-import "node-fetch"
 
 function AboveFold({}) {
   const referralCode = getReferralCode();
-  const [signups, setSignups] = useState(0);
-  const fetchPromise = fetch("https://getpassiv.com/api/v1/signups/").then((response) => response.json())
-  .then(data => setSignups(data.count))
-
-
-  // {
-  //   const data = response
-  //   setSignups(data)  
-  //   console.log(data)
-
-  // });
+  const [signups, setSignups] = useState(null);
+  axios.get("https://getpassiv.com/api/v1/signups/")
+    .then(response => setSignups(response.data.count))
 
   return (
     <section className={styles.aboveFold}>
@@ -52,7 +43,7 @@ function AboveFold({}) {
                 />
                 {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
                   <p className={styles.socialProof}>
-                  {`Join ${signups} new Passiv users this month!`}
+                  {signups && `Join ${signups} new Passiv users this month!`}
                   </p>
               </form>
             </div>
