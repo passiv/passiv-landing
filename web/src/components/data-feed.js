@@ -14,16 +14,18 @@ import styles from "./blog-post.module.css";
 import { Link } from "gatsby";
 
 function DataFeed(props) {
-  const { body, title, publishedAt, postType } = props;
+  const { body, title, slug, publishedAt, postType } = props;
   const [success, setSuccess] = useState(false);
   const [historicalPrices, setHistoricalPrices] = useState(null);
   const ticker = props.slug.current.toUpperCase();
   const [dataRetrieved, setDataRetrieved] = useState(false);
+  const [ownedPercent, setOwnedPercent] = useState(0);
+
   if (historicalPrices === null) {
     axios
       .get("https://getpassiv.com/api/v1/historical/" + ticker)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setHistoricalPrices(response.data);
         setDataRetrieved(true);
       })
@@ -31,6 +33,11 @@ function DataFeed(props) {
         console.log("error", error);
       });
   }
+
+  axios.get(`https://getpassiv.com/api/v1/ownedPercent/${props.slug.current.toUpperCase()}`)
+    .then(response => setOwnedPercent(response.data))
+    // setOwnedPercent(response)
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -84,6 +91,7 @@ function DataFeed(props) {
               )}
               <div>
                 <h1 className={styles.blogTitle}>{title}</h1>
+                {ownedPercent && <p>This security is owned by {Math.round(ownedPercent*1000)/10}% of Passiv Users</p>}
               </div>
               <div className={styles.whoWhen}>
                 {publishedAt && (
