@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import author from './documents/author'
 import category from './documents/category'
 import post from './documents/post'
+import postMoneyGeek from './documents/postMoneyGeek'
 import dataFeed from './documents/dataFeed'
 import modelPortfolio from './documents/modelPortfolio'
 import tutorial from './documents/tutorial'
@@ -36,6 +37,7 @@ export default createSchema({
     // in the studio.
     siteSettings,
     post,
+    postMoneyGeek,
     category,
     tutorial,
     landing,

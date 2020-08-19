@@ -39,6 +39,44 @@ async function createBlogPostPages(graphql, actions) {
     });
 }
 
+async function createBlogPostMoneyGeekPages(graphql, actions) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityPostMoneyGeek(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const postMoneyGeekEdges = (result.data.allSanityPostMoneyGeek || {}).edges || [];
+
+  postMoneyGeekEdges
+    .filter((edge) => !isFuture(edge.node.publishedAt))
+    .forEach((edge, index) => {
+      const { id, slug = {}, publishedAt } = edge.node;
+      const dateSegment = format(publishedAt, "YYYY/MM");
+      const path = `/blog/moneygeek/${slug.current}/`;
+
+      createPage({
+        path,
+        component: require.resolve("./src/templates/moneygeek.js"),
+        context: { id },
+      });
+      
+    });
+}
+
 async function createTutorialPages(graphql, actions) {
   const { createPage } = actions;
   const result = await graphql(`
