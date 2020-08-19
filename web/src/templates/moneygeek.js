@@ -17,28 +17,7 @@ import BlogPostPreviewList from '../components/blog-post-preview-list'
 
 export const query = graphql`
   query BlogPostMoneyGeekTemplateQuery($id: String!) {
-    posts: allSanityPostMoneyGeek(
-      limit: 3
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
-      edges {
-        node {
-          id
-          publishedAt
-          mainImage {
-            ...SanityImage
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
-    }
-    post: sanityPostMoneyGeek(id: {eq: $id}) {
+    postMoneyGeek: sanityPostMoneyGeek(id: {eq: $id}) {
       id
       publishedAt
       mainImage {
@@ -57,54 +36,19 @@ export const query = graphql`
       postType
       _rawExcerpt(resolveReferences: {maxDepth: 5})
       _rawBody(resolveReferences: {maxDepth: 5})
-      authors {
-        _key
-        author {
-          _id
-          image {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
-            }
-          }
-          name
-          _rawBio
-        }
-      }
     }
   }
 `
 
 const BlogPostMoneyGeekTemplate = props => {
   const {data, errors} = props
-  const post = data && data.post
-
-  const postNodes = (data || {}).posts
-  ? mapEdgesToNodes(data.posts)
-    .filter(filterOutDocsWithoutSlugs)
-    .filter(filterOutDocsPublishedInTheFuture)
-  : []
+  const postMoneyGeek = data && data.postMoneyGeek
 
 
   return (
     <Layout>
       {errors && <SEO title='GraphQL Error' />}
-      {post && <SEO title={post.title || 'Untitled'} description={toPlainText(post._rawExcerpt)} image={post.mainImage} />}
+      {postMoneyGeek && <SEO title={postMoneyGeek.title || 'Untitled'} description={toPlainText(postMoneyGeek._rawExcerpt)} image={postMoneyGeek.mainImage} />}
 
       {errors && (
         <Container>
@@ -112,16 +56,7 @@ const BlogPostMoneyGeekTemplate = props => {
         </Container>
       )}
 
-      {post && <BlogPost {...post} />}
-      <Container>
-        {postNodes && (
-          <BlogPostPreviewList
-            title='Latest Posts'
-            nodes={postNodes}
-            browseMoreHref='/moneygeek/'
-          />
-        )}
-      </Container>
+      {postMoneyGeek && <BlogPost {...postMoneyGeek} />}
 
     </Layout>
   )

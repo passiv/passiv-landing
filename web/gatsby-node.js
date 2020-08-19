@@ -66,7 +66,7 @@ async function createBlogPostMoneyGeekPages(graphql, actions) {
     .forEach((edge, index) => {
       const { id, slug = {}, publishedAt } = edge.node;
       const dateSegment = format(publishedAt, "YYYY/MM");
-      const path = `/blog/moneygeek/${slug.current}/`;
+      const path = `/blog/${slug.current}/`;
 
       createPage({
         path,
@@ -228,6 +228,7 @@ async function createModelPortfolios(graphql, actions) {
 
 exports.createPages = async ({ graphql, actions }) => {
   await createBlogPostPages(graphql, actions);
+  await createBlogPostMoneyGeekPages(graphql, actions);
   await createTutorialPages(graphql, actions);
   await createLandingPages(graphql, actions);
   await createDataPages(graphql, actions);
