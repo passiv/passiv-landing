@@ -53,15 +53,6 @@ function BlogPost (props) {
               <h1 className={styles.blogTitle}>{title}</h1>
             </div>
             <div className={styles.whoWhen}>
-              {authors && authors.length > 0 && (
-                <>
-                {authors.map( author => (
-                  <div key={author._key}>
-                    <span>name {author.name}</span>
-                  </div>
-                ))}
-                </>
-              )}
               {publishedAt && (
                 <span className={styles.publishedAt}>
                   {differenceInDays(new Date(publishedAt), new Date()) > 3
@@ -136,17 +127,6 @@ function BlogPost (props) {
             {_rawBody && <PortableText blocks={_rawBody} />}
           </div>
 
-
-          {authors && authors.length > 0 && (
-            <>
-            {authors.map( author => (
-              <div key={author._key}>
-                <span>{author.name}</span>
-                <span>{author._rawBio && <PortableText blocks={author._rawBio} />}</span>
-              </div>
-            ))}
-            </>
-          )}
         </div>
       </Container>
     </article>

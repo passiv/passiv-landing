@@ -1,9 +1,9 @@
 import {format} from 'date-fns'
 
 export default {
-  name: 'landing',
+  name: 'postMoneyGeek',
   type: 'document',
-  title: 'Landing',
+  title: 'Blog Post Money Geek',
   fields: [
     {
       name: 'title',
@@ -28,24 +28,19 @@ export default {
       description: 'This can be used to schedule post for publishing'
     },
     {
-      name: 'tagline',
+      title: 'Post Type',
+      name: 'postType',
       type: 'string',
-      title: 'Tagline',
-    },
-    {
-      name: 'description',
-      type: 'string',
-      title: 'Description',
-    },
-    {
-      name: 'btnUrl',
-      type: 'url',
-      title: 'Button Url',
-    },
-    {
-      name: 'btnCopy',
-      type: 'string',
-      title: 'Button Label',
+      defaultValue: 'personal-finance',
+      options: {
+        list: [
+          {title: 'Personal Finance', value: 'personal-finance'},
+          {title: 'Accounts', value: 'accounts'},
+          {title: 'Retirement', value: 'retirement'},
+          {title: 'Investing', value: 'investing'}
+        ], // <-- predefined values
+        layout: 'radio' // <-- defaults to 'dropdown'
+      }
     },
     {
       name: 'mainImage',
@@ -53,51 +48,26 @@ export default {
       title: 'Main image'
     },
     {
-      name: 'featureTitle',
-      type: 'string',
-      title: 'Feature Title',
+      name: 'excerpt',
+      type: 'excerptPortableText',
+      title: 'Excerpt',
+      description:
+        'This ends up on summary pages, on Google, when people share your post in social media.'
     },
     {
+      name: 'authors',
+      title: 'Authors',
       type: 'array',
-      name: 'feature',
-      title: 'Feature',
-      of: [{
-        type: 'feature'
-      }]
+      of: [
+        {
+          type: 'authorReference'
+        }
+      ]
     },
     {
-      name: 'testimonialTitle',
-      type: 'string',
-      title: 'Testimonial Title',
-    },
-    {
-      type: 'array',
-      name: 'testimonial',
-      title: 'Testimonial',
-      of: [{
-        type: 'testimonial'
-      }]
-    },
-    {
-      name: 'darkTitle',
-      type: 'string',
-      title: 'Dark Section Title',
-      description: 'Bottom Section Title'
-    },
-    {
-      name: 'darkCopy',
-      type: 'string',
-      title: 'Dark Section Copy',
-    },
-    {
-      name: 'darkBtnUrl',
-      type: 'url',
-      title: 'Button Url',
-    },
-    {
-      name: 'darkBtnCopy',
-      type: 'string',
-      title: 'Button Label',
+      name: 'body',
+      type: 'bodyPortableText',
+      title: 'Body'
     }
   ],
   orderings: [
@@ -139,7 +109,7 @@ export default {
     },
     prepare ({title = 'No title', publishedAt, slug = {}, media}) {
       const dateSegment = format(publishedAt, 'YYYY/MM')
-      const path = `/${slug.current}/`
+      const path = `/blog/moneygeek/${slug.current}/`
       return {
         title,
         media,
