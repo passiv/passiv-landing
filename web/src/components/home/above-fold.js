@@ -9,10 +9,10 @@ import styles from "./above-fold.module.css";
 function AboveFold({}) {
   const referralCode = getReferralCode();
 
-  const [signups, setSignups] = useState(0);
+  const [signups, setSignups] = useState(null);
   axios.get("https://getpassiv.com/api/v1/signups/")
-  .then(data => setSignups(data.count))	    
-  .then(response => setSignups(response.data.count))
+  .then(response => setSignups(response.data.count))	    
+
 
 
   return (
