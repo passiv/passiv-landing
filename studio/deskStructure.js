@@ -1,9 +1,10 @@
 import S from '@sanity/desk-tool/structure-builder'
 import MdSettings from 'react-icons/lib/md/settings'
 import MdPerson from 'react-icons/lib/md/person'
+import MdLabel from 'react-icons/lib/md/label'
 
 const hiddenDocTypes = listItem =>
-  !['category', 'author', 'post', 'tutorial', 'siteSettings', 'dataFeed', 'modelPortfolio'].includes(listItem.getId())
+  !['category', 'author', 'post', 'tutorial', 'siteSettings', 'dataFeed', 'modelPortfolio', 'postMoneyGeek'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -19,9 +20,31 @@ export default () =>
             .documentId('siteSettings')
         ),
       S.listItem()
-        .title('Blog posts')
-        .schemaType('post')
-        .child(S.documentTypeList('post').title('Blog posts')),
+        .title('Blogs')
+        .child(
+          S.list()
+            .title('Blogs')
+            .items([
+              S.listItem()
+                .title('The Index')
+                .schemaType('post')
+                .child(S.documentTypeList('post').title('The Index Posts')),
+              S.listItem()
+                .title('MoneyGeek')
+                .schemaType('post')
+                .child(S.documentTypeList('postMoneyGeek').title('Money Geek Posts')),
+              S.listItem()
+                .title('Authors')
+                .icon(MdPerson)
+                .schemaType('author')
+                .child(S.documentTypeList('author').title('Authors')),
+              S.listItem()
+                .title('Categories')
+                .icon(MdLabel)
+                .schemaType('category')
+                .child(S.documentTypeList('category').title('Categories')),
+              ])  
+          ),
       S.listItem()
         .title('Tutorials')
         .schemaType('post')
@@ -35,12 +58,11 @@ export default () =>
         .schemaType('post')
         .child(S.documentTypeList('modelPortfolio').title('Model portfolios')),
       S.listItem()
-        .title('Authors')
-        .icon(MdPerson)
-        .schemaType('author')
-        .child(S.documentTypeList('author').title('Authors')),
+        .title('Landing Pages')
+        .schemaType('post')
+        .child(S.documentTypeList('landing').title('Landing Pages')),
+      
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above
-      ...S.documentTypeListItems().filter(hiddenDocTypes)
     ])

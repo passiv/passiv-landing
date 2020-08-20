@@ -16,29 +16,8 @@ import {
 import BlogPostPreviewList from '../components/blog-post-preview-list'
 
 export const query = graphql`
-  query BlogPostTemplateQuery($id: String!) {
-    posts: allSanityPost(
-      limit: 3
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
-      edges {
-        node {
-          id
-          publishedAt
-          mainImage {
-            ...SanityImage
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
-    }
-    post: sanityPost(id: {eq: $id}) {
+  query BlogPostMoneyGeekTemplateQuery($id: String!) {
+    postMoneyGeek: sanityPostMoneyGeek(id: {eq: $id}) {
       id
       publishedAt
       mainImage {
@@ -61,21 +40,15 @@ export const query = graphql`
   }
 `
 
-const BlogPostTemplate = props => {
+const BlogPostMoneyGeekTemplate = props => {
   const {data, errors} = props
-  const post = data && data.post
-
-  const postNodes = (data || {}).posts
-  ? mapEdgesToNodes(data.posts)
-    .filter(filterOutDocsWithoutSlugs)
-    .filter(filterOutDocsPublishedInTheFuture)
-  : []
+  const postMoneyGeek = data && data.postMoneyGeek
 
 
   return (
     <Layout>
       {errors && <SEO title='GraphQL Error' />}
-      {post && <SEO title={post.title || 'Untitled'} description={toPlainText(post._rawExcerpt)} image={post.mainImage} />}
+      {postMoneyGeek && <SEO title={postMoneyGeek.title || 'Untitled'} description={toPlainText(postMoneyGeek._rawExcerpt)} image={postMoneyGeek.mainImage} />}
 
       {errors && (
         <Container>
@@ -83,19 +56,10 @@ const BlogPostTemplate = props => {
         </Container>
       )}
 
-      {post && <BlogPost {...post} />}
-      <Container>
-        {postNodes && (
-          <BlogPostPreviewList
-            title='Latest Posts'
-            nodes={postNodes}
-            browseMoreHref='/blog/'
-          />
-        )}
-      </Container>
+      {postMoneyGeek && <BlogPost {...postMoneyGeek} />}
 
     </Layout>
   )
 }
 
-export default BlogPostTemplate
+export default BlogPostMoneyGeekTemplate

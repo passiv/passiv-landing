@@ -8,9 +8,11 @@ import styles from "./above-fold.module.css";
 
 function AboveFold({}) {
   const referralCode = getReferralCode();
-  const [signups, setSignups] = useState(null);
-  axios.get("https://getpassiv.com/api/v1/signups/")
-    .then(response => setSignups(response.data.count))
+
+  const [signups, setSignups] = useState(0);
+  const fetchPromise = fetch("https://getpassiv.com/api/v1/signups/").then((response) => response.json())
+  .then(data => setSignups(data.count))
+
 
   return (
     <section className={styles.aboveFold}>
