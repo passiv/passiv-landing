@@ -10,8 +10,9 @@ function AboveFold({}) {
   const referralCode = getReferralCode();
 
   const [signups, setSignups] = useState(0);
-  const fetchPromise = fetch("https://getpassiv.com/api/v1/signups/").then((response) => response.json())
-  .then(data => setSignups(data.count))
+  axios.get("https://getpassiv.com/api/v1/signups/")
+  .then(data => setSignups(data.count))	    
+  .then(response => setSignups(response.data.count))
 
 
   return (
