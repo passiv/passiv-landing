@@ -5,6 +5,7 @@ import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
 import axios from 'axios';
+const ReactMarkdown = require("react-markdown");
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faFacebook,faTwitter,faLinkedinIn} from "@fortawesome/free-brands-svg-icons"
@@ -16,7 +17,7 @@ import {Link} from 'gatsby'
 import styles from './blog-post.module.css'
 
 function BlogPost (props) {
-  const {_rawBody, slug, authors, title, postType, mainImage, publishedAt} = props
+  const {body, _rawBody, slug, authors, title, postType, mainImage, publishedAt} = props
   const [success, setSuccess] = useState(false);
 
 
@@ -125,6 +126,7 @@ function BlogPost (props) {
 
           <div className={styles.mainContent}>
             {_rawBody && <PortableText blocks={_rawBody} />}
+            {body && <ReactMarkdown source={body} escapeHtml={false} />}
           </div>
 
         </div>

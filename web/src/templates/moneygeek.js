@@ -35,7 +35,7 @@ export const query = graphql`
       }
       postType
       _rawExcerpt(resolveReferences: {maxDepth: 5})
-      _rawBody(resolveReferences: {maxDepth: 5})
+      body
     }
   }
 `
