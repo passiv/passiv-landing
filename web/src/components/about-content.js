@@ -104,7 +104,7 @@ All of this is done from one Passiv dashboard for all your accounts - no more lo
 
           <h3 id="why-is-passiv-set-to-buy-only-by-default">Why is Passiv set to Buy-Only by default?</h3>
 
-          <p>While you can’t control the stock market, you can control another aspect of investing: how much you pay in fees like trading commissions. Some brokerages allow you to buy ETFs commission-free, but you pay commission when you sell. Passiv helps you keep more of your money by defaulting to Buy-Only trades, making sure you don’t pay unnecessary trading fees. As long as you’re contributing to your account regularly, you likely won’t need to sell to keep your portfolio in line with your target. For more information on Passiv’s features, read our <a href="https://getpassiv.com/tutorials/">tutorials</a>.</p>
+          <p>While you can’t control the stock market, you can control another aspect of investing: how much you pay in fees like trading commissions. Some brokerages allow you to buy ETFs commission-free, but you pay commission when you sell. Passiv helps you keep more of your money by defaulting to Buy-Only trades, making sure you don’t pay unnecessary trading fees. As long as you’re contributing to your account regularly, you likely won’t need to sell to keep your portfolio in line with your target. For more information on Passiv’s features, read our <a href="https://passiv.com/tutorials/">tutorials</a>.</p>
 
         </div>
       </Container>

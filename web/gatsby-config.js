@@ -42,8 +42,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://getpassiv.com',
-        sitemap: 'https://getpassiv.com/sitemap.xml',
+        host: 'https://passiv.com',
+        sitemap: 'https://passiv.com/sitemap.xml',
         policy: [{
           userAgent: '*',
           allow: '/',
@@ -57,6 +57,6 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    siteUrl: `https://getpassiv.com`,
+    siteUrl: `https://passiv.com`,
   },
 }

@@ -25,7 +25,7 @@ function BlogPost (props) {
     event.preventDefault();
     const form = new FormData(event.target);
     const email = form.get('email');
-     axios.post('https://getpassiv.com/api/v1/emailsubscribe', {email: email}).then(
+     axios.post('https://passiv.com/api/v1/emailsubscribe', {email: email}).then(
        response => {
          setSuccess(true);
          console.log('success', response)
@@ -84,18 +84,18 @@ function BlogPost (props) {
                   target="_blank"
                   href={`https://twitter.com/intent/tweet/?text=${
                     title
-                  }&url=https://getpassiv.com/blog/${props.slug.current}%2F&via=getpassiv`}>
+                  }&url=https://passiv.com/blog/${props.slug.current}%2F&via=getpassiv`}>
                   <FontAwesomeIcon icon={faTwitter} className={styles.icon}/>
                 </a>
                 <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=https://getpassiv.com/blog/${
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https://passiv.com/blog/${
                     props.slug.current
                   }`}
                   target="_blank">
                   <FontAwesomeIcon icon={faFacebook} className={styles.icon}/>
                 </a>
                 <a
-                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://getpassiv.com/blog/${
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://passiv.com/blog/${
                     props.slug.current
                   }&title=${title}&source=${title}`}
                   target="_blank">
