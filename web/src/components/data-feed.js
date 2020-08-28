@@ -85,7 +85,7 @@ function DataFeed(props) {
           <div className={styles.metaContainer}>
             <div className={styles.metaDetails}>
               {postType && (
-                <Link className={styles.category} to={postType}>
+                <Link className={styles.category} to="{postType}/directory">
                   {postType}
                 </Link>
               )}
