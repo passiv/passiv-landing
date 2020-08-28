@@ -46,7 +46,7 @@ function BlogPost (props) {
         <div className={styles.metaContainer}>
           <div className={styles.metaDetails}>
             {postType && (
-              <Link className={styles.category} to="https://passiv.com/blog/" >
+              <Link className={styles.category} to="/blog/" >
 
               {/* <Link className={styles.category} to="blog" > */}
                 {postType}
