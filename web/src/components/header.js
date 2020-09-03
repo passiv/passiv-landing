@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Icon from './icon'
 import {cn} from '../lib/helpers'
 import Container from './container'
-import Logo from '../images/logo.svg'
+import Logo from '../images/passiv-fullname.svg'
 import { getReferralCode } from '../lib/helpers';
 
 import styles from './header.module.css'
@@ -28,7 +28,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
       <header className={styles.siteHeader} role="banner">
         <Container>
           <Link className={styles.logo} rel="author" to='/'>
-            <img src={Logo} width="60" alt="Passiv Logo" />
+            <img src={Logo} width="123" alt="Passiv Logo" />
           </Link>
 
           <nav className={cn(styles.siteNav, showNav && styles.showNav)}>

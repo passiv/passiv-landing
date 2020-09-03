@@ -5,6 +5,7 @@ import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
 import axios from 'axios';
+const ReactMarkdown = require("react-markdown");
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faFacebook,faTwitter,faLinkedinIn} from "@fortawesome/free-brands-svg-icons"
@@ -16,7 +17,7 @@ import {Link} from 'gatsby'
 import styles from './blog-post.module.css'
 
 function BlogPost (props) {
-  const {_rawBody, slug, authors, title, postType, mainImage, publishedAt} = props
+  const {body, _rawBody, slug, authors, title, postType, mainImage, publishedAt} = props
   const [success, setSuccess] = useState(false);
 
 
@@ -24,7 +25,7 @@ function BlogPost (props) {
     event.preventDefault();
     const form = new FormData(event.target);
     const email = form.get('email');
-     axios.post('https://getpassiv.com/api/v1/emailsubscribe', {email: email}).then(
+     axios.post('https://passiv.com/api/v1/emailsubscribe', {email: email}).then(
        response => {
          setSuccess(true);
          console.log('success', response)
@@ -45,7 +46,9 @@ function BlogPost (props) {
         <div className={styles.metaContainer}>
           <div className={styles.metaDetails}>
             {postType && (
-              <Link className={styles.category} to={postType} >
+              <Link className={styles.category} to="/blog/" >
+
+              {/* <Link className={styles.category} to="blog" > */}
                 {postType}
               </Link>
             )}
@@ -83,18 +86,18 @@ function BlogPost (props) {
                   target="_blank"
                   href={`https://twitter.com/intent/tweet/?text=${
                     title
-                  }&url=https://getpassiv.com/blog/${props.slug.current}%2F&via=getpassiv`}>
+                  }&url=https://passiv.com/blog/${props.slug.current}%2F&via=getpassiv`}>
                   <FontAwesomeIcon icon={faTwitter} className={styles.icon}/>
                 </a>
                 <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=https://getpassiv.com/blog/${
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https://passiv.com/blog/${
                     props.slug.current
                   }`}
                   target="_blank">
                   <FontAwesomeIcon icon={faFacebook} className={styles.icon}/>
                 </a>
                 <a
-                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://getpassiv.com/blog/${
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://passiv.com/blog/${
                     props.slug.current
                   }&title=${title}&source=${title}`}
                   target="_blank">
@@ -125,6 +128,7 @@ function BlogPost (props) {
 
           <div className={styles.mainContent}>
             {_rawBody && <PortableText blocks={_rawBody} />}
+            {body && <ReactMarkdown source={body} escapeHtml={false} />}
           </div>
 
         </div>

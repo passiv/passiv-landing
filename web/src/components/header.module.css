@@ -128,17 +128,14 @@
   @media (--media-max-desktop) {
     padding: 8px 0 13px;
   }
-  @nest & img {
-    @media (--media-max-desktop) {
-      max-width: 40px;
-      margin-top: 4px;
-    }
-  }
 }
 
 .logo {
   position: relative;
   z-index: 4;
+  display: inline-block;
+  padding-bottom: 29px;
+  padding-top: 1px;
 }
 
 .siteNav {

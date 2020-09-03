@@ -142,7 +142,7 @@ function Privacy ({  }) {
             </ul>
             <h3>Contact</h3>
             <p>
-                Should you require any further information about Passiv’s GDPR statements, please feel free to reach out using Passiv’s <a href="https://getpassiv.com/app/help/" target="_blank" rel="noopener noreferrer">feedback form</a>.
+                Should you require any further information about Passiv’s GDPR statements, please feel free to reach out using Passiv’s <a href="https://passiv.com/app/help/" target="_blank" rel="noopener noreferrer">feedback form</a>.
             </p>
         </div>
       </Container>
