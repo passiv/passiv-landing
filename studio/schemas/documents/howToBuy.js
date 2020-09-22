@@ -1,9 +1,9 @@
 import { format } from 'date-fns'
 
 export default {
-    name: 'post',
+    name: 'howToBuy',
     type: 'document',
-    title: 'Blog Post',
+    title: 'How To Buy X Stock',
     fields: [
         {
             name: 'ticker',

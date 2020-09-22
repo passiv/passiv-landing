@@ -1,9 +1,9 @@
 import { format } from 'date-fns'
 
 export default {
-    name: 'post',
+    name: 'howToInvest',
     type: 'document',
-    title: 'Blog Post',
+    title: 'How to Invest $X For the Long-Term',
     fields: [
         {
             name: 'slug',
