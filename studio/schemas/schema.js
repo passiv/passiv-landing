@@ -18,6 +18,8 @@ import vimeo from './documents/vimeo'
 import youtube from './documents/youtube'
 import testimonial from './documents/testimonial'
 import feature from './documents/feature'
+import howToInvest from './documents/howToInvest'
+import howToBuy from './documents/howToBuy'
 
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
@@ -28,33 +30,35 @@ import authorReference from './objects/authorReference'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
-  // We name our schema
-  name: 'blog',
-  // Then proceed to concatenate our our document type
-  // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([
-    // The following are document types which will appear
-    // in the studio.
-    siteSettings,
-    post,
-    postMoneyGeek,
-    category,
-    tutorial,
-    landing,
-    author,
-    mainImage,
-    authorReference,
-    bodyPortableText,
-    bioPortableText,
-    dataFeed,
-    modelPortfolio,
-    vimeo,
-    youtube,
-    feature,
-    testimonial,
-    excerptPortableText
+    // We name our schema
+    name: 'blog',
+    // Then proceed to concatenate our our document type
+    // to the ones provided by any plugins that are installed
+    types: schemaTypes.concat([
+        // The following are document types which will appear
+        // in the studio.
+        siteSettings,
+        post,
+        postMoneyGeek,
+        category,
+        tutorial,
+        landing,
+        author,
+        mainImage,
+        authorReference,
+        bodyPortableText,
+        bioPortableText,
+        dataFeed,
+        modelPortfolio,
+        vimeo,
+        youtube,
+        feature,
+        testimonial,
+        excerptPortableText,
+        howToInvest,
+        howToBuy
 
-    // When added to this list, object types can be used as
-    // { type: 'typename' } in other document schemas
-  ])
+        // When added to this list, object types can be used as
+        // { type: 'typename' } in other document schemas
+    ])
 })
