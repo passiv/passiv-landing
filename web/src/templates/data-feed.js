@@ -5,7 +5,6 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import DataFeed from '../components/data-feed'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import { toPlainText } from '../lib/helpers'
 
 const dataFeedTemplate = props => {
     const { data, errors } = props
