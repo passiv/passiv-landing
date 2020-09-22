@@ -1,11 +1,10 @@
 import React from 'react'
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import Landing from '../components/landing'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import {toPlainText} from '../lib/helpers'
 
 export const query = graphql`
   query LandingTemplateQuery($id: String!) {
@@ -52,22 +51,22 @@ export const query = graphql`
 `
 
 const LandingTemplate = props => {
-  const {data, errors} = props
-  const landing = data && data.landing
-  return (
-    <Layout>
-      {errors && <SEO title='GraphQL Error' />}
-      {landing && <SEO title={landing.title || 'Untitled'} description={landing.description || 'Untitled'} image={landing.mainImage} />}
+    const { data, errors } = props
+    const landing = data && data.landing
+    return (
+        <Layout>
+            {errors && <SEO title='GraphQL Error' />}
+            {landing && <SEO title={landing.title || 'Untitled'} description={landing.description || 'Untitled'} image={landing.mainImage} />}
 
-      {errors && (
-        <Container>
-          <GraphQLErrorList errors={errors} />
-        </Container>
-      )}
+            {errors && (
+                <Container>
+                    <GraphQLErrorList errors={errors} />
+                </Container>
+            )}
 
-      {landing && <Landing {...landing} />}
-    </Layout>
-  )
+            {landing && <Landing {...landing} />}
+        </Layout>
+    )
 }
 
 export default LandingTemplate

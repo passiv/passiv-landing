@@ -1,19 +1,11 @@
 import React from 'react'
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import BlogPost from '../components/blog-post'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import {toPlainText} from '../lib/helpers'
-
-import {
-  mapEdgesToNodes,
-  filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
-} from '../lib/helpers'
-
-import BlogPostPreviewList from '../components/blog-post-preview-list'
+import { toPlainText } from '../lib/helpers'
 
 export const query = graphql`
   query BlogPostMoneyGeekTemplateQuery($id: String!) {
@@ -41,25 +33,25 @@ export const query = graphql`
 `
 
 const BlogPostMoneyGeekTemplate = props => {
-  const {data, errors} = props
-  const postMoneyGeek = data && data.postMoneyGeek
+    const { data, errors } = props
+    const postMoneyGeek = data && data.postMoneyGeek
 
 
-  return (
-    <Layout>
-      {errors && <SEO title='GraphQL Error' />}
-      {postMoneyGeek && <SEO title={postMoneyGeek.title || 'Untitled'} description={toPlainText(postMoneyGeek._rawExcerpt)} image={postMoneyGeek.mainImage} />}
+    return (
+        <Layout>
+            {errors && <SEO title='GraphQL Error' />}
+            {postMoneyGeek && <SEO title={postMoneyGeek.title || 'Untitled'} description={toPlainText(postMoneyGeek._rawExcerpt)} image={postMoneyGeek.mainImage} />}
 
-      {errors && (
-        <Container>
-          <GraphQLErrorList errors={errors} />
-        </Container>
-      )}
+            {errors && (
+                <Container>
+                    <GraphQLErrorList errors={errors} />
+                </Container>
+            )}
 
-      {postMoneyGeek && <BlogPost {...postMoneyGeek} />}
+            {postMoneyGeek && <BlogPost {...postMoneyGeek} />}
 
-    </Layout>
-  )
+        </Layout>
+    )
 }
 
 export default BlogPostMoneyGeekTemplate
