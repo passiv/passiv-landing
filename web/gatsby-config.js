@@ -55,12 +55,6 @@ module.exports = {
                 }],
             }
         },
-        {
-            resolve: 'gatsby-plugin-facebook-pixel',
-            options: {
-                pixelId: '418142142497432',
-            },
-        },
     ],
     siteMetadata: {
         siteUrl: `https://passiv.com`,
