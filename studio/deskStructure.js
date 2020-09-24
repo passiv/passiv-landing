@@ -65,10 +65,6 @@ export default () =>
                 .title('How to Invest $X')
                 .schemaType('howToInvest')
                 .child(S.documentTypeList('howToInvest').title('How to Invest $X')),
-            S.listItem()
-                .title('How to Buy X Stock')
-                .schemaType('howToBuy')
-                .child(S.documentTypeList('howToBuy').title('How to buy X Stock')),
 
             // This returns an array of all the document types
             // defined in schema.js. We filter out those that we have
