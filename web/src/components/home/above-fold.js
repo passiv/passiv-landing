@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { buildImageObj, cn } from "../../lib/helpers";
 import { imageUrlFor } from "../../lib/image-url";
 import Container from "../container";
-import { getReferralCode } from "../../lib/helpers";
+import { getReferralCode, getTrackingCode } from "../../lib/helpers";
 import axios from "axios";
 import styles from "./above-fold.module.css";
 

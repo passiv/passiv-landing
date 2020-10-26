@@ -48,6 +48,32 @@ export function toPlainText (blocks) {
     .join('\n\n')
 }
 
+export function generateTrackingCode () {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   var codeLength       = 10;
+   for ( var i = 0; i < codeLength; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+
+export function saveTrackingCode () {
+  if (typeof window !== 'undefined') {
+    const existingCode = getTrackingCode();
+    if (existingCode === null || existingCode === '') {
+      localStorage.setItem('tracking-ref', generateTrackingCode());
+    }
+  }
+}
+
+export function getTrackingCode () {
+  if (typeof localStorage !== 'undefined') {
+    return localStorage.getItem('tracking-ref');
+  }
+}
+
 export function saveReferralCode () {
   if (typeof window !== 'undefined') {
     const query_params = qs.parse(window.location.search, {

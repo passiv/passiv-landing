@@ -5,7 +5,7 @@ import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
 import {Link} from 'gatsby'
-import { getReferralCode } from '../lib/helpers';
+import { getReferralCode, getTrackingCode } from '../lib/helpers';
 
 import stylesA from './home/above-fold.module.css'
 import stylesF from './home/features.module.css'
