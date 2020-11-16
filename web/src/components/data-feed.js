@@ -18,7 +18,7 @@ function DataFeed (props) {
   const [dataRetrieved, setDataRetrieved] = useState(false)
   const [ownedPercent, setOwnedPercent] = useState(0)
 
-  if (historicalPrices === null) {
+  if (historicalPrices === null && ticker != 'ETF-DIRECTORY') {
     axios
       .get('https://passiv.com/api/v1/historical/' + ticker)
       .then((response) => {
