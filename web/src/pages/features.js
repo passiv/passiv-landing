@@ -13,7 +13,7 @@ import styles from '../components/tutorial.module.css'
 
 export const query = graphql`
   query FeaturesPageQuery {
-    tutorials: allSanityFeaturePage(
+    features: allSanityFeaturePage(
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
       ) {
