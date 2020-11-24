@@ -2,7 +2,7 @@
 @import '../styles/custom-properties.css';
 
 .content {
-  background: #F7F7F7;
+  background: #f7fafc;
   min-height: calc(100% - 73px - 120px);
   padding-top: 102px;
   @media (--media-max-desktop) {
