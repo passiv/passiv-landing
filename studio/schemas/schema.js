@@ -12,6 +12,7 @@ import postMoneyGeek from './documents/postMoneyGeek'
 import dataFeed from './documents/dataFeed'
 import modelPortfolio from './documents/modelPortfolio'
 import tutorial from './documents/tutorial'
+import featurePage from './documents/featurePage'
 import landing from './documents/landing'
 import siteSettings from './documents/siteSettings'
 import vimeo from './documents/vimeo'
@@ -42,6 +43,7 @@ export default createSchema({
         postMoneyGeek,
         category,
         tutorial,
+        featurePage,
         landing,
         author,
         mainImage,
