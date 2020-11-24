@@ -227,6 +227,44 @@ async function createModelPortfolios(graphql, actions) {
     });
 }
 
+async function createFeaturePages(graphql, actions) {
+    const { createPage } = actions;
+    const result = await graphql(`
+      {
+        allSanityFeaturePage(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
+          edges {
+            node {
+              id
+              publishedAt
+              slug {
+                current
+              }
+            }
+          }
+        }
+      }
+    `);
+  
+    if (result.errors) throw result.errors;
+  
+    const featurePageEdges = (result.data.allSanityfeaturePage || {}).edges || [];
+  
+    featurePageEdges
+      .filter((edge) => !isFuture(edge.node.publishedAt))
+      .forEach((edge, index) => {
+        const { id, slug = {}, publishedAt } = edge.node;
+        const dateSegment = format(publishedAt, "YYYY/MM");
+        const path = `features/${slug.current}/`;
+  
+        createPage({
+          path,
+          component: require.resolve("./src/templates/feature.js"),
+          context: { id },
+        });
+      });
+  }
+
+
 exports.createPages = async ({ graphql, actions }) => {
   await createBlogPostPages(graphql, actions);
   await createBlogPostMoneyGeekPages(graphql, actions);
@@ -234,4 +272,5 @@ exports.createPages = async ({ graphql, actions }) => {
   await createLandingPages(graphql, actions);
   await createDataPages(graphql, actions);
   await createModelPortfolios(graphql, actions);
+  await createFeaturePages(graphql, actions);
 };

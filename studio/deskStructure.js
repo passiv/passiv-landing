@@ -50,6 +50,10 @@ export default () =>
                 .schemaType('post')
                 .child(S.documentTypeList('tutorial').title('Tutorials')),
             S.listItem()
+                .title('Features')
+                .schemaType('post')
+                .child(S.documentTypeList('featurePage').title('Features')),
+            S.listItem()
                 .title('Data feeds')
                 .schemaType('post')
                 .child(S.documentTypeList('dataFeed').title('Data Feed')),
