@@ -55,8 +55,8 @@ const FeaturesPage = props => {
         <SEO title='Features' />
         <Container>
           <div className={styles.content}>
-            <h1 className={responsiveTitle1}>Getting Started with Passiv</h1>
-            <p className={styles.firstLine}>Just getting acquainted with Passiv? We can walk you through it.</p>
+            <h1 className={responsiveTitle1}>Passiv's Features</h1>
+            <p className={styles.firstLine}>Passiv provides all the functionality you need to manage your own portfolio. This page lists all of our features.</p>
             {featureNodes && featureNodes.length > 0 && <TutorialPreviewGrid nodes={featureNodes} />}
           </div>
         </Container>
