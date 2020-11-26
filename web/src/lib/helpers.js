@@ -76,12 +76,20 @@ export function getTrackingCode () {
 
 export function saveReferralCode () {
   if (typeof window !== 'undefined') {
-    const query_params = qs.parse(window.location.search, {
+    const queryParams = qs.parse(window.location.search, {
       ignoreQueryPrefix: true,
     });
-    if (query_params.ref !== undefined) {
-      localStorage.setItem('landing-ref', query_params.ref);
+    if (queryParams.ref !== undefined) {
+      localStorage.setItem('landing-ref', queryParams.ref);
     }
+    delete queryParams.ref;
+    const newQuery = qs.stringify(queryParams);
+
+    let newPath = window.location.pathname;
+    if (newQuery !== '') {
+      newPath += '?' + newQuery
+    }
+    window.history.replaceState({}, document.title, newPath);
   }
 }
 
@@ -89,4 +97,31 @@ export function getReferralCode () {
   if (typeof localStorage !== 'undefined') {
     return localStorage.getItem('landing-ref');
   }
+}
+
+
+export function generateTrackingPath (basePath) {
+  if (typeof window !== 'undefined') {
+    const referralCode = getReferralCode();
+    const trackingCode = getTrackingCode();
+
+    const newQueryParams = {
+      ref: referralCode,
+      uid: trackingCode,
+    };
+
+    const queryParams = qs.parse(window.location.search, {
+      ignoreQueryPrefix: true,
+    });
+
+    const trackingQueryParams = {...queryParams, ...newQueryParams};
+
+    const newQuery = qs.stringify(trackingQueryParams);
+
+    const newPath = path + '?' + newQuery;
+    return newPath;
+  }
+
+
+
 }
