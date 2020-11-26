@@ -12,12 +12,14 @@ import postMoneyGeek from './documents/postMoneyGeek'
 import dataFeed from './documents/dataFeed'
 import modelPortfolio from './documents/modelPortfolio'
 import tutorial from './documents/tutorial'
+import featurePage from './documents/featurePage'
 import landing from './documents/landing'
 import siteSettings from './documents/siteSettings'
 import vimeo from './documents/vimeo'
 import youtube from './documents/youtube'
 import testimonial from './documents/testimonial'
 import feature from './documents/feature'
+import featurePage from './documents/featurePage'
 import howToInvest from './documents/howToInvest'
 import howToBuy from './documents/howToBuy'
 
@@ -42,6 +44,7 @@ export default createSchema({
         postMoneyGeek,
         category,
         tutorial,
+        featurePage,
         landing,
         author,
         mainImage,
@@ -56,7 +59,8 @@ export default createSchema({
         testimonial,
         excerptPortableText,
         howToInvest,
-        howToBuy
+        howToBuy,
+        featurePage
 
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas

@@ -7,6 +7,7 @@ import styles from './platforms.module.css'
 
 import tda from "../../images/tda-logo.png"
 import ibkr from "../../images/ibkr-logo.png"
+import tradier from "../../images/tradier-logo.png"
 import alpaca from "../../images/alpaca-logo.png"
 import questrade from "../../images/questrade-logo.png"
 import construction from "../../images/construction.png"
@@ -23,9 +24,9 @@ function Platforms ({  }) {
                 Connect your accounts from any of these partner platforms. If your platform isn't listed below, you can join the mailing list to be notified when it's available.
               </p>
               <div className={styles.tileContainer}>
-                <a href="https://www.tdameritrade.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://questrade.com/" target="_blank" rel="noopener noreferrer">
                   <div className={styles.tile}>
-                    <img src={tda} alt="TD Ameritrade Logo" />
+                    <img src={questrade} alt="Questrade Logo" />
                   </div>
                 </a>
                 <a href="https://www.interactivebrokers.com/" target="_blank" rel="noopener noreferrer">
@@ -33,14 +34,19 @@ function Platforms ({  }) {
                     <img src={ibkr} alt="Interactive Brokers Logo" />
                   </div>
                 </a>
+                <a href="https://tradier.com/" target="_blank" rel="noopener noreferrer">
+                  <div className={styles.tile}>
+                    <img src={tradier} alt="Tradier Logo" />
+                  </div>
+                </a>
                 <a href="https://alpaca.markets" target="_blank" rel="noopener noreferrer">
                   <div className={styles.tile}>
                     <img src={alpaca} alt="Alpaca Logo" />
                   </div>
                 </a>
-                <a href="https://questrade.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.tdameritrade.com/" target="_blank" rel="noopener noreferrer">
                   <div className={styles.tile}>
-                    <img src={questrade} alt="Questrade Logo" />
+                    <img src={tda} alt="TD Ameritrade Logo" />
                   </div>
                 </a>
                 <div className={styles.comingSoon}>
