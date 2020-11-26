@@ -19,7 +19,6 @@ import vimeo from './documents/vimeo'
 import youtube from './documents/youtube'
 import testimonial from './documents/testimonial'
 import feature from './documents/feature'
-import featurePage from './documents/featurePage'
 import howToInvest from './documents/howToInvest'
 import howToBuy from './documents/howToBuy'
 
@@ -60,7 +59,6 @@ export default createSchema({
         excerptPortableText,
         howToInvest,
         howToBuy,
-        featurePage
 
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas
