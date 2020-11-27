@@ -47,4 +47,4 @@ const FeatureTemplate = props => {
     )
 }
 
-export default TutorialTemplate
+export default FeatureTemplate
