@@ -4,7 +4,7 @@ import Icon from './icon'
 import {cn} from '../lib/helpers'
 import Container from './container'
 import Logo from '../images/logo.svg'
-import { getReferralCode, getTrackingCode } from '../lib/helpers';
+import { getReferralCode, getTrackingCode, generateTrackingPath } from '../lib/helpers';
 
 import styles from './header.module.css'
 
@@ -17,17 +17,8 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
     setTrackingCode(getTrackingCode());
   }, []);
 
-  let registerPath = '/app/register/';
-  let loginPath = '/app/login/';
-  const trackingAppendage = `?t=${trackingCode}`;
-  registerPath += trackingAppendage;
-  loginPath += trackingAppendage;
-
-  if (referralCode !== undefined && referralCode !== null) {
-    const appendage = `&ref=${referralCode}`;
-    registerPath += appendage;
-    loginPath += appendage;
-  }
+  let registerPath = generateTrackingPath('/app/register/');
+  let loginPath = generateTrackingPath('/app/login/');
 
   return (
     <div>

@@ -100,15 +100,18 @@ export function getReferralCode () {
 }
 
 
-export function generateTrackingPath (basePath) {
+export function generateTrackingPath (basePath, origin=null) {
   if (typeof window !== 'undefined') {
     const referralCode = getReferralCode();
     const trackingCode = getTrackingCode();
 
     const newQueryParams = {
-      ref: referralCode,
       uid: trackingCode,
     };
+
+    if (referralCode) {
+      newQueryParams.ref = referralCode;
+    }
 
     const queryParams = qs.parse(window.location.search, {
       ignoreQueryPrefix: true,
@@ -118,7 +121,12 @@ export function generateTrackingPath (basePath) {
 
     const newQuery = qs.stringify(trackingQueryParams);
 
-    const newPath = path + '?' + newQuery;
+    let newOrigin = '';
+    if (origin !== null) {
+      newOrigin = origin
+    }
+
+    const newPath = newOrigin + basePath + '?' + newQuery;
     return newPath;
   }
 
