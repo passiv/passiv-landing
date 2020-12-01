@@ -2,45 +2,39 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
-import BlogPost from '../components/blog-post'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import { toPlainText } from '../lib/helpers'
 
 export const query = graphql`
-  query BlogPostMoneyGeekTemplateQuery($id: String!) {
-    postMoneyGeek: sanityPostMoneyGeek(id: {eq: $id}) {
+  query FeatureTemplateQuery($id: String!) {
+    feature: sanityFeaturePage(id: {eq: $id}) {
       id
       publishedAt
-      mainImage {
-        asset {
-          fluid(maxWidth: 1600) {
-            ...GatsbySanityImageFluid_noBase64
-          }
-          _id
-        }
-        alt
+      categories {
+        _id
+        title
       }
       title
+      mainImage {
+        ...SanityImage
+      }
       slug {
         current
       }
-      postType
       _rawExcerpt(resolveReferences: {maxDepth: 5})
-      body
+      _rawBody(resolveReferences: {maxDepth: 5})
     }
   }
 `
 
-const BlogPostMoneyGeekTemplate = props => {
+const FeatureTemplate = props => {
     const { data, errors } = props
-    const postMoneyGeek = data && data.postMoneyGeek
-
-
+    const feature = data && data.feature
     return (
         <Layout>
             {errors && <SEO title='GraphQL Error' />}
-            {postMoneyGeek && <SEO title={postMoneyGeek.title || 'Untitled'} description={toPlainText(postMoneyGeek._rawExcerpt)} image={postMoneyGeek.mainImage} />}
+            {feature && <SEO title={feature.title || 'Untitled'} description={toPlainText(feature._rawExcerpt)} image={feature.mainImage} />}
 
             {errors && (
                 <Container>
@@ -48,10 +42,9 @@ const BlogPostMoneyGeekTemplate = props => {
                 </Container>
             )}
 
-            {postMoneyGeek && <BlogPost {...postMoneyGeek} />}
-
+            {feature && <Features {...feature} />}
         </Layout>
     )
 }
 
-export default BlogPostMoneyGeekTemplate
+export default FeatureTemplate

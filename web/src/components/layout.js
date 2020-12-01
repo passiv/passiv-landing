@@ -5,12 +5,12 @@ import Footer from './footer'
 import '../styles/layout.css'
 import styles from './layout.module.css'
 
-const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
-  <>
-    <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
-    <div className={styles.content}>{children}</div>
-    <Footer/>
-  </>
+const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
+    <>
+        <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
+        <div className={styles.content}>{children}</div>
+        <Footer />
+    </>
 )
 
 export default Layout

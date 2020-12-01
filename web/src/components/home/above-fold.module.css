@@ -65,7 +65,7 @@
   }
   @media (--media-min-desktop) {
     background-position: center top;
-    background-color: #F7F7F7;
+    background-color: #f7fafc;
     min-height: 560px;
     padding-bottom: 60px;
     position: relative;

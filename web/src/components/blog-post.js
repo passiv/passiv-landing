@@ -46,7 +46,9 @@ function BlogPost (props) {
         <div className={styles.metaContainer}>
           <div className={styles.metaDetails}>
             {postType && (
-              <Link className={styles.category} to={postType} >
+              <Link className={styles.category} to="/blog/" >
+
+              {/* <Link className={styles.category} to="blog" > */}
                 {postType}
               </Link>
             )}
