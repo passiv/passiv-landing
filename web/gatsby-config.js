@@ -9,6 +9,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
     plugins: [
+        `gatsby-plugin-fontawesome-css`,
         'gatsby-plugin-postcss',
         'gatsby-plugin-react-helmet',
         {
