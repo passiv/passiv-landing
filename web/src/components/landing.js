@@ -17,6 +17,7 @@ import styles from './landing.module.css'
 function Landing (props) {
   const { title, mainImage, publishedAt, tagline, description, btnUrl, btnCopy, featureTitle, feature, testimonialTitle,testimonial,darkTitle, darkCopy, darkBtnUrl, darkBtnCopy} = props
   const referralCode = getReferralCode();
+  const trackingCode = getTrackingCode();
   return (
     <div className={styles.landing}>
       <section className={cn(stylesA.aboveFold, styles.aboveFold)}>
@@ -32,11 +33,8 @@ function Landing (props) {
                   <input type="hidden" name="type" />
                   <input type="email" required max_length="512" className={stylesA.registerEmail} name="email" />
                   <input className={cn(stylesA.btn1, stylesA.registerBtn, stylesA.clickping)} type="submit" value={btnCopy} />
-                  {
-                    referralCode !== null && (
-                      <input type="hidden" name="ref" value={referralCode} />
-                    )
-                  }
+                  {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
+                  {trackingCode !== null && <input type="hidden" name="uid" value={trackingCode} />}
                 </form>
               </div>
             </div>

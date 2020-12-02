@@ -10,7 +10,6 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-
 import AboveFold from '../components/home/above-fold'
 import Features from '../components/home/features'
 import Platforms from '../components/home/platforms'
