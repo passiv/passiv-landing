@@ -105,9 +105,11 @@ export function generateTrackingPath (basePath, origin=null) {
     const referralCode = getReferralCode();
     const trackingCode = getTrackingCode();
 
-    const newQueryParams = {
-      uid: trackingCode,
-    };
+    const newQueryParams = {};
+
+    if (trackingCode) {
+      newQueryParams.uid = trackingCode;
+    }
 
     if (referralCode) {
       newQueryParams.ref = referralCode;
@@ -126,7 +128,11 @@ export function generateTrackingPath (basePath, origin=null) {
       newOrigin = origin
     }
 
-    const newPath = newOrigin + basePath + '?' + newQuery;
+    let newPath = newOrigin + basePath;
+    if (newQuery) {
+      newPath += '?' + newQuery;
+    }
+
     return newPath;
   }
 
