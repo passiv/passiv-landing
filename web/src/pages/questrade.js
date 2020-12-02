@@ -1,6 +1,6 @@
 import React, { useState }  from 'react'
 import {graphql} from 'gatsby'
-import {buildImageObj,cn,getReferralCode } from '../lib/helpers'
+import { buildImageObj , cn, getReferralCode, getTrackingCode } from '../lib/helpers'
 import axios from "axios";
 import {
   mapEdgesToNodes,
@@ -58,6 +58,7 @@ const QuestradePage = props => {
   const {data, errors} = props
 
   const referralCode = getReferralCode();
+  const trackingCode = getTrackingCode();
 
   const [signups, setSignups] = useState(null);
   axios.get("https://passiv.com/api/v1/signups/")
@@ -112,6 +113,7 @@ const QuestradePage = props => {
                       value={`Get Passiv`}
                     />
                     {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
+                    {trackingCode !== null && <input type="hidden" name="uid" value={trackingCode} />}
                       <p className={styles.socialProof}>
                       {signups && `Join ${signups} new Passiv users this month!`}
                       </p>
@@ -129,10 +131,10 @@ const QuestradePage = props => {
           <Container>
             <div className={styles.flexContainer}>
               <div className={styles.videoWrapper}>
-                
+
                 <h2>Free Passiv Elite</h2>
                 <p>All Questrade clients can upgrade to Elite for free and get access to these premium features.</p>
-            
+
                 <div>
                   <iframe width="560" height="309" src="https://www.youtube.com/embed/7qNmzwSIZ2A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -157,7 +159,7 @@ const QuestradePage = props => {
                   </li>
                 </ul>
               </div>
-            </div>  
+            </div>
           </Container>
           <div className={styles.howItWorks}>
             <Container>
@@ -184,7 +186,7 @@ const QuestradePage = props => {
                 <p className={styles.blurb}>Save time by letting Passiv calculate & execute the trades needed to keep your portfolio balanced.</p>
               </div>
             </Container>
-          </div>  
+          </div>
         </section>
 
         <section className={styles.features}>
@@ -195,7 +197,7 @@ const QuestradePage = props => {
                 <p className={styles.blurb}>Build your portfolio and maintain your target allocation. Use Passiv's "buy-only" setting to identify the underweight assets in your portfolio.</p>
               </div>
             </Container>
-          </div>  
+          </div>
         </section>
 
         <section className={styles.features}>
@@ -206,7 +208,7 @@ const QuestradePage = props => {
                 <p className={styles.blurb}>track important metrics such as portfolio value, contributions, dividend payments, and more.</p>
               </div>
             </Container>
-          </div>  
+          </div>
         </section>
 
         <section className={styles.features}>
@@ -217,7 +219,7 @@ const QuestradePage = props => {
                 <p className={styles.blurb}>Choose how Passiv allocates the cash in your account to do strategies such as dollar-cost averaging.</p>
               </div>
             </Container>
-          </div>  
+          </div>
         </section>
 
 
