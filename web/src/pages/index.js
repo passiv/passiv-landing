@@ -12,7 +12,6 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
 import AboveFold from '../components/home/above-fold'
-import Brokerage from '../components/home/brokerage'
 import Features from '../components/home/features'
 import Platforms from '../components/home/platforms'
 import Security from '../components/home/security'
