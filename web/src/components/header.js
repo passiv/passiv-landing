@@ -4,19 +4,11 @@ import Icon from './icon'
 import {cn} from '../lib/helpers'
 import Container from './container'
 import Logo from '../images/passiv-fullname.svg'
-import { getReferralCode, getTrackingCode, generateTrackingPath } from '../lib/helpers';
+import { generateTrackingPath } from '../lib/helpers';
 
 import styles from './header.module.css'
 
 const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
-  const [referralCode, setReferralCode] = useState(undefined);
-  const [trackingCode, setTrackingCode] = useState(undefined);
-
-  useEffect(() => {
-    setReferralCode(getReferralCode());
-    setTrackingCode(getTrackingCode());
-  }, []);
-
   let registerPath = generateTrackingPath('/app/register/');
   let loginPath = generateTrackingPath('/app/login/');
 
