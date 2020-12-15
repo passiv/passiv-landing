@@ -39,11 +39,11 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
             </label>
 
             <div className={styles.trigger}>
-              <Link className={styles.pageLink} to="/blog/">Blog</Link>
-              <Link className={styles.pageLink} to="/about/">About</Link>
-              <Link className={styles.pageLink} to="/pricing/">Pricing</Link>
-              <Link className={styles.pageLink} to="/security/">Security</Link>
+              <Link className={styles.pageLink} to="/features/">Features</Link>
               <Link className={styles.pageLink} to="/tutorials/">Tutorials</Link>
+              <Link className={styles.pageLink} to="/pricing/">Pricing</Link>
+              <Link className={styles.pageLink} to="/about/">About</Link>
+              <Link className={styles.pageLink} to="/blog/">Blog</Link>
               <a className={cn(styles.pageLink, styles.btn2, styles.login)} href={loginPath}>Log in</a>
               <a className={cn(styles.pageLink, styles.btn1, styles.try, styles.clickping)} href={registerPath}>Sign Up</a>
             </div>
