@@ -39,18 +39,18 @@ function Tutorials(props) {
                 <h2>Share</h2>
                 <a
                   target="_blank"
-                  href={`https://twitter.com/intent/tweet/?text=${title}&url=https://passiv.com/blog/${props.slug.current}%2F&via=getpassiv`}
+                  href={`https://twitter.com/intent/tweet/?text=${title}&url=https://passiv.com/help/tutorials/${props.slug.current}%2F&via=getpassiv`}
                 >
                   <FontAwesomeIcon icon={faTwitter} className={styles.icon} />
                 </a>
                 <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=https://passiv.com/blog/${props.slug.current}`}
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https://passiv.com/help/tutorials/${props.slug.current}`}
                   target="_blank"
                 >
                   <FontAwesomeIcon icon={faFacebook} className={styles.icon} />
                 </a>
                 <a
-                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://passiv.com/blog/${props.slug.current}&title=${title}&source=${title}`}
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://passiv.com/help/tutorials/${props.slug.current}&title=${title}&source=${title}`}
                   target="_blank"
                 >
                   <FontAwesomeIcon icon={faLinkedinIn} className={styles.icon} />
