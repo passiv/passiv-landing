@@ -1,10 +1,11 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .content {
   background: #f7fafc;
   min-height: calc(100% - 73px - 120px);
   padding-top: 102px;
+  overflow: hidden;
   @media (--media-max-desktop) {
     padding-top: 70px;
   }
