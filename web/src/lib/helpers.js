@@ -1,6 +1,6 @@
 import {format, isFuture} from 'date-fns'
 import qs from 'qs';
-
+import axios from "axios";
 
 export function cn (...args) {
   return args.filter(Boolean).join(' ')
@@ -99,21 +99,25 @@ export function getReferralCode () {
   }
 }
 
+export function setReferralAndTracking (input) {
+  const referralCode = getReferralCode();
+  const trackingCode = getTrackingCode();
+
+  if (trackingCode) {
+    input.uid = trackingCode;
+  }
+
+  if (referralCode) {
+    input.ref = referralCode;
+  }
+}
+
 
 export function generateTrackingPath (basePath, origin=null) {
   if (typeof window !== 'undefined') {
-    const referralCode = getReferralCode();
-    const trackingCode = getTrackingCode();
-
     const newQueryParams = {};
 
-    if (trackingCode) {
-      newQueryParams.uid = trackingCode;
-    }
-
-    if (referralCode) {
-      newQueryParams.ref = referralCode;
-    }
+    setReferralAndTracking(newQueryParams);
 
     const queryParams = qs.parse(window.location.search, {
       ignoreQueryPrefix: true,
@@ -135,7 +139,21 @@ export function generateTrackingPath (basePath, origin=null) {
 
     return newPath;
   }
+}
 
+export function collectMetadata () {
+  const metadata = {};
+  setReferralAndTracking(metadata);
+  metadata.url = window.location;
 
+  return metadata;
+}
 
+export function pingTracking () {
+  if (typeof window !== 'undefined') {
+    axios.post("/api/v1/ping/", collectMetadata())
+      .then(response => console.log('api response', response))
+      .catch(error => console.log('api response [error]', error))
+    // console.log('ping', window.location)
+  }
 }

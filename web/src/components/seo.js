@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import {StaticQuery, graphql} from 'gatsby'
 import {imageUrlFor} from '../lib/image-url'
-import {buildImageObj} from '../lib/helpers'
+import { buildImageObj, pingTracking } from '../lib/helpers'
 
 function SEO ({description, lang, meta, keywords, title, image}) {
+  pingTracking();
   return (
     <StaticQuery
       query={detailsQuery}

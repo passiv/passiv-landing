@@ -12,6 +12,9 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
   let registerPath = generateTrackingPath('/app/register/');
   let loginPath = generateTrackingPath('/app/login/');
 
+  // console.log('lol header')
+  // pingTracking();
+
   return (
     <div>
       <header className={styles.siteHeader} role="banner">
