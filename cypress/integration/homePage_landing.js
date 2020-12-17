@@ -1,15 +1,6 @@
 describe('Home Page works', () => {
     beforeEach( () => {
-    cy.visit('localhost:8000')
-
-    cy.server()
-
-    cy.route({
-        url:"/api/v1/signups",
-        method:"POST",
-        status: 200,
-        response: {token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4MDcxLCJ1c2VybmFtZSI6IjRiVVRHWlBpZFROSDlIWW5PYjdGbXlIcDZaVXRCQiIsImV4cCI6MTYwNTAzNTkwMCwiZW1haWwiOiJhc3V0aGVybGFuZDgyMTlAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MDQ2MDM5MDB9.lz1xdxwzdQrlo7RE0qnEtHRjszFHYTWQqgOZzFGB2l8"}
-    });
+    cy.visit('localhost:3000')
 
     })
 

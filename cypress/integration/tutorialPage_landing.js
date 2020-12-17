@@ -1,12 +1,12 @@
 describe('Tutorial Links work', () => {
 
     beforeEach( () => {
-        cy.visit('localhost:8000/tutorials/')
+        cy.visit('localhost:3000/tutorials/')
 
     })
 
 it('Article link 1 works', () => {
-    cy.get('ul').children().should('have.length', 12)
+    cy.get('ul').children().should('have.length', 13)
     // .selectNth(1).click()
     cy.get('ul>li div a').eq(0).click({multiple:true})
 
