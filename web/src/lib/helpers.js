@@ -145,6 +145,19 @@ export function collectMetadata () {
   const metadata = {};
   setReferralAndTracking(metadata);
   metadata.url = window.location;
+  metadata.clientTimestamp = new Date().toISOString();
+  metadata.clientTimezoneOffset = new Date().getTimezoneOffset();
+
+  const navigatorFields = [
+    'platform',
+    'appCodeName',
+    'userAgent',
+    'language',
+  ]
+
+  navigatorFields.map(field => {
+    metadata[field] = navigator[field];
+  })
 
   return metadata;
 }
@@ -152,8 +165,8 @@ export function collectMetadata () {
 export function pingTracking () {
   if (typeof window !== 'undefined') {
     axios.post("/api/v1/ping/", collectMetadata())
-      .then(response => console.log('api response', response))
-      .catch(error => console.log('api response [error]', error))
+      // .then(response => console.log('api response', response))
+      .catch(error => null)
     // console.log('ping', window.location)
   }
 }
