@@ -91,7 +91,7 @@ const QuestradePage = props => {
           <Container>
             <div className={styles.ctaContainer}>
               <h1>Autopilot for your Portfolio</h1>
-              <p className={styles.blurb}>Passiv lets you turn your <strong>Questrade</strong> account into your own personalized wealth manager. Build your own personalized index, invest and rebalance with the click of a button, and seamlessly manage multiple accounts.</p>
+              <p className={styles.blurb}>Passiv turns your <strong>Questrade</strong> account into a modern portfolio management tool. Build your own personalized index, invest and rebalance with the click of a button, and seamlessly manage multiple accounts.</p>
               <div className={cn(styles.emailSignup, styles.inputContainer)}>
                 <div className={cn(styles.emailContainer, styles.formContainer)}>
                   <form className={styles.register} method="get" noValidate action="/app/register/">
