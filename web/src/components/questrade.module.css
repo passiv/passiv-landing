@@ -248,9 +248,10 @@
 .aboveFold {
   background: #f7fafc;
   min-height: 0;
-  padding-bottom: 356px;
-  @media (--media-min-desktop) {
+  padding-bottom: 266px;
 
+  @media (--media-min-desktop) {
+    padding-bottom: 340px;
     @nest & .emailSignup {
       @nest & label {
         left: 110px;
@@ -489,6 +490,8 @@
     color: #FFFFFF;
     letter-spacing: -0.3px;
     line-height: 46px;
+    padding-left: 20px;
+    margin-bottom: 20px;
     @media (--media-max-desktop) {
       font-size: 20px;
       line-height: 1.5;
@@ -532,6 +535,7 @@
   padding-top: 170px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
   @media (--media-max-desktop) {
     padding-top: 30px;
     margin-bottom: 50px;
@@ -583,29 +587,8 @@
       background-size: contain;
     }
   }
-  /*@nest &:before {
-    content: '';
-    height: 100%;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    z-index: 0;
-    background: url(../images/dashboard.png) no-repeat;
-    background-position: left 65%;
-    max-width: 520px;
-    @media (--media-max-tablet) {
-      max-width: 475px;
-      width: 100%;
-      background-size: contain;
-    }
-    @media (--media-min-tablet) {
-      width: 50%;
-      background-size: contain;
-    }
-  }*/
   @media (--media-max-desktop) {
-    padding-bottom: 340px;
+    padding-bottom: 370px;
     @nest &:after {
       background-position: center bottom;
     }
@@ -668,7 +651,7 @@
     }
   }
   @media (--media-max-desktop) {
-    padding-bottom: 260px;
+    padding-bottom: 300px;
     @nest &:after {
       background-position: center bottom;
     }
@@ -729,33 +712,15 @@
       background-size: contain;
     }
     @media (--media-min-tablet) {
-      width: 50%;
+      width: 46%;
+      left: 16px;
       background-size: contain;
+      background-position: 0 70px;
     }
   }
-  /*@nest &:before {
-    content: '';
-    height: 100%;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    z-index: 0;
-    background: url(../images/dashboard.png) no-repeat;
-    background-position: left 65%;
-    max-width: 520px;
-    @media (--media-max-tablet) {
-      max-width: 475px;
-      width: 100%;
-      background-size: contain;
-    }
-    @media (--media-min-tablet) {
-      width: 50%;
-      background-size: contain;
-    }
-  }*/
+
   @media (--media-max-desktop) {
-    padding-bottom: 340px;
+    padding-bottom: 160px;
     @nest &:after {
       background-position: center bottom;
     }
@@ -809,15 +774,15 @@
     z-index: 0;
     background: url(../images/targets@2x.png) no-repeat;
     background-position: right 35%;
-    max-width: 820px;
     @media (--media-max-tablet) {
-      max-width: 575px;
+      max-width: 568px;
       width: 100%;
       background-size: contain;
     }
     @media (--media-min-tablet) {
-      width: 50%;
+      width: 48%;
       background-size: contain;
+      left: 0;
     }
   }
   @media (--media-max-desktop) {
