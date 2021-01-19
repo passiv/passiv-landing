@@ -172,7 +172,7 @@ const QuestradePage = props => {
                 </ol>
                 <p className={styles.bonus}><strong>Bonus:</strong> Set up a Pre-Authorized Deposit to fund your Questrade account and put your retirement strategy on autopilot.</p>
 
-                <p>Need more help getting started? Check out our <a href="/about/#passiv-faq" className={styles.link}>tutorials</a></p>
+                <p>Need more help getting started? Check out our <a href="/tutorials" className={styles.link}>tutorials</a></p>
               </div>
             </Container>
           </div>
@@ -182,7 +182,7 @@ const QuestradePage = props => {
           <div className={styles.feature3}>
             <Container>
               <div className={styles.ctaContainer}>
-                <h2>Automate Your Investments</h2>
+                <h2>Automate your investments</h2>
                 <p className={styles.blurb}>Save time by letting Passiv calculate & execute the trades needed to keep your portfolio balanced.</p>
               </div>
             </Container>
@@ -193,8 +193,8 @@ const QuestradePage = props => {
           <div className={styles.feature4}>
             <Container>
               <div className={styles.ctaContainer}>
-                <h2>Maintain Target Allocation</h2>
-                <p className={styles.blurb}>Build your portfolio and maintain your target allocation. Use Passiv's "buy-only" setting to identify the underweight assets in your portfolio.</p>
+                <h2>Maintain your target allocation</h2>
+                <p className={styles.blurb}>Build your portfolio and maintain your target allocation. Use Passiv’s “buy-only” setting to identify the underweight assets in your portfolio or “enable selling” to do a full rebalance.</p>
               </div>
             </Container>
           </div>
@@ -204,8 +204,8 @@ const QuestradePage = props => {
           <div className={styles.feature}>
             <Container>
               <div className={styles.ctaContainer}>
-                <h2>Performance Reporting</h2>
-                <p className={styles.blurb}>track important metrics such as portfolio value, contributions, dividend payments, and more.</p>
+                <h2>Performance reporting</h2>
+                <p className={styles.blurb}>See how your investments are performing. Keep track of your portfolio’s growth, value, contributions, dividend payments and more.</p>
               </div>
             </Container>
           </div>
@@ -215,13 +215,12 @@ const QuestradePage = props => {
           <div className={styles.feature2}>
             <Container>
               <div className={styles.ctaContainer}>
-                <h2>Cash Management Rules</h2>
-                <p className={styles.blurb}>Choose how Passiv allocates the cash in your account to do strategies such as dollar-cost averaging.</p>
+                <h2>Cash management</h2>
+                <p className={styles.blurb}>Use cash management rules to help with dollar-cost averaging. Have greater flexibility and control over the cash in held in your Questrade account.</p>
               </div>
             </Container>
           </div>
         </section>
-
 
         <section className={styles.security}>
           <Container>

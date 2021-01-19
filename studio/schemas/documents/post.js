@@ -37,7 +37,9 @@ export default {
           {title: 'Personal Finance', value: 'personal-finance'},
           {title: 'Accounts', value: 'accounts'},
           {title: 'Retirement', value: 'retirement'},
-          {title: 'Investing', value: 'investing'}
+          {title: 'Investing', value: 'investing'},
+          {title: 'Crypto', value: 'crypto'},
+          {title: 'Technology', value: 'technology'},
         ], // <-- predefined values
         layout: 'radio' // <-- defaults to 'dropdown'
       }
