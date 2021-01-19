@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { buildImageObj, cn } from "../../lib/helpers";
 import { imageUrlFor } from "../../lib/image-url";
 import Container from "../container";
@@ -11,10 +11,11 @@ function AboveFold({}) {
   const trackingCode = getTrackingCode();
 
   const [signups, setSignups] = useState(null);
-  axios.get("https://passiv.com/api/v1/signups/")
-  .then(response => setSignups(response.data.count))
 
-
+  useEffect(() => {
+    axios.get("https://passiv.com/api/v1/signups/")
+    .then(response => setSignups(response.data.count))
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section className={styles.aboveFold}>
