@@ -12,6 +12,8 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
   let registerPath = generateTrackingPath('/app/register/');
   let loginPath = generateTrackingPath('/app/login/');
 
+
+
   // console.log('lol header')
   // pingTracking();
 
@@ -36,8 +38,8 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
               <Link className={styles.pageLink} to="/pricing/">Pricing</Link>
               <Link className={styles.pageLink} to="/about/">About</Link>
               <Link className={styles.pageLink} to="/blog/">Blog</Link>
-              <a className={cn(styles.pageLink, styles.btn2, styles.login)} href={loginPath}>Log in</a>
-              <a className={cn(styles.pageLink, styles.btn1, styles.try, styles.clickping)} href={registerPath}>Sign Up</a>
+              <a className={cn(styles.pageLink, styles.btn2, styles.login)} href={`https://${process.env.GATSBY_APP_BASE_URL_OVERRIDE}${loginPath}`}>Log in</a>
+              <a className={cn(styles.pageLink, styles.btn1, styles.try, styles.clickping)} href={`https://${process.env.GATSBY_APP_BASE_URL_OVERRIDE}${registerPath}`}>Sign Up</a>
             </div>
 
           </nav>
