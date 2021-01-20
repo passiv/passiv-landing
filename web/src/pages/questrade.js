@@ -63,7 +63,7 @@ const QuestradePage = props => {
   const [signups, setSignups] = useState(null);
 
   useEffect(() => {
-    axios.get("https://passiv.com/api/v1/signups/")
+    axios.get(`https://${process.env.GATSBY_API_BASE_URL_OVERRIDE}/api/v1/signups/`)
     .then(response => setSignups(response.data.count))
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
