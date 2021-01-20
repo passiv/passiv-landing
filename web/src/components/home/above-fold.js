@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { buildImageObj, cn } from "../../lib/helpers";
 import { imageUrlFor } from "../../lib/image-url";
 import Container from "../container";
-import { getReferralCode, getTrackingCode } from "../../lib/helpers";
+import { getReferralCode, getTrackingCode, getAppBase, getAPIBase } from "../../lib/helpers";
 import axios from "axios";
 import styles from "./above-fold.module.css";
 
@@ -10,10 +10,13 @@ function AboveFold({}) {
   const referralCode = getReferralCode();
   const trackingCode = getTrackingCode();
 
+  const apiBase = getAPIBase();
+  const appBase = getAppBase();
+
   const [signups, setSignups] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://${process.env.GATSBY_API_BASE_URL_OVERRIDE}/api/v1/signups/`)
+    axios.get(`https://${apiBase}/api/v1/signups/`)
     .then(response => setSignups(response.data.count))
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -29,7 +32,7 @@ function AboveFold({}) {
           </p>
           <div className={cn(styles.emailSignup, styles.inputContainer)}>
             <div className={cn(styles.emailContainer, styles.formContainer)}>
-              <form className={styles.register} method="get" noValidate action={`https://${process.env.GATSBY_APP_BASE_URL_OVERRIDE}/app/register/`}>
+              <form className={styles.register} method="get" noValidate action={`https://${appBase}/app/register/`}>
                 <label>
                   <span>Enter your Email</span>
                 </label>

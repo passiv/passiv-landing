@@ -5,7 +5,7 @@ import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
 import {Link} from 'gatsby'
-import { getReferralCode, getTrackingCode } from '../lib/helpers';
+import { getReferralCode, getTrackingCode, getAppBase } from '../lib/helpers';
 
 import stylesA from './home/above-fold.module.css'
 import stylesF from './home/features.module.css'
@@ -18,6 +18,7 @@ function Landing (props) {
   const { title, mainImage, publishedAt, tagline, description, btnUrl, btnCopy, featureTitle, feature, testimonialTitle,testimonial,darkTitle, darkCopy, darkBtnUrl, darkBtnCopy} = props
   const referralCode = getReferralCode();
   const trackingCode = getTrackingCode();
+  const appBase = getAppBase();
   return (
     <div className={styles.landing}>
       <section className={cn(stylesA.aboveFold, styles.aboveFold)}>
@@ -28,7 +29,7 @@ function Landing (props) {
             <p className={stylesA.blurb}>{description}</p>
             <div className={cn(stylesA.emailSignup, stylesA.inputContainer)}>
               <div className={cn(stylesA.emailContainer, stylesA.formContainer)}>
-                <form className={stylesA.register} method="get" noValidate action={`https://${process.env.GATSBY_APP_BASE_URL_OVERRIDE}/app/register/`}>
+                <form className={stylesA.register} method="get" noValidate action={`https://${appBase}/app/register/`}>
                   <label><span>Enter your Email</span></label>
                   <input type="hidden" name="type" />
                   <input type="email" required max_length="512" className={stylesA.registerEmail} name="email" />

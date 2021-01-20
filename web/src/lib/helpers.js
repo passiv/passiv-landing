@@ -112,6 +112,15 @@ export function setReferralAndTracking (input) {
   }
 }
 
+export function getAppBase() {
+  const appBase = process.env.GATSBY_APP_BASE_URL_OVERRIDE;
+  return appBase;
+}
+
+export function getAPIBase() {
+  const apiBase = process.env.GATSBY_API_BASE_URL_OVERRIDE;
+  return apiBase;
+}
 
 export function generateTrackingPath (basePath, origin=null) {
   if (typeof window !== 'undefined') {
@@ -180,7 +189,7 @@ export function collectMetadata () {
 
 export function pingTracking () {
   if (typeof window !== 'undefined') {
-    axios.post(`https://${process.env.GATSBY_API_BASE_URL_OVERRIDE}/api/v1/ping/`, collectMetadata())
+    axios.post(`https://${getAPIBase()}/api/v1/ping/`, collectMetadata())
       // .then(response => console.log('api response', response))
       .catch(error => null)
     // console.log('ping', window.location)
