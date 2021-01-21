@@ -1,17 +1,33 @@
 import {Link} from 'gatsby'
 import React, { useState, useEffect } from 'react'
 import Icon from './icon'
-import {cn} from '../lib/helpers'
 import Container from './container'
 import Logo from '../images/passiv-fullname.svg'
-import { generateTrackingPath, getAppBase } from '../lib/helpers';
+import { cn, getReferralCode, getTrackingCode } from '../lib/helpers';
 
 import styles from './header.module.css'
 
 const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
-  let registerPath = generateTrackingPath('/app/register/');
-  let loginPath = generateTrackingPath('/app/login/');
-  const appBase = getAppBase();
+  const [referralCode, setReferralCode] = useState(undefined);
+  const [trackingCode, setTrackingCode] = useState(undefined);
+
+  useEffect(() => {
+    setReferralCode(getReferralCode());
+    setTrackingCode(getTrackingCode());
+  }, []);
+
+  let registerPath = '/app/register/';
+  let loginPath = '/app/login/';
+  if (trackingCode !== undefined && trackingCode !== null) {
+    const appendage = `?ref=${trackingCode}`;
+    registerPath += appendage;
+    loginPath += appendage;
+    if (referralCode !== undefined && referralCode !== null) {
+      const appendage = `&ref=${referralCode}`;
+      registerPath += appendage;
+      loginPath += appendage;
+    }
+  }
 
   return (
     <div>
@@ -34,8 +50,8 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
               <Link className={styles.pageLink} to="/pricing/">Pricing</Link>
               <Link className={styles.pageLink} to="/about/">About</Link>
               <Link className={styles.pageLink} to="/blog/">Blog</Link>
-              <a className={cn(styles.pageLink, styles.btn2, styles.login)} href={`https://${appBase}${loginPath}`}>Log in</a>
-              <a className={cn(styles.pageLink, styles.btn1, styles.try, styles.clickping)} href={`https://${appBase}${registerPath}`}>Sign Up</a>
+              <a className={cn(styles.pageLink, styles.btn2, styles.login)} href={loginPath}>Log in</a>
+              <a className={cn(styles.pageLink, styles.btn1, styles.try, styles.clickping)} href={registerPath}>Sign Up</a>
             </div>
 
           </nav>
