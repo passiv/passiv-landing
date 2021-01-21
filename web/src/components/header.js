@@ -1,17 +1,21 @@
 import {Link} from 'gatsby'
 import React, { useState, useEffect } from 'react'
 import Icon from './icon'
-import {cn} from '../lib/helpers'
 import Container from './container'
 import Logo from '../images/passiv-fullname.svg'
-import { generateTrackingPath, getAppBase } from '../lib/helpers';
+import { cn, generateTrackingPath, getAppBase } from '../lib/helpers';
 
 import styles from './header.module.css'
 
 const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
-  let registerPath = generateTrackingPath('/app/register/');
-  let loginPath = generateTrackingPath('/app/login/');
+  const [registerPath, setRegisterPath] = useState('/app/register/');
+  const [loginPath, setLoginPath] = useState('/app/login/');
   const appBase = getAppBase();
+
+  useEffect(() => {
+    setRegisterPath(generateTrackingPath('/app/register/'));
+    setLoginPath(generateTrackingPath('/app/login/'));
+  }, []);
 
   return (
     <div>
