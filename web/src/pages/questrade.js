@@ -1,6 +1,6 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect }  from 'react'
 import {graphql} from 'gatsby'
-import {buildImageObj,cn,getReferralCode } from '../lib/helpers'
+import { buildImageObj , cn, getReferralCode, getTrackingCode, getAppBase, getAPIBase } from '../lib/helpers'
 import axios from "axios";
 import {
   mapEdgesToNodes,
@@ -58,10 +58,17 @@ const QuestradePage = props => {
   const {data, errors} = props
 
   const referralCode = getReferralCode();
+  const trackingCode = getTrackingCode();
+
+  const apiBase = getAPIBase();
+  const appBase = getAppBase();
 
   const [signups, setSignups] = useState(null);
-  axios.get("https://passiv.com/api/v1/signups/")
-  .then(response => setSignups(response.data.count))
+
+  useEffect(() => {
+    axios.get(`https://${apiBase}/api/v1/signups/`)
+    .then(response => setSignups(response.data.count))
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (errors) {
     return (
@@ -94,7 +101,7 @@ const QuestradePage = props => {
               <p className={styles.blurb}>Passiv turns your <strong>Questrade</strong> account into a modern portfolio management tool. Build your own personalized index, invest and rebalance with the click of a button, and seamlessly manage multiple accounts.</p>
               <div className={cn(styles.emailSignup, styles.inputContainer)}>
                 <div className={cn(styles.emailContainer, styles.formContainer)}>
-                  <form className={styles.register} method="get" noValidate action="/app/register/">
+                  <form className={styles.register} method="get" noValidate action={`https://${appBase}/app/register/`}>
                     <label>
                       <span>Enter your Email</span>
                     </label>
@@ -112,6 +119,7 @@ const QuestradePage = props => {
                       value={`Get Passiv`}
                     />
                     {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
+                    {trackingCode !== null && <input type="hidden" name="uid" value={trackingCode} />}
                       <p className={styles.socialProof}>
                       {signups && `Join ${signups} new Passiv users this month!`}
                       </p>
@@ -129,10 +137,10 @@ const QuestradePage = props => {
           <Container>
             <div className={styles.flexContainer}>
               <div className={styles.videoWrapper}>
-                
+
                 <h2>Free Passiv Elite</h2>
                 <p>All Questrade clients can upgrade to Elite for free and get access to these premium features.</p>
-            
+
                 <div>
                   <iframe width="560" height="309" src="https://www.youtube.com/embed/7qNmzwSIZ2A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -157,7 +165,7 @@ const QuestradePage = props => {
                   </li>
                 </ul>
               </div>
-            </div>  
+            </div>
           </Container>
           <div className={styles.howItWorks}>
             <Container>
@@ -170,7 +178,7 @@ const QuestradePage = props => {
                 </ol>
                 <p className={styles.bonus}><strong>Bonus:</strong> Set up a Pre-Authorized Deposit to fund your Questrade account and put your retirement strategy on autopilot.</p>
 
-                <p>Need more help getting started? Check out our <a href="/about/#passiv-faq" className={styles.link}>tutorials</a></p>
+                <p>Need more help getting started? Check out our <a href="/tutorials" className={styles.link}>tutorials</a></p>
               </div>
             </Container>
           </div>
@@ -180,46 +188,45 @@ const QuestradePage = props => {
           <div className={styles.feature3}>
             <Container>
               <div className={styles.ctaContainer}>
-                <h2>Automate Your Investments</h2>
+                <h2>Automate your investments</h2>
                 <p className={styles.blurb}>Save time by letting Passiv calculate & execute the trades needed to keep your portfolio balanced.</p>
               </div>
             </Container>
-          </div>  
+          </div>
         </section>
 
         <section className={styles.features}>
           <div className={styles.feature4}>
             <Container>
               <div className={styles.ctaContainer}>
-                <h2>Maintain Target Allocation</h2>
-                <p className={styles.blurb}>Build your portfolio and maintain your target allocation. Use Passiv's "buy-only" setting to identify the underweight assets in your portfolio.</p>
+                <h2>Maintain your target allocation</h2>
+                <p className={styles.blurb}>Build your portfolio and maintain your target allocation. Use Passiv’s “buy-only” setting to identify the underweight assets in your portfolio or “enable selling” to do a full rebalance.</p>
               </div>
             </Container>
-          </div>  
+          </div>
         </section>
 
         <section className={styles.features}>
           <div className={styles.feature}>
             <Container>
               <div className={styles.ctaContainer}>
-                <h2>Performance Reporting</h2>
-                <p className={styles.blurb}>track important metrics such as portfolio value, contributions, dividend payments, and more.</p>
+                <h2>Performance reporting</h2>
+                <p className={styles.blurb}>See how your investments are performing. Keep track of your portfolio’s growth, value, contributions, dividend payments and more.</p>
               </div>
             </Container>
-          </div>  
+          </div>
         </section>
 
         <section className={styles.features}>
           <div className={styles.feature2}>
             <Container>
               <div className={styles.ctaContainer}>
-                <h2>Cash Management Rules</h2>
-                <p className={styles.blurb}>Choose how Passiv allocates the cash in your account to do strategies such as dollar-cost averaging.</p>
+                <h2>Cash management</h2>
+                <p className={styles.blurb}>Use cash management rules to help with dollar-cost averaging. Have greater flexibility and control over the cash in held in your Questrade account.</p>
               </div>
             </Container>
-          </div>  
+          </div>
         </section>
-
 
         <section className={styles.security}>
           <Container>

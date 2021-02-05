@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import {StaticQuery, graphql} from 'gatsby'
 import {imageUrlFor} from '../lib/image-url'
-import {buildImageObj} from '../lib/helpers'
+import { buildImageObj, pingTracking } from '../lib/helpers'
 
 function SEO ({description, lang, meta, keywords, title, image}) {
+  useEffect(() => {
+    pingTracking();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  
   return (
     <StaticQuery
       query={detailsQuery}

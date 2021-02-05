@@ -1,27 +1,21 @@
 import {Link} from 'gatsby'
 import React, { useState, useEffect } from 'react'
 import Icon from './icon'
-import {cn} from '../lib/helpers'
 import Container from './container'
 import Logo from '../images/passiv-fullname.svg'
-import { getReferralCode } from '../lib/helpers';
+import { cn, generateTrackingPath, getAppBase } from '../lib/helpers';
 
 import styles from './header.module.css'
 
 const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
-  const [referralCode, setReferralCode] = useState(undefined);
+  const [registerPath, setRegisterPath] = useState('/app/register/');
+  const [loginPath, setLoginPath] = useState('/app/login/');
+  const appBase = getAppBase();
 
   useEffect(() => {
-    setReferralCode(getReferralCode());
+    setRegisterPath(generateTrackingPath('/app/register/'));
+    setLoginPath(generateTrackingPath('/app/login/'));
   }, []);
-
-  let registerPath = '/app/register/';
-  let loginPath = '/app/login/';
-  if (referralCode !== undefined && referralCode !== null) {
-    const appendage = `?ref=${referralCode}`;
-    registerPath += appendage;
-    loginPath += appendage;
-  }
 
   return (
     <div>
@@ -44,8 +38,8 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
               <Link className={styles.pageLink} to="/pricing/">Pricing</Link>
               <Link className={styles.pageLink} to="/about/">About</Link>
               <Link className={styles.pageLink} to="/blog/">Blog</Link>
-              <a className={cn(styles.pageLink, styles.btn2, styles.login)} href={loginPath}>Log in</a>
-              <a className={cn(styles.pageLink, styles.btn1, styles.try, styles.clickping)} href={registerPath}>Sign Up</a>
+              <a className={cn(styles.pageLink, styles.btn2, styles.login)} href={`https://${appBase}${loginPath}`}>Log in</a>
+              <a className={cn(styles.pageLink, styles.btn1, styles.try, styles.clickping)} href={`https://${appBase}${registerPath}`}>Sign Up</a>
             </div>
 
           </nav>
