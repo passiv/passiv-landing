@@ -83,7 +83,7 @@ const QuestradePage = props => {
   return (
     <Layout>
       <SEO
-        title="Questrade Landing Page"
+        title="Automate Your Questrade Account"
         description="Passiv builds portfolio rebalancing software for DIY investors. This page explains a bit about us and the company we're building."
         keywords={site.keywords}
       />
@@ -91,7 +91,7 @@ const QuestradePage = props => {
         <section className={styles.aboveFold}>
           <Container>
             <div className={styles.ctaContainer}>
-              <h1>Autopilot for your Portfolio</h1>
+              <h1>Autopilot for your Questrade Account</h1>
               <p className={styles.blurb}>Passiv turns your <strong>Questrade</strong> account into a modern portfolio management tool. Build your own personalized index, invest and rebalance with the click of a button, and seamlessly manage multiple accounts.</p>
               <div className={cn(styles.emailSignup, styles.inputContainer)}>
                 <div className={cn(styles.emailContainer, styles.formContainer)}>
