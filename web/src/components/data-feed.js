@@ -89,15 +89,7 @@ function DataFeed (props) {
                 <h1 className={styles.blogTitle}>{title}</h1>
                 {ownedPercent && <p>This security is owned by {Math.round(ownedPercent * 1000) / 10}% of Passiv Users</p>}
               </div>
-              <div className={styles.whoWhen}>
-                {publishedAt && (
-                  <span className={styles.publishedAt}>
-                    {differenceInDays(new Date(publishedAt), new Date()) > 3
-                      ? distanceInWords(new Date(publishedAt), new Date())
-                      : format(new Date(publishedAt), 'MMMM Do, YYYY')}
-                  </span>
-                )}
-              </div>
+
             </div>
           </div>
           <div className={styles.wrapper}>
@@ -159,13 +151,6 @@ function DataFeed (props) {
             </div>
             <div className={styles.mainContent}>
               <ReactMarkdown source={body} escapeHtml={false} />
-              {publishedAt && (
-                <div className={styles.publishedAt}>
-                  {differenceInDays(new Date(publishedAt), new Date()) > 3
-                    ? distanceInWords(new Date(publishedAt), new Date())
-                    : format(new Date(publishedAt), 'MMMM Do, YYYY')}
-                </div>
-              )}
             </div>
           </div>
         </Container>

@@ -2,22 +2,12 @@ import React, { useState, useEffect } from 'react'
 import {buildImageObj,cn} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import Container from './container'
-import { getReferralCode } from '../lib/helpers';
+import { generateTrackingPath } from '../lib/helpers';
 
 import styles from './pricing.module.css'
 
 function PricingList ({  }) {
-  const [referralCode, setReferralCode] = useState(undefined);
-
-  useEffect(() => {
-    setReferralCode(getReferralCode());
-  }, []);
-
-  let registerPath = '/app/register/';
-  if (referralCode !== undefined && referralCode !== null) {
-    const appendage = `?ref=${referralCode}`;
-    registerPath += appendage;
-  }
+  let registerPath = generateTrackingPath('/app/register/');
 
   return (
   <div className={styles.priceContainer}>

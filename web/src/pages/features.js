@@ -1,7 +1,7 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import {mapEdgesToNodes} from '../lib/helpers'
-import TutorialPreviewGrid from '../components/tutorial-preview-grid'
+import FeaturePreviewGrid from '../components/feature-preview-grid'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
@@ -57,7 +57,7 @@ const FeaturesPage = props => {
           <div className={styles.content}>
             <h1 className={responsiveTitle1}>Passiv's Features</h1>
             <p className={styles.firstLine}>Passiv provides all the functionality you need to manage your own portfolio. This page lists all of our features.</p>
-            {featureNodes && featureNodes.length > 0 && <TutorialPreviewGrid nodes={featureNodes} />}
+            {featureNodes && featureNodes.length > 0 && <FeaturePreviewGrid nodes={featureNodes} />}
           </div>
         </Container>
       </Layout>

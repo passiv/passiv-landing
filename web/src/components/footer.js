@@ -1,10 +1,12 @@
-import React from 'react'
-import {Link} from 'gatsby'
-import Container from './container'
+import React from "react";
+import { Link } from "gatsby";
+import Container from "./container";
 
-import styles from './footer.module.css'
+import styles from "./footer.module.css";
 
-function Footer () {
+function Footer() {
+  var date = new Date(); 
+  var year = date.getFullYear(); 
   return (
     <footer className={styles.siteFooter}>
       <Container>
@@ -18,10 +20,10 @@ function Footer () {
         </p>
       </Container>
       <small className={styles.copyright}>
-        &copy; Copyright <script type="text/javascript">document.write(new Date().getFullYear());</script>, Passiv
+        &copy; Copyright {year}, Passiv
       </small>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

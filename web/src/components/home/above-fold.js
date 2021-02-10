@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { buildImageObj, cn } from "../../lib/helpers";
 import { imageUrlFor } from "../../lib/image-url";
 import Container from "../container";
-import { getReferralCode } from "../../lib/helpers";
+import { getReferralCode, getTrackingCode, getAppBase, getAPIBase } from "../../lib/helpers";
 import axios from "axios";
 import styles from "./above-fold.module.css";
 
 function AboveFold({}) {
   const referralCode = getReferralCode();
+  const trackingCode = getTrackingCode();
+
+  const apiBase = getAPIBase();
+  const appBase = getAppBase();
 
   const [signups, setSignups] = useState(null);
-  axios.get("https://passiv.com/api/v1/signups/")
-  .then(response => setSignups(response.data.count))
 
-
+  useEffect(() => {
+    axios.get(`https://${apiBase}/api/v1/signups/`)
+    .then(response => setSignups(response.data.count))
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section className={styles.aboveFold}>
@@ -27,7 +32,7 @@ function AboveFold({}) {
           </p>
           <div className={cn(styles.emailSignup, styles.inputContainer)}>
             <div className={cn(styles.emailContainer, styles.formContainer)}>
-              <form className={styles.register} method="get" noValidate action="/app/register/">
+              <form className={styles.register} method="get" noValidate action={`https://${appBase}/app/register/`}>
                 <label>
                   <span>Enter your Email</span>
                 </label>
@@ -45,9 +50,10 @@ function AboveFold({}) {
                   value={`Get Passiv`}
                 />
                 {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
-                  <p className={styles.socialProof}>
-                  {signups && `Join ${signups} new Passiv users this month!`}
-                  </p>
+                {trackingCode !== null && <input type="hidden" name="uid" value={trackingCode} />}
+                <p className={styles.socialProof}>
+                {signups && `Join ${signups} new Passiv users this month!`}
+                </p>
               </form>
             </div>
           </div>

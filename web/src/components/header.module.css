@@ -121,7 +121,7 @@
   left: 0;
   padding-top: 15px;
   padding-bottom: 15px;
-  background: #f7f7f7;
+  background: #f7fafc;
   @nest & .page-content {
     margin-top: 0;
   }

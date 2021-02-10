@@ -12,13 +12,13 @@ import postMoneyGeek from './documents/postMoneyGeek'
 import dataFeed from './documents/dataFeed'
 import modelPortfolio from './documents/modelPortfolio'
 import tutorial from './documents/tutorial'
+import featurePage from './documents/featurePage'
 import landing from './documents/landing'
 import siteSettings from './documents/siteSettings'
 import vimeo from './documents/vimeo'
 import youtube from './documents/youtube'
 import testimonial from './documents/testimonial'
 import feature from './documents/feature'
-import featurePage from './documents/featurePage'
 import howToInvest from './documents/howToInvest'
 import howToBuy from './documents/howToBuy'
 
@@ -28,6 +28,7 @@ import bioPortableText from './objects/bioPortableText'
 import excerptPortableText from './objects/excerptPortableText'
 import mainImage from './objects/mainImage'
 import authorReference from './objects/authorReference'
+import table from './objects/table'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -43,6 +44,7 @@ export default createSchema({
         postMoneyGeek,
         category,
         tutorial,
+        featurePage,
         landing,
         author,
         mainImage,
@@ -52,13 +54,13 @@ export default createSchema({
         dataFeed,
         modelPortfolio,
         vimeo,
+        table,
         youtube,
         feature,
         testimonial,
         excerptPortableText,
         howToInvest,
         howToBuy,
-        featurePage
 
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas
