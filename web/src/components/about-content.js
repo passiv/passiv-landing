@@ -60,7 +60,7 @@ All of this is done from one Passiv dashboard for all your accounts - no more lo
           <p>Passiv is for individuals who prefer to manage their own retirement portfolio and are tired of losing money to high management fees. It’s for anyone who wants to automate the tedious parts of portfolio management, like allocating new cash and rebalancing.</p>
           <h3 id="im-american-can-i-use-passiv">What brokerages does Passiv support?</h3>
 
-          <p>Passiv supports Interactive Brokers (available internationally), TD Ameritrade, Questrade, and Alpaca. In Canada, Passiv is excusively partnered with Questrade. We are planning to roll out support for more brokerages in the near future.</p>
+          <p>Passiv supports Interactive Brokers (available internationally), TD Ameritrade, Questrade, Tradier, Wealthica, and Alpaca. In Canada, Passiv is excusively partnered with Questrade. We are planning to roll out support for more brokerages in the near future.</p>
 
           <h3 id="does-passiv-store-my-brokerages-login-credentials">Does Passiv store my brokerage’s login credentials?</h3>
 
