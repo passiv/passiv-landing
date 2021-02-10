@@ -1,18 +1,12 @@
 import React, { useState, useEffect }  from 'react'
 import {graphql} from 'gatsby'
-import { buildImageObj , cn, getReferralCode, getTrackingCode, getAppBase, getAPIBase } from '../lib/helpers'
+import { cn, getReferralCode, getTrackingCode, getAppBase, getAPIBase } from '../lib/helpers'
 import axios from "axios";
-import {
-  mapEdgesToNodes,
-  filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
-} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import notifications from "../images/notification@2x.svg"
