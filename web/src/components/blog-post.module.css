@@ -76,6 +76,18 @@
   @nest & .mainImage {
     margin-bottom: 30px;
   }
+  @nest & table {
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    border-collapse:collapse; 
+    @nest & th {
+      padding: 5px;
+    }
+    @nest & td {
+      padding: 5px;
+    }
+  }
 }
 
 .metaContent {
