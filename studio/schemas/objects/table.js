@@ -30,17 +30,7 @@ export default {
       name: 'row',
       title: 'Table Rows',
       of: [{
-        type: 'object',
-        name: 'cells',
-        title: 'Table Row',
-        fields: [{
-          type: 'array',
-          name: 'cell',
-          title: 'Cells',
-          of: [{
-            type: 'string'
-          }]
-        }]
+        type:'cells'
       }]
     }
   ],

@@ -40,7 +40,7 @@ export default {
           {title: 'Investing', value: 'investing'},
           {title: 'Crypto', value: 'crypto'},
           {title: 'Technology', value: 'technology'},
-        ], // <-- predefined values
+        ], // <-- predefined value
         layout: 'radio' // <-- defaults to 'dropdown'
       }
     },

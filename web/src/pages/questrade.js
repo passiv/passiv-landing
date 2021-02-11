@@ -1,18 +1,12 @@
 import React, { useState, useEffect }  from 'react'
 import {graphql} from 'gatsby'
-import { buildImageObj , cn, getReferralCode, getTrackingCode, getAppBase, getAPIBase } from '../lib/helpers'
+import { cn, getReferralCode, getTrackingCode, getAppBase, getAPIBase } from '../lib/helpers'
 import axios from "axios";
-import {
-  mapEdgesToNodes,
-  filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
-} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import notifications from "../images/notification@2x.svg"
@@ -89,7 +83,7 @@ const QuestradePage = props => {
   return (
     <Layout>
       <SEO
-        title="Questrade Landing Page"
+        title="Automate Your Questrade Account"
         description="Passiv builds portfolio rebalancing software for DIY investors. This page explains a bit about us and the company we're building."
         keywords={site.keywords}
       />
@@ -97,7 +91,7 @@ const QuestradePage = props => {
         <section className={styles.aboveFold}>
           <Container>
             <div className={styles.ctaContainer}>
-              <h1>Autopilot for your Portfolio</h1>
+              <h1>Automate Your Questrade Account</h1>
               <p className={styles.blurb}>Passiv turns your <strong>Questrade</strong> account into a modern portfolio management tool. Build your own personalized index, invest and rebalance with the click of a button, and seamlessly manage multiple accounts.</p>
               <div className={cn(styles.emailSignup, styles.inputContainer)}>
                 <div className={cn(styles.emailContainer, styles.formContainer)}>
