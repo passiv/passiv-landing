@@ -10,9 +10,7 @@ import Table from './Table'
 
 const serializers = {
   types: {
-    mainImage (props) {
-      return <Figure {...props.node} />
-    },
+    mainImage: Figure,
     table (props) {
       return <Table {...props.node} />
     },
