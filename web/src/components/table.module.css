@@ -1,0 +1,18 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.tableContainer h2.heading {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.tableContainer {
+  border-collapse:collapse; 
+  @nest table {
+    border: none;
+  }
+  @nest & th {
+    background: #1a1e22;
+    color: #fff;
+  }
+}
