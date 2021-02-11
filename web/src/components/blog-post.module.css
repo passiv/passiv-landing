@@ -77,15 +77,18 @@
     margin-bottom: 30px;
   }
   @nest & table {
-    max-width: 600px;
     width: 100%;
     text-align: left;
     border-collapse:collapse; 
+    margin: 20px 0;
     @nest & th {
       padding: 5px;
     }
     @nest & td {
       padding: 5px;
+    }
+    @nest & tr:nth-child(odd) {
+      background: #e8f3fb;
     }
   }
 }
