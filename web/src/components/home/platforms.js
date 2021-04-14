@@ -51,6 +51,8 @@ function Platforms({}) {
                     <img src={alpaca} alt="Alpaca Logo" />
                   </div>
                 </a>
+              </div>
+              <div className={styles.tileContainer}>
                 <a href="https://www.tdameritrade.com/" target="_blank" rel="noopener noreferrer">
                   <div className={styles.tile}>
                     <img src={tda} alt="TD Ameritrade Logo" />
