@@ -20,7 +20,7 @@ function Platforms({}) {
       <Container>
         <div className={styles.wrapper}>
           <div className={styles.copyContainer}>
-            <h2>Platforms</h2>
+            <h2>Integrations</h2>
             <div>
               <p>
                 Connect your accounts from any of these partner platforms. If your platform isn't
