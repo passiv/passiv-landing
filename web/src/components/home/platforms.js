@@ -11,6 +11,7 @@ import tradier from "../../images/tradier-logo.png";
 import alpaca from "../../images/alpaca-logo.png";
 import questrade from "../../images/questrade-logo.png";
 import zerodha from "../../images/zerodha-logo.png";
+import unocoin from "../../images/unocoin-logo.png";
 import construction from "../../images/construction.png";
 
 function Platforms({}) {
