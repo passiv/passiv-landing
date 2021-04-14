@@ -61,7 +61,12 @@ function Platforms({}) {
                     <img src={zerodha} alt="Zerodha Logo" />
                   </div>
                 </a>
-                <div className={styles.comingSoon}>
+                <a href="https://unocoin.com/" target="_blank" rel="noopener noreferrer">
+                  <div className={styles.tile}>
+                    <img src={unocoin} alt="Unocoin Logo" />
+                  </div>
+                </a>
+                <div className={styles.tile}>
                   <img className={styles.small} src={construction} alt="Construction" />
                   <div className={styles.subtext}>More coming soon...</div>
                 </div>
