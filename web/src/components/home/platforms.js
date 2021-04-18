@@ -12,6 +12,8 @@ import alpaca from "../../images/alpaca-logo.png";
 import questrade from "../../images/questrade-logo.png";
 import zerodha from "../../images/zerodha-logo.png";
 import unocoin from "../../images/unocoin-logo.png";
+import wealthica from "../../images/wealthica-logo.png";
+import kraken from "../../images/kraken-logo.png";
 import construction from "../../images/construction.png";
 
 function Platforms({}) {
@@ -51,16 +53,21 @@ function Platforms({}) {
                     <img src={alpaca} alt="Alpaca Logo" />
                   </div>
                 </a>
-              </div>
-              <div className={styles.tileContainer}>
                 <a href="https://www.tdameritrade.com/" target="_blank" rel="noopener noreferrer">
                   <div className={styles.tile}>
                     <img src={tda} alt="TD Ameritrade Logo" />
                   </div>
                 </a>
+              </div>
+              <div className={styles.tileContainer}>
                 <a href="https://zerodha.com/" target="_blank" rel="noopener noreferrer">
                   <div className={styles.tile}>
                     <img src={zerodha} alt="Zerodha Logo" />
+                  </div>
+                </a>
+                <a href="https://wealthica.com/" target="_blank" rel="noopener noreferrer">
+                  <div className={styles.tile}>
+                    <img src={wealthica} alt="Wealthica Logo" />
                   </div>
                 </a>
                 <a href="https://unocoin.com/" target="_blank" rel="noopener noreferrer">
@@ -68,6 +75,12 @@ function Platforms({}) {
                     <img src={unocoin} alt="Unocoin Logo" />
                   </div>
                 </a>
+                <a href="https://kraken.com/" target="_blank" rel="noopener noreferrer">
+                  <div className={styles.tile}>
+                    <img src={kraken} alt="Kraken Logo" />
+                  </div>
+                </a>
+
                 <div className={styles.tile}>
                   <img className={styles.small} src={construction} alt="Construction" />
                   <div className={styles.subtext}>More coming soon...</div>
