@@ -66,6 +66,10 @@ export default () =>
                 .schemaType('post')
                 .child(S.documentTypeList('landing').title('Landing Pages')),
             S.listItem()
+                .title('Landing Pages 2.0')
+                .schemaType('post')
+                .child(S.documentTypeList('landingNew').title('Landing Pages 2.0')),
+            S.listItem()
                 .title('How to Invest $X')
                 .schemaType('howToInvest')
                 .child(S.documentTypeList('howToInvest').title('How to Invest $X')),

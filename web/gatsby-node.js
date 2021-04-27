@@ -133,7 +133,7 @@ async function createLandingPages(graphql, actions) {
     }
   `);
 
-  if (result.errors) throw result.errors;
+    if (result.errors) throw result.errors;
 
   const landingEdges = (result.data.allSanityLanding || {}).edges || [];
 
@@ -147,6 +147,44 @@ async function createLandingPages(graphql, actions) {
       createPage({
         path,
         component: require.resolve("./src/templates/landing-page.js"),
+        context: { id },
+      });
+    });
+}
+
+async function createLandingNewPages(graphql, actions) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityLandingNew(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+
+  if (result.errors) throw result.errors;
+
+  const landingNewEdges = (result.data.allSanityLandingNew || {}).edges || [];
+
+  landingNewEdges
+    .filter((edge) => !isFuture(edge.node.publishedAt))
+    .forEach((edge, index) => {
+      const { id, slug = {}, publishedAt } = edge.node;
+      const dateSegment = format(publishedAt, "YYYY/MM");
+      const path = `/${slug.current}/`;
+
+      createPage({
+        path,
+        component: require.resolve("./src/templates/landing-new-page.js"),
         context: { id },
       });
     });
@@ -270,6 +308,7 @@ exports.createPages = async ({ graphql, actions }) => {
   await createBlogPostMoneyGeekPages(graphql, actions);
   await createTutorialPages(graphql, actions);
   await createLandingPages(graphql, actions);
+  await createLandingNewPages(graphql, actions);
   await createDataPages(graphql, actions);
   await createModelPortfolios(graphql, actions);
   await createFeaturePages(graphql, actions);
