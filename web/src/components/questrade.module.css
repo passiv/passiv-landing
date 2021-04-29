@@ -117,6 +117,14 @@
   }
 }
 
+.imgContainerAboveFold {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 800px;
+}
+
 .tagline {
   color: #9a9a9a;
   font-family: var(--base-font-family);
@@ -796,4 +804,28 @@
 
 .registerEmail {
   margin-bottom: 10px;
+}
+
+.landingNew {
+  @nest & .aboveFold:after {
+    display: none;
+  }
+  @nest & .feature:after {
+    display: none;
+  } 
+  @nest & .feature {
+    min-height: 0;
+    @media (--media-min-desktop) {
+      @nest & .flex {
+        display: flex;
+
+        @nest & > div {
+          flex: 1;
+        }
+      }
+    }
+  }
+  @nest & .feature .imgContainer {
+    max-width: 100%;
+  }
 }

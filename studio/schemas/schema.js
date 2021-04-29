@@ -21,6 +21,7 @@ import youtube from './documents/youtube'
 import testimonial from './documents/testimonial'
 import howItWorks from './documents/howItWorks'
 import feature from './documents/feature'
+import summary from './documents/summary'
 import howToInvest from './documents/howToInvest'
 import howToBuy from './documents/howToBuy'
 
@@ -62,6 +63,7 @@ export default createSchema({
         cells,
         youtube,
         feature,
+        summary,
         testimonial,
         excerptPortableText,
         howToInvest,

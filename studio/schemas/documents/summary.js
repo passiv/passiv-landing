@@ -11,8 +11,8 @@ export default {
       type: 'image'
     },
     {
-      title: 'Feature Description',
-      name: 'featureDesc',
+      title: 'Summary Description',
+      name: 'sumDesc',
       type: 'string'
     }
   ]

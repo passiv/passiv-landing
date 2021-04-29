@@ -57,7 +57,7 @@ function Landing (props) {
 
           <div className={stylesF.col3}>
             {feature.map( item => (
-              <div className={cn(stylesF.innerCol, stylesF.tile)}>
+              <div key={item._key} className={cn(stylesF.innerCol, stylesF.tile)}>
                 <div className={stylesF.tileContainer}>
                   {item.icon && (
                     <img

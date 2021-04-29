@@ -84,9 +84,9 @@ export default {
       }]
     },
     {
-      name: 'featureTitle',
-      type: 'string',
-      title: 'Feature Title',
+      name: 'howItWorksDesc',
+      type: 'bodyPortableText',
+      title: 'How it works content area',
     },
     {
       type: 'array',

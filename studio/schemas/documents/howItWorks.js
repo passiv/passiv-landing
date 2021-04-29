@@ -4,13 +4,13 @@ export default {
   title: 'How It Works',
   fields: [
   {
-    title: 'How It Works Description',
-    name: 'howItWorksDesc',
-    type: 'bodyPortableText'
+    title: 'How It Works Heading (Number)',
+    name: 'howItWorksName',
+    type: 'string'
   },
   {
-    title: 'How It Works Name',
-    name: 'howItWorksName',
+    title: 'How It Works Description',
+    name: 'howItWorksDesc',
     type: 'string'
   }]
 }

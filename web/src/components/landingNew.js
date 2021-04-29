@@ -1,48 +1,79 @@
 import {format, distanceInWords, differenceInDays} from 'date-fns'
-import React from 'react'
-import {buildImageObj,cn} from '../lib/helpers'
+import React, { useState, useEffect }  from 'react'
+
 import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
 import {Link} from 'gatsby'
-import { getReferralCode, getTrackingCode, getAppBase } from '../lib/helpers';
+import SEO from '../components/seo'
+import { cn, buildImageObj, getReferralCode, getTrackingCode, getAppBase, getAPIBase } from '../lib/helpers';
+import axios from "axios";
 
-import stylesA from './home/above-fold.module.css'
-import stylesF from './home/features.module.css'
-import stylesT from './home/testimonials.module.css'
-import stylesS from './home/security.module.css'
-import styles from './landingNew.module.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+
+import styles from './questrade.module.css'
 
 
 function LandingNew (props) {
-  const { title, mainImage, publishedAt, tagline, description, btnUrl, btnCopy, featureTitle, feature, howItWorksTitle,howItWorks,darkTitle, darkCopy, darkBtnUrl, darkBtnCopy} = props
-  const referralCode = getReferralCode();
+  const { title, mainImage, publishedAt, tagline, description, btnUrl, btnCopy, feature, summaryTitle, _rawSummaryDesc, summary, howItWorksTitle, howItWorks, howItWorksDesc, _rawHowItWorksDesc, darkTitle, _rawDarkBody } = props
+
+const referralCode = getReferralCode();
   const trackingCode = getTrackingCode();
+
+  const apiBase = getAPIBase();
   const appBase = getAppBase();
+
+  const [signups, setSignups] = useState(null);
+
+  useEffect(() => {
+    axios.get(`https://${apiBase}/api/v1/signups/`)
+    .then(response => setSignups(response.data.count))
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <div className={styles.landingNew}>
-      <section className={cn(stylesA.aboveFold, styles.aboveFold)}>
+
+      <section className={styles.aboveFold}>
         <Container>
-          <div className={stylesA.ctaContainer}>
+          <div className={styles.ctaContainer}>
             <h1>{title}</h1>
-            <p className={stylesA.tagline}>{tagline}</p>
-            <p className={stylesA.blurb}>{description}</p>
-            <div className={cn(stylesA.emailSignup, stylesA.inputContainer)}>
-              <div className={cn(stylesA.emailContainer, stylesA.formContainer)}>
-                <form className={stylesA.register} method="get" noValidate action={`https://${appBase}/app/register/`}>
-                  <label><span>Enter your Email</span></label>
+            <p className={styles.blurb}>{description}</p>
+            <div className={cn(styles.emailSignup, styles.inputContainer)}>
+              <div className={cn(styles.emailContainer, styles.formContainer)}>
+                <form className={styles.register} method="get" noValidate action={`https://${appBase}/app/register/`}>
+                  <label>
+                    <span>Enter your Email</span>
+                  </label>
                   <input type="hidden" name="type" />
-                  <input type="email" required max_length="512" className={stylesA.registerEmail} name="email" />
-                  <input className={cn(stylesA.btn1, stylesA.registerBtn, stylesA.clickping)} type="submit" value={btnCopy} />
+                  <input
+                    type="email"
+                    required
+                    max_length="512"
+                    className={styles.registerEmail}
+                    name="email"
+                  />
+                  <input
+                    className={cn(styles.btn1, styles.registerBtn, styles.clickping)}
+                    type="submit"
+                    value={btnCopy}
+                  />
                   {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
                   {trackingCode !== null && <input type="hidden" name="uid" value={trackingCode} />}
+                    <p className={styles.socialProof}>
+                    {signups && `Join ${new Intl.NumberFormat().format(signups)} new Passiv users this month!`}
+                    </p>
                 </form>
               </div>
             </div>
+            <a href="#whyus" className={styles.scrollCTA}>
+              <p>Scroll down to learn more</p>
+              <FontAwesomeIcon icon={faChevronDown} className={styles.icon} />
+            </a>
           </div>
         </Container>
         {mainImage && (
-          <div className={styles.imgContainer}>
+          <div className={styles.imgContainerAboveFold}>
             <img
               src={imageUrlFor(buildImageObj(mainImage))
               .width(900)
@@ -51,47 +82,86 @@ function LandingNew (props) {
           </div>
         )}
       </section>
-      <section className={stylesF.features}>
-        <Container>
-          <h2>{featureTitle}</h2>
 
-          <div className={stylesF.col3}>
-            {feature.map( item => (
-              <div className={cn(stylesF.innerCol, stylesF.tile)}>
-                <div className={stylesF.tileContainer}>
-                  {item.icon && (
+      <section className={styles.benefits} id="whyus">
+        <Container>
+          <div className={styles.flexContainer}>
+            <div className={styles.videoWrapper}>
+
+              <h2>{summaryTitle}</h2>
+              <div>
+                {_rawSummaryDesc && <PortableText blocks={_rawSummaryDesc} />}
+              </div>
+            </div>
+            <div className={styles.copyContainer}>
+              <ul>
+                {summary.map( itemSum => (
+                <li key={itemSum._key}>
+                  {itemSum.icon && (
                     <img
-                      src={imageUrlFor(buildImageObj(item.icon))
+                      alt=""
+                      role="presentation"
+                      src={imageUrlFor(buildImageObj(itemSum.icon))
                       .width(500)
                       .url()}
                     />
                   )}
-                  <h3>{item.featureTitle}</h3>
-                  <p>{item.featureDesc}</p>
-                </div>
-              </div>
-            ))}
+                  {itemSum.sumDesc}
+                </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Container>
+        <div className={styles.howItWorks}>
+          <Container>
+            <div className={styles.howCopyContainer}>
+              <h2>{howItWorksTitle}</h2>
+              <ol>
+                {howItWorks.map( itemHow => (
+                  <li key={itemHow._key}><p>{itemHow.howItWorksDesc}</p></li>
+                ))}
+              </ol>
+              <div>
+                 {_rawHowItWorksDesc && <PortableText blocks={_rawHowItWorksDesc} />}
+              </div>   
+            </div>
+          </Container>
+        </div>
       </section>
-      <section className={cn(stylesT.howItWorks, styles.howItWorks)}>
-        <Container>
-          <h2>{howItWorksTitle}</h2>
-          <div className={stylesT.col2}>
-            {howItWorks.map( item => (
-              <div className={cn(stylesT.innerCol, stylesT.howItWorks)}>
-                <p><span>"</span>{item.howItWorksDesc}<span>"</span></p>
-                <span className={stylesT.name}>{item.howItWorksName}</span>
+
+      {feature.map ( itemFeature => (
+                
+      <section key={itemFeature._key} className={styles.features}>
+        <div className={styles.feature}>
+          <Container>
+            <div className={styles.flex}>
+              <div className={styles.ctaContainer}>
+                <h2>{itemFeature.featureTitle}</h2>
+                <p className={styles.blurb}>{itemFeature.featureDesc}</p>
               </div>
-            ))}
-          </div>
-        </Container>
+              <div className={styles.imgContainer}>
+                <img
+                  alt=""
+                  role="presentation"
+                  src={imageUrlFor(buildImageObj(itemFeature.icon))
+                  .width(500)
+                  .url()}
+                />
+              </div>
+            </div>
+          </Container>
+        </div>
       </section>
-      <section className={stylesS.security}>
+
+      ))}
+
+      <section className={styles.security}>
         <Container>
           <h2>{darkTitle}</h2>
-          <p>{darkCopy}</p>
-          <a href={darkBtnUrl} className={stylesS.btn1}>{darkBtnCopy}</a>
+          <div>
+             {_rawDarkBody && <PortableText blocks={_rawDarkBody} />}
+          </div>
         </Container>
       </section>
     </div>

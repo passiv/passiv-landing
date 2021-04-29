@@ -23,7 +23,6 @@ export const query = graphql`
         ...SanityImage
         alt
       }
-      featureTitle
       feature {
         _key
         _type
@@ -35,6 +34,19 @@ export const query = graphql`
         featureTitle
         featureDesc
       }
+      summary{
+        _key
+        _type
+        icon {
+          asset {
+            _id
+          }
+        }
+        sumDesc
+
+      }
+      _rawSummaryDesc
+      summaryTitle
       howItWorksTitle
       howItWorks {
         _key
@@ -42,10 +54,9 @@ export const query = graphql`
         howItWorksDesc
         howItWorksName
       }
+      _rawHowItWorksDesc
       darkTitle
-      darkCopy
-      darkBtnUrl
-      darkBtnCopy
+      _rawDarkBody
     }
   }
 `
