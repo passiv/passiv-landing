@@ -14,11 +14,14 @@ import modelPortfolio from './documents/modelPortfolio'
 import tutorial from './documents/tutorial'
 import featurePage from './documents/featurePage'
 import landing from './documents/landing'
+import landingNew from './documents/landingNew'
 import siteSettings from './documents/siteSettings'
 import vimeo from './documents/vimeo'
 import youtube from './documents/youtube'
 import testimonial from './documents/testimonial'
+import howItWorks from './documents/howItWorks'
 import feature from './documents/feature'
+import summary from './documents/summary'
 import howToInvest from './documents/howToInvest'
 import howToBuy from './documents/howToBuy'
 
@@ -47,6 +50,7 @@ export default createSchema({
         tutorial,
         featurePage,
         landing,
+        landingNew,
         author,
         mainImage,
         authorReference,
@@ -59,9 +63,11 @@ export default createSchema({
         cells,
         youtube,
         feature,
+        summary,
         testimonial,
         excerptPortableText,
         howToInvest,
+        howItWorks,
         howToBuy
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas

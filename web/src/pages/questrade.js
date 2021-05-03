@@ -115,7 +115,7 @@ const QuestradePage = props => {
                     {referralCode !== null && <input type="hidden" name="ref" value={referralCode} />}
                     {trackingCode !== null && <input type="hidden" name="uid" value={trackingCode} />}
                       <p className={styles.socialProof}>
-                      {signups && `Join ${signups} new Passiv users this month!`}
+                      {signups && `Join ${new Intl.NumberFormat().format(signups)} new Passiv users this month!`}
                       </p>
                   </form>
                 </div>

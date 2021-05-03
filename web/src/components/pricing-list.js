@@ -26,10 +26,10 @@ function PricingList ({  }) {
             <li>Automated calculations</li>
             <li>Cash & dividend notifications</li>
             <li>Keep stock picks separate</li>
+            <li>Multi-account portfolios</li>
+            <li>Connect multiple brokerage logins</li>
             <li className={styles.disabled}>One-click trades</li>
-            <li className={styles.disabled}>Multi-account portfolios</li>
             <li className={styles.disabled}>Advanced currency handling</li>
-            <li className={styles.disabled}>Connect multiple brokerage logins</li>
           </ul>
           <a href={registerPath} className={cn(styles.pageLink,styles.btn4)}>GET COMMUNITY</a>
         </div>
@@ -45,10 +45,10 @@ function PricingList ({  }) {
             <li>Automated calculations</li>
             <li>Cash & dividend notifications</li>
             <li>Keep stock picks separate</li>
-            <li>One-click trades</li>
             <li>Multi-account portfolios</li>
-            <li>Advanced currency handling</li>
             <li>Connect multiple brokerage logins</li>
+            <li>One-click trades</li>
+            <li>Advanced currency handling</li>
           </ul>
           <a href={registerPath} className={cn(styles.pageLink,styles.btn4)}>GET ELITE</a>
         </div>
