@@ -812,7 +812,7 @@
   }
   @nest & .feature:after {
     display: none;
-  } 
+  }
   @nest & .feature {
     min-height: 0;
     @media (--media-min-desktop) {
@@ -827,5 +827,18 @@
   }
   @nest & .feature .imgContainer {
     max-width: 100%;
+  }
+}
+
+.whyUs {
+  margin: 0 auto;
+  @nest & .videoWrapper {
+    text-align: center;
+  }
+  @nest & .copyContainerNoVid {
+    padding-top: 20px;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 30px;
   }
 }
