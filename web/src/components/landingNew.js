@@ -106,7 +106,7 @@ function LandingNew(props) {
         </Container>
         {mainImage && (
           <div className={styles.imgContainerAboveFold}>
-            <img src={imageUrlFor(buildImageObj(mainImage)).width(900).url()} />
+            <img src={imageUrlFor(buildImageObj(mainImage)).width(1400).url()} />
           </div>
         )}
       </section>
@@ -166,7 +166,7 @@ function LandingNew(props) {
                   <img
                     alt=""
                     role="presentation"
-                    src={imageUrlFor(buildImageObj(itemFeature.icon)).width(500).url()}
+                    src={imageUrlFor(buildImageObj(itemFeature.icon)).width(1000).url()}
                   />
                 </div>
               </div>
