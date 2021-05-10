@@ -29,7 +29,7 @@ function Landing (props) {
             <p className={stylesA.blurb}>{description}</p>
             <div className={cn(stylesA.emailSignup, stylesA.inputContainer)}>
               <div className={cn(stylesA.emailContainer, stylesA.formContainer)}>
-                <form className={stylesA.register} method="get" noValidate action={`https://${appBase}/app/register/`}>
+                <form className={stylesA.register} method="get" noValidate action={`https://${appBase}/register/`}>
                   <label><span>Enter your Email</span></label>
                   <input type="hidden" name="type" />
                   <input type="email" required max_length="512" className={stylesA.registerEmail} name="email" />
