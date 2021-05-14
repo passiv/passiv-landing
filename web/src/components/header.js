@@ -8,13 +8,13 @@ import { cn, generateTrackingPath, getAppBase } from '../lib/helpers';
 import styles from './header.module.css'
 
 const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
-  const [registerPath, setRegisterPath] = useState('/app/register/');
-  const [loginPath, setLoginPath] = useState('/app/login/');
+  const [registerPath, setRegisterPath] = useState('/register/');
+  const [loginPath, setLoginPath] = useState('/login/');
   const appBase = getAppBase();
 
   useEffect(() => {
-    setRegisterPath(generateTrackingPath('/app/register/'));
-    setLoginPath(generateTrackingPath('/app/login/'));
+    setRegisterPath(generateTrackingPath('/register/'));
+    setLoginPath(generateTrackingPath('/login/'));
   }, []);
 
   return (

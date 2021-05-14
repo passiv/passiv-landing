@@ -85,7 +85,7 @@ function Security ({  }) {
 
           <h2 id="deleting-your-personal-data">Deleting your personal data</h2>
 
-          <p>Any user can request the permanent deletion of all their personal data at any time. Simply contact us using our <a href="https://passiv.com/app/help/" target="_blank" rel="noopener noreferrer">feedback form</a> and the email address associated with your Passiv account, requesting the closure of your account or the deletion of your personal data. Your request will be processed within five business days and you will receive a confirmation email once complete.</p>
+          <p>Any user can request the permanent deletion of all their personal data at any time. Simply contact us using our <a href="/app/help/">feedback form</a> and the email address associated with your Passiv account, requesting the closure of your account or the deletion of your personal data. Your request will be processed within five business days and you will receive a confirmation email once complete.</p>
 
 
         </div>
