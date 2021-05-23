@@ -111,8 +111,9 @@ function Security({}) {
           <p>
             Your investment account information is not shared with any other party, except when
             included with communications such as emails or other messaging. Application usage data
-            may be shared with third-party services including Google Analytics, Reddit, and
-            Facebook.
+            may be shared with third-party services such as Google Analytics. Please note that the
+            sharing of application usage data does <strong>not</strong> include your private
+            financial data.
           </p>
 
           <h2 id="how-we-secure-your-personal-data">How we secure your personal data</h2>
@@ -171,16 +172,6 @@ function Security({}) {
             <li>
               <a href="https://www.twilio.com/" target="_blank" rel="noopener noreferrer">
                 Twilio
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="https://www.reddit.com" target="_blank" rel="noopener noreferrer">
-                Reddit
               </a>
             </li>
             <li>
