@@ -55,11 +55,23 @@ const TutorialsPage = props => {
         <SEO title='Tutorials' />
         <Container>
           <div className={styles.content}>
-            <h1 className={responsiveTitle1}>Getting Started with Passiv</h1>
-            <p className={styles.firstLine}>Just getting acquainted with Passiv? We can walk you through it.</p>
-            {tutorialNodes && tutorialNodes.length > 0 && <TutorialPreviewGrid nodes={tutorialNodes} />}
+            <h1 className={responsiveTitle1}>What can we help you learn today?</h1>
+            <p className={styles.firstLine}>Search through our articles for helpful tips and videos.</p>
+            <div className={styles.searchBox}>
+              <h2 className={styles.searchTitle}>SEARCH</h2>
+              <input type="text" placeholder="Type to look for helpful resources"/>
+            </div>
+            <div className={styles.carouselContainer}>
+              <h2 className={styles.headerBar}>Basic</h2>
+              {tutorialNodes && tutorialNodes.length > 0 && <TutorialPreviewGrid nodes={tutorialNodes} />}
+              <h2 className={styles.headerBar}>Intermediate</h2>
+              {tutorialNodes && tutorialNodes.length > 0 && <TutorialPreviewGrid nodes={tutorialNodes} />}
+              <h2 className={styles.headerBar}>Expert</h2>
+              {tutorialNodes && tutorialNodes.length > 0 && <TutorialPreviewGrid nodes={tutorialNodes} />}
+            </div>
           </div>
         </Container>
+
       </Layout>
     </div>
   )
