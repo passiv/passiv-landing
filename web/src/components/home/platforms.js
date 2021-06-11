@@ -14,6 +14,7 @@ import zerodha from "../../images/zerodha-logo.png";
 import unocoin from "../../images/unocoin-logo.png";
 import wealthica from "../../images/wealthica-logo.png";
 import kraken from "../../images/kraken-logo.png";
+import bitbuy from "../../images/bitbuy-logo.png";
 import construction from "../../images/construction.png";
 
 function Platforms({}) {
@@ -80,11 +81,16 @@ function Platforms({}) {
                     <img src={kraken} alt="Kraken Logo" />
                   </div>
                 </a>
+                <a href="https://bitbuy.ca/" target="_blank" rel="noopener noreferrer">
+                  <div className={styles.tile}>
+                    <img src={bitbuy} alt="Bitbuy Logo" />
+                  </div>
+                </a>
 
-                <div className={styles.tile}>
+                {/* <div className={styles.tile}>
                   <img className={styles.small} src={construction} alt="Construction" />
                   <div className={styles.subtext}>More coming soon...</div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -69,7 +69,7 @@ function LandingNew(props) {
                   className={styles.register}
                   method="get"
                   noValidate
-                  action={`https://${appBase}/app/register/`}
+                  action={`https://${appBase}/register/`}
                 >
                   <label>
                     <span>Enter your Email</span>
