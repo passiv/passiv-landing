@@ -1,7 +1,7 @@
-@import '../../styles/custom-media.css';
-@import '../../styles/custom-properties.css';
-@import '../../styles/home.css';
-@import '../../styles/btn.css';
+@import "../../styles/custom-media.css";
+@import "../../styles/custom-properties.css";
+@import "../../styles/home.css";
+@import "../../styles/btn.css";
 
 .email-signup {
   position: relative;
@@ -13,7 +13,7 @@
     left: 16px;
     @nest &:after {
       background: #fff;
-      content: '';
+      content: "";
       top: 12px;
       left: -5px;
       position: absolute;
@@ -35,7 +35,6 @@
     line-height: 1.5;
     padding: 2px 12px;
     @nest &:focus {
-
     }
     @media (--media-max-desktop) {
       margin-bottom: 20px;
@@ -87,14 +86,14 @@
     }
   }
   @nest &:after {
-    content: '';
+    content: "";
     height: 100%;
     width: 100%;
     bottom: 0;
     right: 0;
     position: absolute;
     z-index: 0;
-    background: url(../../images/dashboard-img@2x.png) no-repeat;
+    background: url(../../images/new-dashboard-image.png) no-repeat;
     background-position: right 25%;
     max-width: 750px;
     @media (--media-max-tablet) {
@@ -114,7 +113,7 @@
     }
   }
   @nest &:before {
-    content: '';
+    content: "";
     width: 875px;
     height: 965px;
     position: absolute;
@@ -137,7 +136,7 @@
 }
 
 .tagline {
-  color: #9A9A9A;
+  color: #9a9a9a;
   font-family: var(--base-font-family);
   font-weight: 700;
   font-size: 18px;
