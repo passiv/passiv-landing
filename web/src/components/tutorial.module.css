@@ -51,6 +51,34 @@
   @nest & .post-page .wrapper {
     max-width: calc(1500px - (20px * 2));
   }
+  @nest & .alice-carousel__prev-btn-item.__inactive, 
+  @nest & .alice-carousel__next-btn-item.__inactive{
+    opacity:  0;
+  }
+
+  @nest & .alice-carousel__prev-btn-item, 
+  @nest & .alice-carousel__next-btn-item {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0;
+    color: #232325;
+    background: #fff;
+    border-radius: 50%;
+    padding: 0px 9px;
+    font-weight: 700;
+    font-size: 21px;
+  }
+  @nest & .alice-carousel__prev-btn {
+    right:  78px;
+    position: absolute;
+    top: -75px;
+  }
+  @nest & .alice-carousel__next-btn {
+    right: 15px;
+    position: absolute;
+    top: -75px;
+  }
 }
 .post-content {
   position: relative;

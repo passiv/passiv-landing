@@ -366,4 +366,36 @@ main {
   }
 }
 
+.alice-carousel__prev-btn-item.__inactive, 
+.alice-carousel__next-btn-item.__inactive{
+    opacity: 0!important;
+  }
+
+.alice-carousel__prev-btn-item, 
+.alice-carousel__next-btn-item {
+  display: inline-block;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0;
+  color: #232325;
+  background: #fff;
+  border-radius: 50%;
+  padding: 0px 9px !important;
+  font-weight: 700;
+  font-size: 21px;
+}
+.alice-carousel__prev-btn {
+  right:  78px !important;
+  position: absolute;
+  top: -75px;
+  width:  auto !important;
+}
+.alice-carousel__next-btn {
+  right: 32px !important;
+  position: absolute;
+  top: -75px;
+  width:  auto !important;
+}
+
+
 

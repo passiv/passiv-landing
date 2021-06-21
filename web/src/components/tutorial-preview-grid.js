@@ -16,8 +16,6 @@ const responsive = {
 
 function TutorialPreviewGrid (props) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const slidePrev = () => setActiveIndex(activeIndex - 1);
-  const slideNext = () => setActiveIndex(activeIndex + 1);
 
   return (
     <div className={styles.root}>
@@ -28,7 +26,6 @@ function TutorialPreviewGrid (props) {
           mouseTrackingEnabled={true}
           mouseDragEnabled={true}
           disableAutoPlayOnAction={true}
-          disableButtonsControls
           autoPlay={false}
           autoWidth={false}
           disableDotsControls={true}
@@ -44,10 +41,6 @@ function TutorialPreviewGrid (props) {
               </div>
             ))}
         </AliceCarousel>
-        <div className="b-refs-buttons">
-            <button onClick={slidePrev}>Prev</button>
-            <button onClick={slideNext}>Next</button>
-        </div>,
       </div>
       {props.browseMoreHref && (
         <div className={styles.browseMoreNav}>
