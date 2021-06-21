@@ -6,8 +6,8 @@ import { generateTrackingPath } from "../lib/helpers";
 
 import styles from "./pricing.module.css";
 
-function PricingList({}) {
-  let registerPath = generateTrackingPath("/app/register/");
+function PricingList ({  }) {
+  let registerPath = generateTrackingPath('/register/');
 
   return (
     <div className={styles.priceContainer}>
