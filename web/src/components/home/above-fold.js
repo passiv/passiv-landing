@@ -32,7 +32,7 @@ function AboveFold({}) {
           </p>
           <div className={cn(styles.emailSignup, styles.inputContainer)}>
             <div className={cn(styles.emailContainer, styles.formContainer)}>
-              <form className={styles.register} method="get" noValidate action={`https://${appBase}/app/register/`}>
+              <form className={styles.register} method="get" noValidate action={`https://${appBase}/register/`}>
                 <label>
                   <span>Enter your Email</span>
                 </label>

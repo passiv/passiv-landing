@@ -807,14 +807,88 @@
 }
 
 .landingNew {
+  @nest & h1 {
+    @media (--media-min-desktop) {
+      font-size: 4.5rem;
+    }
+  }
+  @nest & .ctaContainer {
+    max-width: 606px;
+     @media (--media-max-desktop) {
+      margin: 0 auto;
+     }
+  }
+  @nest & .aboveFold {
+    padding-bottom: 173px;
+    @media (--media-max-desktop) {
+      text-align: center;
+      padding-bottom: 73px;
+    }
+  }
+  @nest & .copyContainerNoVid {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    @nest & ul {
+      grid-column-gap: 30px;
+      @media (--media-max-tablet) {
+        display: block;
+      }
+    }
+    @nest & li {
+      background: #2e3543;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: -15px 15px 23px rgb(6 130 107);
+      @media (--media-max-tablet) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  @nest & .howCopyContainer a{
+    color: #fff;
+    text-decoration: underline;
+    font-size: 20px;
+    &:hover {
+      color: #000;
+    }
+  }
+  @nest & .aboveFold .imgContainerAboveFold {
+    background: #fff;
+    padding: 0px;
+    overflow: hidden;
+    border-radius: 8px 0 0 8px;
+    box-shadow: -28px 16px 25px rgb(173 173 173 / 69%);
+     @media (--media-min-desktop) {
+        width: 50%;
+
+      }
+      @media (--media-max-desktop) {
+        position: relative;
+        transform: none;
+        border-radius: 8px;
+        max-width: 700px;
+        display: inline-block;
+        margin-top: 30px;
+      }
+  }
   @nest & .aboveFold:after {
     display: none;
   }
   @nest & .feature:after {
     display: none;
-  } 
+  }
+  @nest & .videoWrapper {
+    max-width: 760px;
+    margin: 195px auto 0;
+    @media (--media-max-desktop) {
+      margin-top: 50px;
+    }
+  }
   @nest & .feature {
     min-height: 0;
+    @media (--media-max-desktop) {
+      padding-bottom: 70px;
+    }
     @media (--media-min-desktop) {
       @nest & .flex {
         display: flex;
@@ -827,5 +901,23 @@
   }
   @nest & .feature .imgContainer {
     max-width: 100%;
+    background: #fff;
+    padding: 0px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: -28px 25px 31px rgb(173, 173, 173, .41);
+  }
+}
+
+.whyUs {
+  margin: 0 auto;
+  @nest & .videoWrapper {
+    text-align: center;
+  }
+  @nest & .copyContainerNoVid {
+    padding-top: 20px;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 30px;
   }
 }
