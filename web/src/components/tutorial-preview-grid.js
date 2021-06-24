@@ -2,20 +2,18 @@ import {Link} from 'gatsby'
 import React, { useState } from 'react'
 import TutorialPreview from './tutorial-preview'
 import AliceCarousel from 'react-alice-carousel'
-import 'react-alice-carousel/lib/alice-carousel.css'
+import "react-alice-carousel/lib/alice-carousel.css";
 import styles from './tutorial.module.css'
-
-const handleOnDragStart = e => e.preventDefault()
-const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
-    1024: { items: 4 },
-    1600: { items: 5 },
-};
-
 
 function TutorialPreviewGrid (props) {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const responsive = {
+      0: { items: 1 },
+      568: { items: 2 },
+      1024: { items: 4 },
+      1600: { items: 5 },
+  };
 
   return (
     <div className={styles.root}>
@@ -23,20 +21,18 @@ function TutorialPreviewGrid (props) {
       <div className={styles.aliceCarousel}>
         <AliceCarousel
           className={styles.posts}
-          mouseTrackingEnabled={true}
-          mouseDragEnabled={true}
+          mouseTracking
           disableAutoPlayOnAction={true}
           autoPlay={false}
           autoWidth={false}
           disableDotsControls={true}
           keyboardNavigation={true}
-          activeIndex={activeIndex}
           responsive={responsive}
           paddingRight={40}>
         
           {props.nodes &&
             props.nodes.map(node => (
-              <div onDragStart={handleOnDragStart} key={node.id} className={styles.post}>
+              <div key={node.id} className={styles.post}>
                 <TutorialPreview {...node} />
               </div>
             ))}
