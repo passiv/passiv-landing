@@ -28,9 +28,22 @@ export default {
       description: 'This can be used to schedule post for publishing'
     },
     {
+      title: 'Tutorial Category',
+      name: 'postType',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Basic', value: 'basic'},
+          {title: 'Intermediate', value: 'intermediate'},
+          {title: 'Expert', value: 'expert'}
+        ], // <-- predefined values
+        layout: 'radio' // <-- defaults to 'dropdown'
+      }
+    },
+    {
       name: 'categories',
       type: 'array',
-      title: 'Categories',
+      title: 'Tag',
       of: [
         {
           type: 'reference',

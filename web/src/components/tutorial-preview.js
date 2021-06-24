@@ -10,7 +10,7 @@ import {responsiveTitle3} from './typography.module.css'
 
 function TutorialPreview (props) {
 
-const {_rawBody, title, vimeo} = props
+const {_rawBody, title} = props
 
   return (
     <div className={styles.text}>
@@ -27,17 +27,6 @@ const {_rawBody, title, vimeo} = props
       <Link className={styles.readBtn} to={`/help/tutorials/${props.slug.current}/`}>
         Read More
       </Link>
-      <div className={styles.videoContainer}>
-        {props.mainImage && props.mainImage.asset && (
-          <img
-            src={imageUrlFor(buildImageObj(props.mainImage))
-              .width(700)
-              .height(Math.floor((9 / 16) * 600))
-              .auto('format')
-              .url()}
-          />
-        )}
-      </div>
     </div>
   )
 }
