@@ -385,13 +385,13 @@ main {
   font-size: 21px;
 }
 .alice-carousel__prev-btn {
-  right:  78px !important;
+  left: 80vw;
   position: absolute;
   top: -75px;
   width:  auto !important;
 }
 .alice-carousel__next-btn {
-  right: 32px !important;
+  left: 83vw;
   position: absolute;
   top: -75px;
   width:  auto !important;
