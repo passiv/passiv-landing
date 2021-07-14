@@ -20,6 +20,7 @@ export const query = graphql`
       mainImage {
         ...SanityImage
       }
+      postType
       slug {
         current
       }

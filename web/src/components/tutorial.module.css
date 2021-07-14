@@ -4,38 +4,45 @@
 .tutorials {
   overflow: hidden;
   position: relative;
-
+  @nest & .alice-carousel {
+    width: 100vw!important;
+  }
   @nest & h1 {
     position: relative;
     z-index: 2;
     margin-bottom: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.44px;
   }
-  @nest &:before {
-    content: '';
-    width: 875px;
-    height: 965px;
-    position: absolute;
-    right: -400px;
-    top: 0;
-    transform: rotate(-45deg);
-    border-radius: 4px;
-    box-shadow: 4px 4px 24px 0 rgba(2, 74, 61, 0.28);
-    background-image: radial-gradient(circle at 48% 46%, #04a287, #0eb599, #04a287 165%);
-    z-index: 0;
+  @media (--media-min-desktop) {
+    @nest &:before {
+      content: '';
+      width: 875px;
+      height: 965px;
+      position: absolute;
+      right: -400px;
+      top: 0;
+      transform: rotate(-45deg);
+      border-radius: 4px;
+      box-shadow: 4px 4px 24px 0 rgba(2, 74, 61, 0.28);
+      background-image: radial-gradient(circle at 48% 46%, #04a287, #0eb599, #04a287 165%);
+      z-index: 0;
+    }
+    @nest &:after {
+      content: '';
+      width: 875px;
+      height: 965px;
+      position: absolute;
+      left: -400px;
+      top: 1000px;
+      transform: rotate(-45deg);
+      border-radius: 4px;
+      box-shadow: 4px 4px 24px 0 rgba(2, 74, 61, 0.28);
+      background-image: radial-gradient(circle at 48% 46%, #04a287, #0eb599, #04a287 165%);
+      z-index: 0;
+    }
   }
-  @nest &:after {
-    content: '';
-    width: 875px;
-    height: 965px;
-    position: absolute;
-    left: -400px;
-    top: 1000px;
-    transform: rotate(-45deg);
-    border-radius: 4px;
-    box-shadow: 4px 4px 24px 0 rgba(2, 74, 61, 0.28);
-    background-image: radial-gradient(circle at 48% 46%, #04a287, #0eb599, #04a287 165%);
-    z-index: 0;
-  }
+  
   @nest &.post-page {
     @nest & p:first-of-type {
       text-align: left;
@@ -52,82 +59,30 @@
 .posts {
   margin-top: 30px;
   @media (--media-min-desktop) {
-    margin-top: 100px;
+    margin-top: 50px;
   }
 }
 .post {
-  box-shadow: 4px 4px 24px 0 rgba(57, 62, 75, 0.2);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.0932405);
   background-color: #ffffff;
   position: relative;
-  margin-bottom: 50px;
+  margin: 0px 20px 20px 0;
   list-style: none;
+  padding: 25px 25px 45px 25px;
+  box-sizing: border-box;
+  border-radius:  5px;
+  height: 338px;
+
   @media (--media-min-desktop) {
-    margin-bottom: 150px;
+    padding: 35px 30px 35px 30px;
+    
+    padding-bottom: 25px;
   }
-  @nest &:nth-child(even){
-    border-right: solid 6px #2a2d34;
-    padding: 25px;
-    @media (--media-min-desktop) {
-      padding: 35px 30px 35px 53%;
-      margin-right: 40px;
-    }
-    @nest & .videoContainer {
-      padding: 0;
-      margin: 20px 0;
-      background: #fff;
-      box-shadow: 4px 4px 24px 0 rgba(80, 84, 91, 0.44);
-      border-radius: 6px;
-      width: 100%;
-      @nest & iframe {
-        width: 100%;
-      }
-      @media (--media-min-desktop) {
-        max-width: 53%;
-        position: absolute;
-        left: -40px;
-        margin: 0;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-  }
-  @nest &:nth-child(odd){
-    border-left: solid 6px #2a2d34;
-    padding: 25px;
-    @media (--media-min-desktop) {
-      padding: 35px 53% 35px 30px;
-      margin-left: 40px;
-    }
-    @nest & .videoContainer {
-      padding: 0;
-      margin: 20px 0;
-      background: #fff;
-      box-shadow: 4px 4px 24px 0 rgba(80, 84, 91, 0.44);
-      border-radius: 6px;
-      left: auto;
-      transform: none;
-      width: 100%;
-      max-width: 640px;
-      @nest & img {
-        width: 100%;
-      }
-      @media (--media-min-desktop) {
-        max-width: 53%;
-        position: absolute;
-        right: -40px;
-        top: 50%;
-        transform: translateY(-50%);
-        left: auto;
-        margin: 0;
-      }
-    }
-  }
-  @nest & h2 a{
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: -0.36px;
-    color: #048770;
-    line-height: 1;
+  @nest & h2 a {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 32px;
+    color: #02050F;
   }
   @nest & h2 {
     padding-top: 0;
@@ -136,17 +91,30 @@
   }
   @nest & p {
     font-size: 18px;
-    margin-bottom: 12px;
+    line-height: 32px;
+    color: #02050F;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
 }
 .content {
   position: relative;
   z-index: 2;
+  @media (--media-min-desktop) {
+    @nest &:before{
+      content: url(../images/tutorials-icon.svg);
+      position: absolute;
+      left: -24px;
+    }
+  } 
 }
 .firstLine {
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.7;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.2px;
+  color: #02050F;
   text-align: center;
   max-width: 650px;
   margin: 0 auto 45px;
@@ -155,4 +123,56 @@
 .readBtn {
   color: #04a388;
   font-weight: 600;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 20px;
+}
+
+.searchBox{
+  display: block;
+  margin: 0 0 50px 0;
+  @media (--media-min-desktop) {
+    padding: 20px 100px;
+  }
+  @nest & .searchTitle{
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 150%;
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+    color: #232225;
+    margin-bottom: 15px;
+  }
+  @nest & input{
+    background: rgba(255, 255, 255, 0.67);
+    border: 3px solid #04A287;
+    box-sizing: border-box;
+    border-radius: 39px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 27px;
+    padding: 15px 30px 17px;
+    width: 100%;
+    @media (--media-min-desktop) {
+      font-size: 18px;
+    }
+  }
+}
+.carouselContainer{
+  z-index: 2;
+  position: relative;
+  width: 100vw!important;
+}
+.headerBar{
+  background: #232225;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.0932405);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 26px;
+  padding: 16px 0 14px 87px;
+  line-height: 100%;
+  letter-spacing: 1.2px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
 }
