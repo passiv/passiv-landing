@@ -15,6 +15,7 @@ import unocoin from "../../images/unocoin-logo.png";
 import wealthica from "../../images/wealthica-logo.png";
 import kraken from "../../images/kraken-logo.png";
 import bitbuy from "../../images/bitbuy-logo.png";
+import ally from "../../images/ally-logo.png";
 import construction from "../../images/construction.png";
 
 function Platforms({}) {
@@ -54,13 +55,13 @@ function Platforms({}) {
                     <img src={alpaca} alt="Alpaca Logo" />
                   </div>
                 </a>
+              </div>
+              <div className={styles.tileContainer}>
                 <a href="https://www.tdameritrade.com/" target="_blank" rel="noopener noreferrer">
                   <div className={styles.tile}>
                     <img src={tda} alt="TD Ameritrade Logo" />
                   </div>
                 </a>
-              </div>
-              <div className={styles.tileContainer}>
                 <a href="https://zerodha.com/" target="_blank" rel="noopener noreferrer">
                   <div className={styles.tile}>
                     <img src={zerodha} alt="Zerodha Logo" />
@@ -76,6 +77,8 @@ function Platforms({}) {
                     <img src={unocoin} alt="Unocoin Logo" />
                   </div>
                 </a>
+              </div>
+              <div className={styles.tileContainer}>
                 <a href="https://kraken.com/" target="_blank" rel="noopener noreferrer">
                   <div className={styles.tile}>
                     <img src={kraken} alt="Kraken Logo" />
@@ -86,11 +89,15 @@ function Platforms({}) {
                     <img src={bitbuy} alt="Bitbuy Logo" />
                   </div>
                 </a>
-
-                {/* <div className={styles.tile}>
+                <a href="https://www.ally.com/" target="_blank" rel="noopener noreferrer">
+                  <div className={styles.tile}>
+                    <img src={ally} alt="Ally Logo" />
+                  </div>
+                </a>
+                <div className={styles.tile}>
                   <img className={styles.small} src={construction} alt="Construction" />
                   <div className={styles.subtext}>More coming soon...</div>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
