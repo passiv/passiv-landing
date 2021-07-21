@@ -21,7 +21,7 @@ function ModelPortfolio(props) {
   const [dataRetrieved, setDataRetrieved] = useState(false);
   if (historicalPrices === null) {
     axios
-      .get("https://passiv.com/api/v1/historical/" + ticker)
+      .get("https://passiv.com/v1/historical/" + ticker)
       .then((response) => {
         console.log(response.data);
         setHistoricalPrices(response.data);
@@ -37,7 +37,7 @@ function ModelPortfolio(props) {
     const form = new FormData(event.target);
     const email = form.get("email");
     axios
-      .post("https://passiv.com/api/v1/emailsubscribe", { email: email })
+      .post("https://passiv.com/v1/emailsubscribe", { email: email })
       .then((response) => {
         setSuccess(true);
         console.log("success", response);

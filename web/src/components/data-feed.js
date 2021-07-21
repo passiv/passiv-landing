@@ -20,7 +20,7 @@ function DataFeed (props) {
 
   if (historicalPrices === null && ticker != 'ETF-DIRECTORY') {
     axios
-      .get('https://passiv.com/api/v1/historical/' + ticker)
+      .get('https://passiv.com/v1/historical/' + ticker)
       .then((response) => {
         // console.log(response.data);
         setHistoricalPrices(response.data)
@@ -31,7 +31,7 @@ function DataFeed (props) {
       })
   }
 
-  axios.get(`https://passiv.com/api/v1/ownedPercent/${props.slug.current.toUpperCase()}`)
+  axios.get(`https://passiv.com/v1/ownedPercent/${props.slug.current.toUpperCase()}`)
     .then(response => setOwnedPercent(response.data))
     // setOwnedPercent(response)
 
@@ -40,7 +40,7 @@ function DataFeed (props) {
     const form = new FormData(event.target)
     const email = form.get('email')
     axios
-      .post('https://passiv.com/api/v1/emailsubscribe', {email: email})
+      .post('https://passiv.com/v1/emailsubscribe', {email: email})
       .then((response) => {
         setSuccess(true)
         console.log('success', response)

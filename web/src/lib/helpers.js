@@ -189,7 +189,7 @@ export function collectMetadata () {
 
 export function pingTracking () {
   if (typeof window !== 'undefined') {
-    axios.post(`https://${getAPIBase()}/api/v1/ping/`, collectMetadata())
+    axios.post(`https://${getAPIBase()}/v1/ping/`, collectMetadata())
       // .then(response => console.log('api response', response))
       .catch(error => null)
     // console.log('ping', window.location)
