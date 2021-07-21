@@ -16,7 +16,7 @@ function AboveFold({}) {
   const [signups, setSignups] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://${apiBase}/api/v1/signups/`)
+    axios.get(`https://${apiBase}/v1/signups/`)
     .then(response => setSignups(response.data.count))
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
