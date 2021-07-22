@@ -67,6 +67,19 @@ main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  background: rgba(255,255,255,0);
+  transition: .25s background;
+}
+
+.navbar.active {
+  background: rgba(255,255,255,1);
+}
+
 
 
 /**
@@ -239,7 +252,6 @@ table {
 
 header {
   padding-top: 12px;
-  position: absolute;
   top: 0;
   width: 100%;
   background: rgba(255,255,255,0);
@@ -383,6 +395,7 @@ main {
   padding: 0px 9px !important;
   font-weight: 700;
   font-size: 21px;
+  font-family: arial;
 }
 .alice-carousel__prev-btn {
   left: 0;

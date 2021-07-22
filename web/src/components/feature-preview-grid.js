@@ -2,7 +2,7 @@ import {Link} from 'gatsby'
 import React from 'react'
 import FeaturePreview from './feature-preview'
 
-import styles from './tutorial.module.css'
+import styles from './features.module.css'
 
 function FeaturePreviewGrid (props) {
   return (

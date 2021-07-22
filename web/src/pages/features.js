@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
 import {responsiveTitle1} from '../components/typography.module.css'
-import styles from '../components/tutorial.module.css'
+import styles from '../components/features.module.css'
 
 
 export const query = graphql`

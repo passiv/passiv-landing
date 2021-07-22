@@ -12,13 +12,27 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => {
   const [loginPath, setLoginPath] = useState('/login/');
   const appBase = getAppBase();
 
+   //navbar scroll when active state
+  const [navbar, setNavbar] = useState(false)
+
+  const changeBackground = () => {
+    console.log(window.scrollY)
+    if (window.scrollY >= 66) {
+      setNavbar(true)
+    } else {
+      setNavbar(false)
+    }
+  }
+
   useEffect(() => {
     setRegisterPath(generateTrackingPath('/register/'));
     setLoginPath(generateTrackingPath('/login/'));
+    changeBackground()
+    window.addEventListener("scroll", changeBackground)
   }, []);
 
   return (
-    <div>
+    <div className={navbar ? "navbar active" : "navbar"}>
       <header className={styles.siteHeader} role="banner">
         <Container>
           <Link className={styles.logo} rel="author" to='/'>

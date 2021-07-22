@@ -37,6 +37,7 @@
   }
 }
 
+
 .toggleNavButton {
   appearance: none;
   font-size: 25px;
@@ -115,13 +116,8 @@
 }
 
 .siteHeader {
-  position: fixed;
-  z-index: 5;
-  top: 0;
-  left: 0;
   padding-top: 15px;
   padding-bottom: 15px;
-  background: #f7fafc;
   @nest & .page-content {
     margin-top: 0;
   }
@@ -145,7 +141,6 @@
   margin-top: 20px;
   @nest & .btn2 {
     background: #fff;
-    border: none;
     box-shadow: -2px 4px 11px 0 rgba(174, 174, 174, 0.25);
     @nest &:hover {
       color: #003BA2;
@@ -202,7 +197,7 @@
     }
   }
 
-  @media (max-width: 870px) {
+  @media (max-width: 1000px) {
     position: absolute;
     top: 9px;
     right: 0;
