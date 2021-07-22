@@ -1,5 +1,5 @@
 :root {
-  --font-family-sans: 'Cooper Hewitt', Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans:  sofia-pro, Helvetica, sans-serif;
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
@@ -9,9 +9,11 @@
   --color-white: #fff;
   --color-accent: #156dff;
 
-  --base-font-family: 'Cooper Hewitt', Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --base-font-family: sofia-pro, Helvetica, sans-serif;
+  --base-font-style: normal;
+
   --base-font-size:   18px;
-  --base-font-weight: 500;
+  --base-font-weight: 400;
   --small-font-size:  var(--base-font-size) * 0.875;
   --base-line-height: 1.5;
 

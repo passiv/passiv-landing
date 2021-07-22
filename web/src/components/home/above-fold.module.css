@@ -29,7 +29,7 @@
   @nest & input[type="email"] {
     width: 312px;
     margin-right: 18px;
-    height: 52px;
+    height: 57px;
     border: solid 1px #9e9f9f;
     font-size: 20px;
     line-height: 1.5;
@@ -94,7 +94,7 @@
     position: absolute;
     z-index: 0;
     background: url(../../images/new-dashboard-image.png) no-repeat;
-    background-position: right 25%;
+    background-position: right 40%;
     max-width: 750px;
     @media (--media-max-tablet) {
       max-width: 475px;
